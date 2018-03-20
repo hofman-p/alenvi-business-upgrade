@@ -2,7 +2,7 @@
   <div class="row">
     <q-window-resize-observable @resize="onResize" />
     <!-- On Mobile -->
-    <div class="col-sm-3 auxiliaries-container" v-for="(auxiliary, index) in auxiliaries" :key="auxiliary" v-if="$q.platform.is.mobile && auxiliary.youtube" @click="getVideo($event)" :id="'container-' + (index + 1)">
+    <div class="col-sm-3 auxiliaries-container" v-for="(auxiliary, index) in auxiliaries" :key="index" v-if="$q.platform.is.mobile && auxiliary.youtube" @click="getVideo($event)" :id="'container-' + (index + 1)">
       <img :src="auxiliary.picture.link" alt="splash" />
       <div class="auxiliaries-icon-container-mobile" :ref="'video' + (index + 1)">
         <q-video :src="auxiliary.youtube.link" style="width: 100%; height: 100%"/>
@@ -16,7 +16,7 @@
       </div>
     </div>
     <!-- On Desktop -->
-    <div class="col-sm-3 auxiliaries-container" v-for="auxiliary in auxiliaries" :key="auxiliary" v-if="!$q.platform.is.mobile && auxiliary.youtube" @click="openModal(auxiliary)">
+    <div class="col-sm-3 auxiliaries-container" v-for="(auxiliary, index) in auxiliaries" :key="index" v-if="!$q.platform.is.mobile && auxiliary.youtube" @click="openModal(auxiliary)">
       <img class="auxiliaries-size" :src="auxiliary.picture.link" alt="splash" />
       <div class="auxiliaries-icon-container row justify-center">
         <!-- isProd because when building site icons are not displaying properly so we have to change its display property -->
@@ -58,24 +58,24 @@ export default {
     }
   },
   async created () {
-    if (PROD) {
-      this.isProd = true;
-    }
+    // if (PROD) {
+    //   this.isProd = true;
+    // }
     const params = {
       role: this.videoRoles || '',
       location: this.videoLocation
     };
     const payload = _.pickBy(params);
-    const auxiliariesRaw = await this.$http.get('https://alenvi-api.herokuapp.com/users/presentation', {
+    const auxiliariesRaw = await this.$axios.get('https://alenvi-api.herokuapp.com/users/presentation', {
       params: payload
     });
     console.log('AUXILIARIES ROLES', auxiliariesRaw.data.data.users);
     this.auxiliariesRaw = auxiliariesRaw.data.data.users;
     this.auxiliaries = this.auxiliariesRaw;
     this.shuffle(this.auxiliaries);
-    if (this.auxiliaries[0].role.name == 'Admin' ||
-    this.auxiliaries[0].role.name == 'Coach' ||
-    this.auxiliaries[0].role.name == 'Tech') {
+    if (this.auxiliaries[0].role.name === 'Admin' ||
+    this.auxiliaries[0].role.name === 'Coach' ||
+    this.auxiliaries[0].role.name === 'Tech') {
       const first = this.auxiliaries.splice(0, 1);
       this.auxiliaries.push(first[0]);
     }
@@ -87,17 +87,17 @@ export default {
       }
     }
     for (let i = 0, j = 4, test = false; i < this.auxiliaries.length; i++) {
-      if (this.auxiliaries[i].role.name == 'Auxiliaire') {
+      if (this.auxiliaries[i].role.name === 'Auxiliaire') {
         if (i < j) {
           if (test) {
-            this.auxiliaries[i].backgroundColor = i % 2 == 1 ? '#F070AA' : '#B61A6D';
+            this.auxiliaries[i].backgroundColor = i % 2 === 1 ? '#F070AA' : '#B61A6D';
           } else {
-            this.auxiliaries[i].backgroundColor = i % 2 == 0 ? '#F070AA' : '#B61A6D';
+            this.auxiliaries[i].backgroundColor = i % 2 === 0 ? '#F070AA' : '#B61A6D';
           }
         } else {
           j += 4;
           test = !test;
-          this.auxiliaries[i].backgroundColor = this.auxiliaries[i - 4].backgroundColor == '#F070AA' ? '#B61A6D' : '#F070AA';
+          this.auxiliaries[i].backgroundColor = this.auxiliaries[i - 4].backgroundColor === '#F070AA' ? '#B61A6D' : '#F070AA';
           // this.auxiliaries[i].backgroundColor = i % 2 == 0 ? '#F070AA' : '#B61A6D';
         }
       } else {

@@ -19,12 +19,12 @@
 
 <script>
 import Features from '../components/Features.vue'
-// import AuxiliariesGallery from '../components/AuxiliariesGallery.vue'
+import AuxiliariesGallery from '../components/AuxiliariesGallery.vue'
 
 export default {
   components: {
     Features,
-    // AuxiliariesGallery
+    AuxiliariesGallery
   },
   data () {
     return {

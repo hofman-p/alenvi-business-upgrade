@@ -1,6 +1,6 @@
 <template>
   <div class="row layout-padding">
-    <div v-for="feature in featuresContent" :key="feature" class="col-sm-4 feature-padding" :style="{ backgroundColor: feature.backgroundColor }">
+    <div v-for="(feature, index) in featuresContent" :key="index" class="col-sm-4 feature-padding" :style="{ backgroundColor: feature.backgroundColor }">
       <div class="text-center">
         <img class="main-picto" :src="feature.image" alt="">
         <h2>{{feature.title}}</h2>
