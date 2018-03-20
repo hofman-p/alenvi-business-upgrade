@@ -6,7 +6,14 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  metaInfo: {
+    title: 'Alenvi',
+    // titleTemplate: '%s | Alenvi',
+    htmlAttrs: {
+      lang: 'fr'
+    }
+  }
 }
 </script>
 
