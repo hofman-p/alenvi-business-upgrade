@@ -3,10 +3,10 @@
     <section id="features">
       <features :featuresContent="featuresContent"/>
     </section>
-    <!-- <section id="auxiliaries-gallery">
+    <section id="auxiliaries-gallery">
       <h1 class="text-center title-margin-bottom">Les auxiliaires d'envie</h1>
       <auxiliaries-gallery :videoNumber="videoNumber" :videoLocation="videoLocation" :videoRoles="videoRoles"/>
-    </section> -->
+    </section>
     <!-- <section id="carousel-media">
       <h1 id="about-us" class="text-center">Ils parlent de nous</h1>
       <carousel-media />
@@ -19,13 +19,18 @@
 
 <script>
 import Features from '../components/Features.vue'
+// import AuxiliariesGallery from '../components/AuxiliariesGallery.vue'
 
 export default {
   components: {
-    Features
+    Features,
+    // AuxiliariesGallery
   },
   data () {
     return {
+      videoNumber: 8,
+      videoLocation: ['accueil'],
+      videoRoles: ['Auxiliaire'],
       featuresContent: [
         {
           title: 'Aide à domicile',
@@ -54,5 +59,21 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus" scoped>
+
+#carousel-media
+  background: #FAF9F8
+
+#about-us
+  margin-top: 0
+  padding-top: 6%
+
+.section-margin
+  margin-bottom: 3%
+
+.title-margin-bottom
+  margin-bottom: 3%
+
+.section-margin-big
+  margin-bottom: 6%
 </style>
