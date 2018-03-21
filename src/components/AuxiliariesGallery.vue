@@ -2,7 +2,7 @@
   <div class="row">
     <q-window-resize-observable @resize="onResize" />
     <!-- On Mobile -->
-    <!-- <div class="col-sm-3 auxiliaries-container" v-for="(auxiliary, index) in auxiliaries" :key="index" v-if="$q.platform.is.mobile && auxiliary.youtube" @click="getVideo($event)" :id="'container-' + (index + 1)">
+    <div class="col-sm-3 auxiliaries-container" v-for="(auxiliary, index) in auxiliaries" :key="index" v-if="$q.platform.is.mobile && auxiliary.youtube" @click="getVideo($event)" :id="'container-' + (index + 1)">
       <img :src="auxiliary.picture.link" alt="splash" />
       <div class="auxiliaries-icon-container-mobile" :ref="'video' + (index + 1)">
         <q-video :src="auxiliary.youtube.link" style="width: 100%; height: 100%"/>
@@ -10,14 +10,14 @@
       <div class="auxiliaries-filter-mobile" :style="{ backgroundColor: auxiliary.backgroundColor }"></div>
       <div class="auxiliaries-name-container-mobile row justify-center">
         <div class="auxiliaries-name-mobile col-12 self-center">{{auxiliary.firstname}}</div>
-        <div class="auxiliaries-name-mobile col-12"><q-icon name="play circle outline" size="5rem"/></div>
+        <div class="auxiliaries-name-mobile col-12"><q-icon name="play circle outline" size="2rem"/></div>
       </div>
-    </div> -->
+    </div>
     <!-- On Desktop -->
-    <div class="col-sm-3 auxiliaries-container" v-for="(auxiliary, index) in auxiliaries" :key="index" v-if="auxiliary.youtube" @click="openModal(auxiliary)">
+    <div class="col-sm-3 auxiliaries-container" v-for="(auxiliary, index) in auxiliaries" :key="index" v-if="!$q.platform.is.mobile && auxiliary.youtube" @click="openModal(auxiliary)">
       <img class="auxiliaries-size" :src="auxiliary.picture.link" alt="splash" />
       <div class="auxiliaries-icon-container row justify-center">
-        <q-icon  class="auxiliaries-icon self-center" name="play circle outline" color="white" size="5rem" style="display: inherit"/>
+        <q-icon class="auxiliaries-icon self-center" name="play circle outline" color="white" size="5rem" style="display: inherit"/>
       </div>
       <div class="auxiliaries-filter" :style="{ backgroundColor: auxiliary.backgroundColor }"></div>
       <div class="auxiliaries-name-container row justify-center"><p class="auxiliaries-name self-center">{{auxiliary.firstname}}</p>
@@ -211,38 +211,38 @@ export default {
   left: 0
   opacity: 0.7
 
-// .auxiliaries-icon-container-mobile
-//   position: absolute
-//   width: 100%
-//   height: 100%
-//   top: 0
-//   left: 0
-//   text-align: center
-//   z-index: -1
+.auxiliaries-icon-container-mobile
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  text-align: center
+  z-index: -1
 
-// .auxiliaries-name-container-mobile
-//   position: absolute
-//   width: 100%
-//   height: 100%
-//   top: 0
-//   left: 0
-//   text-align: center
-//   z-index: 2
+.auxiliaries-name-container-mobile
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  text-align: center
+  z-index: 2
 
-// .auxiliaries-name-mobile
-//   position: relative
-//   // width: 100%
-//   height: 10%
-//   font-size: 40px
-//   color: white
+.auxiliaries-name-mobile
+  position: relative
+  // width: 100%
+  height: 10%
+  font-size: 30px
+  color: white
 
-// .auxiliaries-filter-mobile
-//   position: absolute
-//   width: 100%
-//   height: 100%
-//   top: 0
-//   left: 0
-//   opacity: 0.7
-//   z-index: 1
+.auxiliaries-filter-mobile
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  opacity: 0.7
+  z-index: 1
 
 </style>
