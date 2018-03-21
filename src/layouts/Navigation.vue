@@ -88,35 +88,35 @@
     </q-page-container>
 
     <!-- Footer -->
-    <q-layout-footer class="row justify-center">
+    <q-layout-footer class="row justify-center items-center">
       <div class="col-xs-12 col-md-3">
         <ul>
-          <li><router-link :to="'/'" class="footer-links text-white">Accueil</router-link></li>
-          <li><router-link :to="'vision'" class="footer-links">Vision</router-link></li>
-          <li><router-link :to="'equipe'" class="footer-links">Equipe</router-link></li>
-          <li><router-link :to="'recrutement'" class="footer-links">Recrutement</router-link></li>
+          <li>Accueil</li>
+          <li>Vision</li>
+          <li>Equipe</li>
+          <li>Recrutement</li>
           <li><a href="http://blog.alenvi.io" class="footer-links">Blog</a></li>
         </ul>
       </div>
       <div class="col-xs-12 col-md-3">
         <ul>
-          <li><router-link :to="'aide-a-domicile'" class="footer-links">Aide à domicile</router-link></li>
-          <li><router-link :to="'compagnie'" class="footer-links">Compagnie et stimulation</router-link></li>
-          <li><router-link :to="'sortie-hopital'" class="footer-links">Sortie d'hôpital</router-link></li>
-          <li><router-link :to="'mentions'" class="footer-links">Mentions légales</router-link></li>
+          <li>Aide à domicile</li>
+          <li>Compagnie et stimulation</li>
+          <li>Sortie d'hôpital</li>
+          <li>Mentions légales</li>
         </ul>
       </div>
-      <div class="col-xs-12 col-md-3 padding-top-footer">
+      <div class="col-xs-12 col-md-3">
         <div class="row justify-center">
             <a href="https://www.facebook.com/alenviservices/">
-              <q-icon name="fa-facebook-official" color="white" size="2.5rem" class="hover-icon on-left"/>
+              <q-icon name="fab fa-facebook" color="white" size="2.5rem" class="hover-icon on-left"/>
             </a>
             <a href="https://www.youtube.com/channel/UCY31qIuLKsPY6zFUh_pR-pw">
-              <q-icon name="fa-youtube" color="white" size="2.5rem" class="hover-icon"/>
+              <q-icon name="fab fa-youtube" color="white" size="2.5rem" class="hover-icon"/>
             </a>
           </div>
         </div>
-        <div class="col-xs-12 col-md-3 padding-top-footer">
+        <div class="col-xs-12 col-md-3">
           <div class="row justify-center items-center">
             <div><img class="footer-img" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019445/images/business/logo-service-personne.png" alt="logo service personne"></div>
           </div>
@@ -149,7 +149,6 @@ export default {
     };
   },
   mounted () {
-    this.$refs.layout.hideRight();
     if (Cookies.get('popupWasShown')) {
       this.displayCookieInfo();
     }
@@ -259,6 +258,9 @@ export default {
     // margin: 0 -15px
     margin-left: auto
 
+  footer
+    background-color: $purpleAlenvi
+
   footer ul
     list-style: none
 
@@ -289,8 +291,8 @@ export default {
   .hover-icon:hover
     color: $grey-4 !important
 
-  #cookie-popup
-    padding-right: 1%
-    padding-bottom: 1%
+  //#cookie-popup
+  //  padding-right: 1%
+  //  padding-bottom: 1%
 
 </style>
