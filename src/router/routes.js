@@ -12,7 +12,8 @@ export default [
           breadcrumb: 'Aide à domicile',
           name: 'aide-a-domicile'
         }
-      }
+      },
+      { path: '/compagnie', component: () => import('pages/Company') }
     ]
   },
 
