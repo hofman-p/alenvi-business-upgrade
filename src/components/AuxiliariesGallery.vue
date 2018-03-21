@@ -61,7 +61,7 @@ export default {
       location: this.videoLocation
     };
     const payload = _.pickBy(params);
-    const auxiliariesRaw = await this.$axios.get('https://alenvi-api.herokuapp.com/users/presentation', {
+    const auxiliariesRaw = await this.$axios.get(`${process.env.API_HOSTNAME}/users/presentation`, { // 'https://alenvi-api.herokuapp.com/users/presentation'
       params: payload
     });
     // console.log('AUXILIARIES ROLES', auxiliariesRaw.data.data.users);
