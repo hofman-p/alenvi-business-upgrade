@@ -30,7 +30,7 @@
         <q-btn id="btn-call-header" v-if="this.$route.meta.name != 'recrutement'" class="gt-mld" color="primary" big><a class="btn-call text-white" href="tel:+33179755475">Appeler le 01 79 75 54 75</a></q-btn>
         <q-btn id="btn-call-header" v-else class="gt-mld" color="primary" @click="$refs.infoModal.openModal('https://alenvi.typeform.com/to/MwEMWk')" big><a class="btn-call text-white">Postuler</a></q-btn>
         <modal ref="infoModal"/>
-        <q-btn color="primary" class="lt-lgx hide-on-drawer-visible absolute-right" @click="$refs.layout.toggleRight()" flat big>
+        <q-btn color="primary" class="lt-lgx hide-on-drawer-visible absolute-right" @click="showDrawer = true" flat big>
           <q-icon name="menu" />
         </q-btn>
       </div>
@@ -88,39 +88,53 @@
     </q-page-container>
 
     <!-- Footer -->
-    <q-layout-footer class="row justify-center items-center">
-      <div class="col-xs-12 col-md-3">
+    <q-layout-footer class="row justify-between items-center q-pl-lg">
+      <div class="col-xs-6 col-lg-2">
+        <h6 class="footer-title">A propos</h6>
         <ul>
-          <li>Accueil</li>
-          <li>Vision</li>
-          <li>Equipe</li>
-          <li>Recrutement</li>
-          <li><a href="http://blog.alenvi.io" class="footer-links">Blog</a></li>
+          <li class="footer-links">Vision</li>
+          <li class="footer-links">Equipe</li>
+          <li class="footer-links">Histoire d'alenvi</li>
         </ul>
       </div>
-      <div class="col-xs-12 col-md-3">
+      <div class="col-xs-6 col-lg-2">
+        <h6 class="footer-title">Bénéficiaires</h6>
         <ul>
-          <li>Aide à domicile</li>
-          <li>Compagnie et stimulation</li>
-          <li>Sortie d'hôpital</li>
-          <li>Mentions légales</li>
+          <li class="footer-links">Services</li>
+          <li class="footer-links">Communautés</li>
+          <li class="footer-links">Actualités</li>
         </ul>
       </div>
-      <div class="col-xs-12 col-md-3">
-        <div class="row justify-center">
+      <div class="col-xs-6 col-lg-2">
+        <h6 class="footer-title">Auxiliaires</h6>
+        <ul>
+          <li class="footer-links">Recrutement</li>
+          <li class="footer-links">Communautés</li>
+          <li class="footer-links">Actualités</li>
+        </ul>
+      </div>
+      <div class="col-xs-6 col-lg-2">
+        <a href="#" class="footer-spe-link">Nous trouver</a>
+        <br />
+        <a href="#" class="footer-spe-link">Se connecter</a>
+      </div>
+      <div class="col-xs-6 col-lg-2">
+        <!-- <div class="row justify&#45;center"> -->
             <a href="https://www.facebook.com/alenviservices/">
               <q-icon name="fab fa-facebook" color="white" size="2.5rem" class="hover-icon on-left"/>
             </a>
-            <a href="https://www.youtube.com/channel/UCY31qIuLKsPY6zFUh_pR-pw">
+            <!-- <a href="https://www.youtube.com/channel/UCY31qIuLKsPY6zFUh_pR&#45;pw"> -->
               <q-icon name="fab fa-youtube" color="white" size="2.5rem" class="hover-icon"/>
-            </a>
-          </div>
+            <!-- </a> -->
+        <!-- </div> -->
+      </div>
+      <div class="col-xs-6 col-lg-2">
+        <!-- <div class="row justify&#45;center items&#45;center"> -->
+          <!-- <div> -->
+            <img class="footer-img" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019445/images/business/logo-service-personne.png" alt="logo service personne">
+          <!-- </div> -->
         </div>
-        <div class="col-xs-12 col-md-3">
-          <div class="row justify-center items-center">
-            <div><img class="footer-img" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019445/images/business/logo-service-personne.png" alt="logo service personne"></div>
-          </div>
-        </div>
+      <!-- </div> -->
     </q-layout-footer>
   </q-layout>
 </template>
@@ -263,36 +277,35 @@ export default {
 
   footer ul
     list-style: none
+    padding: 0
 
-  footer ul li a
-    color: $white
-    line-height: 30px
+  footer ul li
+    color: white
+
+  .footer-title
+    color: $primary
 
   .footer-links
     color: $white
+    cursor: pointer;
     &:hover
       color: $grey-4 !important
 
-  // .footer-logos
-  //   background-color: $white
-  //   border-radius: 15px
-  //
-  //   &:hover
-  //     text-decoration: underline
-  //     color: $white
+  .footer-spe-link
+    text-decoration: none
+    color: white
+    font-weight: bold
+    &:hover
+      color: $grey-4 !important
 
   .footer-img
-    width: 100px
-    height: auto
+   width: 100px
+   height: auto
 
   .forced-wrap
     flex-wrap: wrap
 
   .hover-icon:hover
     color: $grey-4 !important
-
-  //#cookie-popup
-  //  padding-right: 1%
-  //  padding-bottom: 1%
 
 </style>
