@@ -14,8 +14,8 @@
         <q-btn color="primary" big>
           <a class="btn-call" href="tel:+33179755475">Appeler le 01 79 75 54 75</a>
         </q-btn>
-        <p id="online-asking" @click="$refs.infoModal.openModal('https://alenvi.typeform.com/to/Hq6cm5')">Demande en ligne</p>
-        <modal ref="infoModal"/>
+        <p id="online-asking" @click="showModal = true">Demande en ligne</p>
+        <typeform-modal v-model="showModal" info="https://alenvi.typeform.com/to/Hq6cm5" @closeModal="showModal = false"/>
       </div>
       <div class="col-lg-6 text-center self-center">
         <img class="img-size" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507047952/images/business/sortie_hopital_16_10.jpg" alt="">
@@ -35,20 +35,21 @@
 
 <script>
 import Breadcrumb from '../components/Breadcrumbs.vue'
-import Modal from '../components/Modal'
+import TypeformModal from '../components/TypeformModal'
 import Features from '../components/Features.vue'
 import Auxiliaries from '../components/AuxiliariesGallery.vue'
 
 export default {
   components: {
     Breadcrumb,
-    Modal,
+    TypeformModal,
     Features,
     Auxiliaries,
     // CarouselMedia
   },
   data () {
     return {
+      showModal: false,
       featuresContent: [
         {
           title: 'Mise en place sous 3 jours',

@@ -16,10 +16,10 @@
             <li><q-icon name="keyboard arrow right" /> Coopération entre collègues (réunions d’équipe toutes les 2 semaines) & formation continue</li>
           </ul>
           <p>Nous recrutons actuellement pour des interventions à Paris et dans les Hauts-de-Seine.</p>
-          <q-btn color="primary" @click="$refs.infoModal.openModal('https://alenvi.typeform.com/to/MwEMWk')" big>
+          <q-btn color="primary" @click="showModal = true" big>
             <a class="btn-call">Postuler</a>
           </q-btn>
-          <modal ref="infoModal"/>
+          <typeform-modal v-model="showModal" info="https://alenvi.typeform.com/to/MwEMWk" @closeModal="showModal = false"/>
         </div>
         <div class="col-lg-5 alenvi-video">
           <iframe id="auxiliary-iframe" src="https://www.youtube.com/embed/yGWVPxglesc" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
@@ -31,7 +31,7 @@
 
 <script>
 import Breadcrumb from '../components/Breadcrumbs.vue'
-import Modal from '../components/Modal.vue'
+import TypeformModal from '../components/TypeformModal'
 
 export default {
   metaInfo: {
@@ -42,7 +42,12 @@ export default {
   },
   components: {
     Breadcrumb,
-    Modal
+    TypeformModal
+  },
+  data () {
+    return {
+      showModal: false
+    }
   }
 }
 </script>

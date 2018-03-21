@@ -9,14 +9,11 @@
         <p>Chaque après-midi, Dorothée se rend chez Thierry. Selon l’humeur du jour, ils décident d’aller se promener, de faire un jeu, ou de simplement lire un livre ensemble. C’est souvent dur de se quitter, mais Dorothée s’en va avec un sentiment de fierté car elle sent Thierry plus apaisé qu’à son arrivée.
         Ce sont ces moments humains, de partage, qui aident les personnes touchées par des troubles cognitifs à se sentir mieux. Ils peuvent également ralentir l’évolution de la maladie.
         Spécialement formés en continu, les auxiliaires d’envie sont là pour offrir ces moments d’apaisement à votre proche âgé.</p>
-        <!-- <q-btn color="red" big>
-          <a class="btn-call" @click="$refs.infoModal.openModal('https://alenvi.typeform.com/to/j8Zn47')">Demande en ligne</a>
-        </q-btn> -->
         <q-btn color="primary" big>
           <a class="btn-call" href="tel:+33179755475">Appeler le 01 79 75 54 75</a>
         </q-btn>
-        <p id="online-asking" @click="$refs.infoModal.openModal('https://alenvi.typeform.com/to/Hq6cm5')">Demande en ligne</p>
-        <modal ref="infoModal"/>
+        <p id="online-asking" @click="showModal = true">Demande en ligne</p>
+        <typeform-modal v-model="showModal" info="https://alenvi.typeform.com/to/Hq6cm5" @closeModal="showModal = false"/>
       </div>
       <div class="col-lg-6 text-center self-center">
         <img class="img-size" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507049556/images/business/compagnie_16_10.jpg" alt="">
@@ -36,10 +33,9 @@
 
 <script>
 import Breadcrumb from '../components/Breadcrumbs.vue'
-import Modal from '../components/Modal'
+import TypeformModal from '../components/TypeformModal'
 import Features from '../components/Features.vue'
 import Auxiliaries from '../components/AuxiliariesGallery.vue'
-// import CarouselMedia from '../components/CarouselMedia.vue'
 
 export default {
   metaInfo: {
@@ -50,13 +46,13 @@ export default {
   },
   components: {
     Breadcrumb,
-    Modal,
+    TypeformModal,
     Features,
-    Auxiliaries,
-    // CarouselMedia
+    Auxiliaries
   },
   data () {
     return {
+      showModal: false,
       featuresContent: [
         {
           title: 'Mise en place sous 3 jours',
