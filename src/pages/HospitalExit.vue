@@ -2,13 +2,12 @@
   <q-page padding>
     <breadcrumb v-if="!$q.platform.is.mobile" class="col-12 breadcrumb"/>
     <section class="row">
-      <h1 class="col-12 text-center title-margin-bottom">Aide à domicile pour les personnes âgées</h1>
+      <h1 class="col-12 text-center title-margin-bottom">Sortie d’hôpital pour les personnes âgées</h1>
       <div id="pres-text" class="col-lg-6 self-center">
         <!-- <h1 class="col-12 text-center title-margin-bottom">{{presentationContent.title}}</h1> -->
-        <h2>Françoise et Sabine</h2>
-        <p>Tous les matins, Sabine retrouve Françoise à son domicile. Après un petit café, Sabine aide Françoise à faire un brin de toilette. La préparation du repas est ensuite l’occasion de passer un bon moment toutes les deux. Sabine est contente de voir que Françoise apprécie le plat cuisiné ensemble. Elle la laisse ensuite prendre un peu de repos en attendant la visite de sa fille dans l’après-midi.
-        C’est pour vivre et faire vivre ce type de moments que les auxiliaires d’envie se lèvent tous les matins.
-        Nous sommes à la disposition de votre proche âgé pour l’aider dans ses gestes de la vie quotidienne et passer du temps de qualité avec lui.</p>
+        <h2>Madeleine et Nathalie</h2>
+        <p>Madeleine est rentrée récemment du service de soins de suite et de réadaptation. Elle a du mal à se déplacer et se fatigue très vite, même en restant chez elle. Nathalie vient la voir deux fois par jour. Ensemble elles peuvent ainsi faire la toilette, les repas et s’occuper un peu de la maison. Elles passent un bon moment. Nathalie est fascinée par toutes les histoires que Madeleine lui raconte au sujet de sa vie passée. Tous les week-ends, Nathalie est relayée par Sophie.
+        Les auxiliaires d’envie mobilisent toute leur expérience et leur envie pour aider leurs bénéficiaires à réussir leur retour à domicile. Leur mission est pleinement réussie quand l’autonomie se rétablit au fur et à mesure et qu’on a de moins en moins besoin d’eux.</p>
         <!-- <q-btn color="red" big>
           <a class="btn-call" @click="$refs.infoModal.openModal('https://alenvi.typeform.com/to/j8Zn47')">Demande en ligne</a>
         </q-btn> -->
@@ -19,7 +18,7 @@
         <modal ref="infoModal"/>
       </div>
       <div class="col-lg-6 text-center self-center">
-        <img class="img-size" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507049555/images/business/aide_domicile_16_10.jpg" alt="">
+        <img class="img-size" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507047952/images/business/sortie_hopital_16_10.jpg" alt="">
       </div>
     </section>
     <section id="features">
@@ -39,15 +38,8 @@ import Breadcrumb from '../components/Breadcrumbs.vue'
 import Modal from '../components/Modal'
 import Features from '../components/Features.vue'
 import Auxiliaries from '../components/AuxiliariesGallery.vue'
-// import CarouselMedia from '../CarouselMedia.vue'
 
 export default {
-  metaInfo: {
-    title: 'Aide à domicile',
-    meta: [
-      { name: 'description', content: "Services d’aide à domicile (repas, toilettes, aide au lever…) proposés aux personnes âgées par les 'auxiliaires d’envie' Alenvi." }
-    ]
-  },
   components: {
     Breadcrumb,
     Modal,
@@ -57,14 +49,6 @@ export default {
   },
   data () {
     return {
-      presentationContent: {
-        title: 'Aide à domicile pour les personnes âgées',
-        subtitle: 'Françoise et Sabine',
-        text1: `Tous les matins, Sabine retrouve Françoise à son domicile. Après un petit café, Sabine aide Françoise à faire un brin de toilette. La préparation du repas est ensuite l’occasion de passer un bon moment toutes les deux. Sabine est contente de voir que Françoise apprécie le plat cuisiné ensemble. Elle la laisse ensuite prendre un peu de repos en attendant la visite de sa fille dans l’après-midi.`,
-        text2: `C’est pour vivre et faire vivre ce type de moments que les auxiliaires d’envie se lèvent tous les matins.`,
-        text3: `Nous sommes à la disposition de votre proche âgé pour l’aider dans ses gestes de la vie quotidienne et passer du temps de qualité avec lui.`,
-        image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507049555/images/business/aide_domicile_16_10.jpg'
-      },
       featuresContent: [
         {
           title: 'Mise en place sous 3 jours',

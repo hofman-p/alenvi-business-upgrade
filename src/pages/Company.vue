@@ -1,0 +1,130 @@
+<template>
+  <q-page padding>
+    <breadcrumb v-if="!$q.platform.is.mobile" class="col-12 breadcrumb"/>
+    <section class="row"> <!-- pres-background -->
+      <h1 class="col-12 text-center title-margin-bottom">Compagnie et stimulation pour les personnes âgées</h1>
+      <div id="pres-text" class="col-lg-6 self-center">
+        <!-- <h1 class="col-12 text-center title-margin-bottom">{{presentationContent.title}}</h1> -->
+        <h2>Thierry et Dorothée</h2>
+        <p>Chaque après-midi, Dorothée se rend chez Thierry. Selon l’humeur du jour, ils décident d’aller se promener, de faire un jeu, ou de simplement lire un livre ensemble. C’est souvent dur de se quitter, mais Dorothée s’en va avec un sentiment de fierté car elle sent Thierry plus apaisé qu’à son arrivée.
+        Ce sont ces moments humains, de partage, qui aident les personnes touchées par des troubles cognitifs à se sentir mieux. Ils peuvent également ralentir l’évolution de la maladie.
+        Spécialement formés en continu, les auxiliaires d’envie sont là pour offrir ces moments d’apaisement à votre proche âgé.</p>
+        <!-- <q-btn color="red" big>
+          <a class="btn-call" @click="$refs.infoModal.openModal('https://alenvi.typeform.com/to/j8Zn47')">Demande en ligne</a>
+        </q-btn> -->
+        <q-btn color="primary" big>
+          <a class="btn-call" href="tel:+33179755475">Appeler le 01 79 75 54 75</a>
+        </q-btn>
+        <p id="online-asking" @click="$refs.infoModal.openModal('https://alenvi.typeform.com/to/Hq6cm5')">Demande en ligne</p>
+        <modal ref="infoModal"/>
+      </div>
+      <div class="col-lg-6 text-center self-center">
+        <img class="img-size" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507049556/images/business/compagnie_16_10.jpg" alt="">
+      </div>
+    </section>
+    <section id="features">
+      <features :featuresContent="featuresContent" />
+    </section>
+    <section id="auxiliaries">
+      <auxiliaries :videoNumber="videoNumber" :videoLocation="videoLocation" :videoRoles="videoRoles"/>
+    </section>
+    <section id="carousel-media">
+      <carousel-media />
+    </section>
+  </q-page>
+</template>
+
+<script>
+import Breadcrumb from '../components/Breadcrumbs.vue'
+import Modal from '../components/Modal'
+import Features from '../components/Features.vue'
+import Auxiliaries from '../components/AuxiliariesGallery.vue'
+// import CarouselMedia from '../components/CarouselMedia.vue'
+
+export default {
+  metaInfo: {
+    title: 'Compagnie',
+    meta: [
+      { name: 'description', content: "Les 'auxiliaires d’envie' passent du temps de qualité avec les personnes âgées à domicile : promenades, jeux, stimulation etc…" }
+    ]
+  },
+  components: {
+    Breadcrumb,
+    Modal,
+    Features,
+    Auxiliaries,
+    // CarouselMedia
+  },
+  data () {
+    return {
+      featuresContent: [
+        {
+          title: 'Mise en place sous 3 jours',
+          text: `Nous vous rendons visite gratuitement pour discuter de votre besoin. L'accompagnement peut démarrer tout de suite.`,
+          image: 'https://res.cloudinary.com/alenvi/image/upload/v1507194145/images/business/pictos/mise_en_place.png',
+          backgroundColor: '#FFFFFF'
+        },
+        {
+          title: 'Un accompagnement sur mesure',
+          text: `Une équipe d'auxiliaires adaptée à vos besoins vous suit et fait évoluer ses prestations si nécessaire.`,
+          image: 'https://res.cloudinary.com/alenvi/image/upload/v1507194145/images/business/pictos/sur_mesure.png',
+          backgroundColor: '#FAF9F8'
+        },
+        {
+          title: 'Entre 23 et 26€ / heure',
+          text: `50% remboursé en crédit d'impôt. Prise en charge APA possible.`,
+          image: 'https://res.cloudinary.com/alenvi/image/upload/v1507194145/images/business/pictos/tarif_horaire.png',
+          link: 'http://blog.alenvi.io/financement-aide-domicile',
+          backgroundColor: '#FFFFFF'
+        }
+      ],
+      videoNumber: 4,
+      videoLocation: ['accueil'],
+      videoRoles: ['auxiliary']
+    }
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
+@import '~variables'
+
+.breadcrumb
+  padding-left: 1%
+  @media (max-width: 1024px) and (min-width: 320px)
+    padding-left: 0%
+  @media (min-width: 1199px)
+    padding-left: 2.3%
+
+.pres-background
+  background: linear-gradient(to right, #FAF9F8, white)
+
+h1
+  // padding-left: 5%
+  // padding-right: 5%
+  @media (max-width: 991px)
+    padding-bottom: 5%
+
+#pres-text
+  // padding-left: 5%
+  // padding-right: 5%
+  @media (max-width: 991px)
+    padding-bottom: 5%
+
+#online-asking
+  padding-top: 1%
+  padding-left: 57px
+  cursor: pointer
+  color: $primary
+
+.title-margin-bottom
+  margin-bottom: 3%
+
+.img-size
+  width: 78%
+  max-width: 780px
+  height: auto;
+  @media (max-width: 1024px)
+    width: 100%
+    max-width: 100%
+</style>
