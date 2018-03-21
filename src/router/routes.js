@@ -46,6 +46,14 @@ export default [
         }
       },
       {
+        path: 'envie',
+        component: () => import('pages/Recruitment'),
+        meta: {
+          breadcrumb: 'Recrutement',
+          name: 'recrutement'
+        }
+      },
+      {
         path: '/vision',
         component: () => import('pages/Vision'),
         meta: {
