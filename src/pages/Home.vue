@@ -3,7 +3,7 @@
     <section id="features">
       <features :featuresContent="featuresContent"/>
     </section>
-    <section id="auxiliaries-gallery">
+    <section id="auxiliaries-gallery" class="section-margin">
       <h1 class="text-center title-margin-bottom">Les auxiliaires d'envie</h1>
       <auxiliaries-gallery :videoNumber="videoNumber" :videoLocation="videoLocation" :videoRoles="videoRoles"/>
     </section>
@@ -11,20 +11,23 @@
       <h1 id="about-us" class="text-center">Ils parlent de nous</h1>
       <carousel-media />
     </section> -->
-    <!-- <section id="latest-articles">
+    <section id="latest-articles">
+       <h1 class="text-center title-margin-bottom">Blog : les derniers articles</h1>
       <latest-articles />
-    </section> -->
+    </section>
   </q-page>
 </template>
 
 <script>
 import Features from '../components/Features.vue'
 import AuxiliariesGallery from '../components/AuxiliariesGallery.vue'
+import LatestArticles from '../components/LatestArticles.vue'
 
 export default {
   components: {
     Features,
-    AuxiliariesGallery
+    AuxiliariesGallery,
+    LatestArticles
   },
   data () {
     return {

@@ -1,4 +1,5 @@
 // Configuration for your app
+require('dotenv').config();
 
 module.exports = function (ctx) {
   return {
@@ -36,6 +37,9 @@ module.exports = function (ctx) {
           loader: 'eslint-loader',
           exclude: /(node_modules|quasar)/
         })
+      },
+      env: {
+        API_HOSTNAME: JSON.stringify(process.env.API_HOSTNAME)
       }
     },
     devServer: {
@@ -64,7 +68,12 @@ module.exports = function (ctx) {
         'QModal',
         'QCollapsible',
         'QVideo',
-        'QWindowResizeObservable'
+        'QWindowResizeObservable',
+        'QCard',
+        'QCardTitle',
+        'QCardMain',
+        'QCardActions',
+        'QCardMedia',
       ],
       directives: [
         'Ripple'
