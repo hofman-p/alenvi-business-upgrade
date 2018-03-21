@@ -70,6 +70,14 @@ export default [
         }
       },
       {
+        path: 'equipe',
+        component: () => import('pages/Team'),
+        meta: {
+          breadcrumb: 'Equipe',
+          name: 'team'
+        }
+      },
+      {
         path: 'charte-beneficiaire',
         beforeEnter: (to, from, next) => {
           window.location = 'https://blog.alenvi.io/charte-envie';
