@@ -4,7 +4,7 @@ export default [
     path: '/',
     component: () => import('layouts/Navigation'),
     children: [
-      { path: '', component: () => import('pages/index') }
+      { path: '', component: () => import('pages/Home') }
     ]
   },
 

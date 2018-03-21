@@ -62,7 +62,9 @@ module.exports = function (ctx) {
         'QItemMain',
         'QItemSide',
         'QModal',
-        'QCollapsible'
+        'QCollapsible',
+        'QVideo',
+        'QWindowResizeObservable'
       ],
       directives: [
         'Ripple'
