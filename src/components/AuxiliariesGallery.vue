@@ -2,34 +2,30 @@
   <div class="row">
     <q-window-resize-observable @resize="onResize" />
     <!-- On Mobile -->
-    <div class="col-sm-3 auxiliaries-container" v-for="(auxiliary, index) in auxiliaries" :key="index" v-if="$q.platform.is.mobile && auxiliary.youtube" @click="getVideo($event)" :id="'container-' + (index + 1)">
+    <!-- <div class="col-sm-3 auxiliaries-container" v-for="(auxiliary, index) in auxiliaries" :key="index" v-if="$q.platform.is.mobile && auxiliary.youtube" @click="getVideo($event)" :id="'container-' + (index + 1)">
       <img :src="auxiliary.picture.link" alt="splash" />
       <div class="auxiliaries-icon-container-mobile" :ref="'video' + (index + 1)">
         <q-video :src="auxiliary.youtube.link" style="width: 100%; height: 100%"/>
-
-        <!-- <iframe id="auxiliary-iframe" :src="auxiliary.youtube.link" width="100%" height="100%" frameborder="0" allowfullscreen></iframe> -->
       </div>
       <div class="auxiliaries-filter-mobile" :style="{ backgroundColor: auxiliary.backgroundColor }"></div>
       <div class="auxiliaries-name-container-mobile row justify-center">
         <div class="auxiliaries-name-mobile col-12 self-center">{{auxiliary.firstname}}</div>
         <div class="auxiliaries-name-mobile col-12"><q-icon name="play circle outline" size="5rem"/></div>
       </div>
-    </div>
+    </div> -->
     <!-- On Desktop -->
-    <div class="col-sm-3 auxiliaries-container" v-for="(auxiliary, index) in auxiliaries" :key="index" v-if="!$q.platform.is.mobile && auxiliary.youtube" @click="openModal(auxiliary)">
+    <div class="col-sm-3 auxiliaries-container" v-for="(auxiliary, index) in auxiliaries" :key="index" v-if="auxiliary.youtube" @click="openModal(auxiliary)">
       <img class="auxiliaries-size" :src="auxiliary.picture.link" alt="splash" />
       <div class="auxiliaries-icon-container row justify-center">
-        <!-- isProd because when building site icons are not displaying properly so we have to change its display property -->
-        <q-icon  class="auxiliaries-icon self-center" name="play circle outline" color="white" size="5rem" style="display: inherit"/> <!-- v-if="isProd" -->
-        <!--<q-icon class="auxiliaries-icon self-center" name="play circle outline" color="white" size="5rem"/>--> <!-- v-else -->
+        <q-icon  class="auxiliaries-icon self-center" name="play circle outline" color="white" size="5rem" style="display: inherit"/>
       </div>
       <div class="auxiliaries-filter" :style="{ backgroundColor: auxiliary.backgroundColor }"></div>
       <div class="auxiliaries-name-container row justify-center"><p class="auxiliaries-name self-center">{{auxiliary.firstname}}</p>
       </div>
     </div>
-    <q-modal ref="basicModal" @close="closeModal()" :content-css="setVideoContainerSize()">
+    <q-modal v-model="opened" @hide="closeModal()" :content-css="setVideoContainerSize">
       <div class="absolute-right">
-        <q-btn color="primary" @click="$refs.basicModal.close()">
+        <q-btn color="primary" @click="closeModal()">
           <q-icon name="close"></q-icon>
         </q-btn>
       </div>
@@ -49,12 +45,11 @@ export default {
   ],
   data () {
     return {
+      opened: false,
       windowSize: {},
       video_link: '',
       auxiliaries: [],
-      auxiliariesRaw: [],
-      clicked: false,
-      isProd: false
+      auxiliariesRaw: []
     }
   },
   async created () {
@@ -69,7 +64,7 @@ export default {
     const auxiliariesRaw = await this.$axios.get('https://alenvi-api.herokuapp.com/users/presentation', {
       params: payload
     });
-    console.log('AUXILIARIES ROLES', auxiliariesRaw.data.data.users);
+    // console.log('AUXILIARIES ROLES', auxiliariesRaw.data.data.users);
     this.auxiliariesRaw = auxiliariesRaw.data.data.users;
     this.auxiliaries = this.auxiliariesRaw;
     this.shuffle(this.auxiliaries);
@@ -105,11 +100,7 @@ export default {
       }
     }
   },
-  methods: {
-    openModal (auxiliary) {
-      this.video_link = `${auxiliary.youtube.link}?autoplay=1&enablejsapi=1`;
-      this.$refs.basicModal.open();
-    },
+  computed: {
     setVideoContainerSize () {
       let width = '50%';
       let height = '50%';
@@ -124,12 +115,19 @@ export default {
         height
       }
     },
+  },
+  methods: {
+    openModal (auxiliary) {
+      this.video_link = `${auxiliary.youtube.link}?autoplay=1&enablejsapi=1`;
+      this.opened = true;
+    },
     onResize (size) {
       this.windowSize = size;
     },
     closeModal () {
       const iframe = document.getElementById('auxiliary-iframe').contentWindow;
       iframe.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
+      this.opened = false;
     },
     shuffle (a) {
       for (let i = a.length; i; i--) {
@@ -186,15 +184,6 @@ export default {
   opacity: 0
   text-align: center
 
-.auxiliaries-icon-container-mobile
-  position: absolute
-  width: 100%
-  height: 100%
-  top: 0
-  left: 0
-  text-align: center
-  z-index: -1
-
 .auxiliaries-icon
   height: 100%
   color: rgba(255, 255, 255, .5)
@@ -207,26 +196,10 @@ export default {
   left: 0
   text-align: center
 
-.auxiliaries-name-container-mobile
-  position: absolute
-  width: 100%
-  height: 100%
-  top: 0
-  left: 0
-  text-align: center
-  z-index: 2
-
 .auxiliaries-name
   position: relative
   // width: 100%
   // height: 100%
-  font-size: 40px
-  color: white
-
-.auxiliaries-name-mobile
-  position: relative
-  // width: 100%
-  height: 10%
   font-size: 40px
   color: white
 
@@ -238,13 +211,38 @@ export default {
   left: 0
   opacity: 0.7
 
-.auxiliaries-filter-mobile
-  position: absolute
-  width: 100%
-  height: 100%
-  top: 0
-  left: 0
-  opacity: 0.7
-  z-index: 1
+// .auxiliaries-icon-container-mobile
+//   position: absolute
+//   width: 100%
+//   height: 100%
+//   top: 0
+//   left: 0
+//   text-align: center
+//   z-index: -1
+
+// .auxiliaries-name-container-mobile
+//   position: absolute
+//   width: 100%
+//   height: 100%
+//   top: 0
+//   left: 0
+//   text-align: center
+//   z-index: 2
+
+// .auxiliaries-name-mobile
+//   position: relative
+//   // width: 100%
+//   height: 10%
+//   font-size: 40px
+//   color: white
+
+// .auxiliaries-filter-mobile
+//   position: absolute
+//   width: 100%
+//   height: 100%
+//   top: 0
+//   left: 0
+//   opacity: 0.7
+//   z-index: 1
 
 </style>
