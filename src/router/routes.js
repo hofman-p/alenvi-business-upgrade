@@ -3,8 +3,18 @@ export default [
   {
     path: '/',
     component: () => import('layouts/Navigation'),
+    meta: {
+      breadcrumb: 'Accueil',
+      name: '/'
+    },
     children: [
-      { path: '', component: () => import('pages/Home') },
+      {
+        path: '',
+        component: () => import('pages/Home'),
+        meta: {
+          breadcrumb: 'Accueil',
+        }
+      },
       {
         path: 'aide-a-domicile',
         component: () => import('pages/HomeCare'),

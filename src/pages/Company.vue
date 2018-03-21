@@ -25,9 +25,6 @@
     <section id="auxiliaries">
       <auxiliaries :videoNumber="videoNumber" :videoLocation="videoLocation" :videoRoles="videoRoles"/>
     </section>
-    <section id="carousel-media">
-      <carousel-media />
-    </section>
   </q-page>
 </template>
 

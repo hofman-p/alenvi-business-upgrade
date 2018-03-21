@@ -13,6 +13,9 @@
 
 <script>
 export default {
+  mounted () {
+    console.log(this.$breadcrumbs)
+  }
 }
 </script>
 
