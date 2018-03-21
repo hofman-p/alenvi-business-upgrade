@@ -1,14 +1,13 @@
 <template>
   <q-page padding>
     <breadcrumb v-if="!$q.platform.is.mobile" class="col-12 breadcrumb"/>
-    <section class="row"> <!-- pres-background -->
-      <h1 class="col-12 text-center title-margin-bottom">Compagnie et stimulation pour les personnes âgées</h1>
+    <section class="row">
+      <h1 class="col-12 text-center title-margin-bottom">Sortie d’hôpital pour les personnes âgées</h1>
       <div id="pres-text" class="col-lg-6 self-center">
         <!-- <h1 class="col-12 text-center title-margin-bottom">{{presentationContent.title}}</h1> -->
-        <h2>Thierry et Dorothée</h2>
-        <p>Chaque après-midi, Dorothée se rend chez Thierry. Selon l’humeur du jour, ils décident d’aller se promener, de faire un jeu, ou de simplement lire un livre ensemble. C’est souvent dur de se quitter, mais Dorothée s’en va avec un sentiment de fierté car elle sent Thierry plus apaisé qu’à son arrivée.
-        Ce sont ces moments humains, de partage, qui aident les personnes touchées par des troubles cognitifs à se sentir mieux. Ils peuvent également ralentir l’évolution de la maladie.
-        Spécialement formés en continu, les auxiliaires d’envie sont là pour offrir ces moments d’apaisement à votre proche âgé.</p>
+        <h2>Madeleine et Nathalie</h2>
+        <p>Madeleine est rentrée récemment du service de soins de suite et de réadaptation. Elle a du mal à se déplacer et se fatigue très vite, même en restant chez elle. Nathalie vient la voir deux fois par jour. Ensemble elles peuvent ainsi faire la toilette, les repas et s’occuper un peu de la maison. Elles passent un bon moment. Nathalie est fascinée par toutes les histoires que Madeleine lui raconte au sujet de sa vie passée. Tous les week-ends, Nathalie est relayée par Sophie.
+        Les auxiliaires d’envie mobilisent toute leur expérience et leur envie pour aider leurs bénéficiaires à réussir leur retour à domicile. Leur mission est pleinement réussie quand l’autonomie se rétablit au fur et à mesure et qu’on a de moins en moins besoin d’eux.</p>
         <!-- <q-btn color="red" big>
           <a class="btn-call" @click="$refs.infoModal.openModal('https://alenvi.typeform.com/to/j8Zn47')">Demande en ligne</a>
         </q-btn> -->
@@ -19,7 +18,7 @@
         <modal ref="infoModal"/>
       </div>
       <div class="col-lg-6 text-center self-center">
-        <img class="img-size" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507049556/images/business/compagnie_16_10.jpg" alt="">
+        <img class="img-size" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507047952/images/business/sortie_hopital_16_10.jpg" alt="">
       </div>
     </section>
     <section id="features">
@@ -39,15 +38,8 @@ import Breadcrumb from '../components/Breadcrumbs.vue'
 import Modal from '../components/Modal'
 import Features from '../components/Features.vue'
 import Auxiliaries from '../components/AuxiliariesGallery.vue'
-// import CarouselMedia from '../components/CarouselMedia.vue'
 
 export default {
-  metaInfo: {
-    title: 'Compagnie',
-    meta: [
-      { name: 'description', content: "Les 'auxiliaires d’envie' passent du temps de qualité avec les personnes âgées à domicile : promenades, jeux, stimulation etc…" }
-    ]
-  },
   components: {
     Breadcrumb,
     Modal,
@@ -87,44 +79,45 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '~variables'
+  @import "~variables"
 
-.breadcrumb
-  padding-left: 1%
-  @media (max-width: 1024px) and (min-width: 320px)
-    padding-left: 0%
-  @media (min-width: 1199px)
-    padding-left: 2.3%
+  .breadcrumb
+    padding-left: 1%
+    @media (max-width: 1024px) and (min-width: 320px)
+      padding-left: 0%
+    @media (min-width: 1199px)
+      padding-left: 2.3%
 
-.pres-background
-  background: linear-gradient(to right, #FAF9F8, white)
+  .pres-background
+    background: linear-gradient(to right, #FAF9F8, white)
 
-h1
-  // padding-left: 5%
-  // padding-right: 5%
-  @media (max-width: 991px)
-    padding-bottom: 5%
+  h1
+    // padding-left: 5%
+    // padding-right: 5%
+    @media (max-width: 991px)
+      padding-bottom: 5%
 
-#pres-text
-  // padding-left: 5%
-  // padding-right: 5%
-  @media (max-width: 991px)
-    padding-bottom: 5%
+  #pres-text
+    // padding-left: 5%
+    // padding-right: 5%
+    @media (max-width: 991px)
+      padding-bottom: 5%
 
-#online-asking
-  padding-top: 1%
-  padding-left: 57px
-  cursor: pointer
-  color: $primary
+  #online-asking
+    padding-top: 1%
+    padding-left: 57px
+    cursor: pointer
+    color: $primary
 
-.title-margin-bottom
-  margin-bottom: 3%
+  .title-margin-bottom
+    margin-bottom: 3%
 
-.img-size
-  width: 78%
-  max-width: 780px
-  height: auto;
-  @media (max-width: 1024px)
-    width: 100%
-    max-width: 100%
+  .img-size
+    width: 78%
+    max-width: 780px
+    height: auto;
+    @media (max-width: 1024px)
+      width: 100%
+      max-width: 100%
+
 </style>

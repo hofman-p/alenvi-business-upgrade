@@ -103,4 +103,37 @@ export default {
       padding-left: 0%
     @media (min-width: 1199px)
       padding-left: 2.3%
+
+  .pres-background
+    background: linear-gradient(to right, #FAF9F8, white)
+
+  h1
+    // padding-left: 5%
+    // padding-right: 5%
+    @media (max-width: 991px)
+      padding-bottom: 5%
+
+  #pres-text
+    // padding-left: 5%
+    // padding-right: 5%
+    @media (max-width: 991px)
+      padding-bottom: 5%
+
+  #online-asking
+    padding-top: 1%
+    padding-left: 57px
+    cursor: pointer
+    color: $primary
+
+  .title-margin-bottom
+    margin-bottom: 3%
+
+  .img-size
+    width: 78%
+    max-width: 780px
+    height: auto;
+    @media (max-width: 1024px)
+      width: 100%
+      max-width: 100%
+
 </style>
