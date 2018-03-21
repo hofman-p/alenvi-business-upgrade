@@ -28,8 +28,8 @@
           </div>
         </div>
         <q-btn id="btn-call-header" v-if="this.$route.meta.name != 'recrutement'" class="gt-mld" color="primary" big><a class="btn-call text-white" href="tel:+33179755475">Appeler le 01 79 75 54 75</a></q-btn>
-        <q-btn id="btn-call-header" v-else class="gt-mld" color="primary" @click="$refs.infoModal.openModal('https://alenvi.typeform.com/to/MwEMWk')" big><a class="btn-call text-white">Postuler</a></q-btn>
-        <modal ref="infoModal"/>
+        <q-btn id="btn-call-header" v-else class="gt-mld" color="primary" @click.native="showModal = true" big><a class="btn-call text-white">Postuler</a></q-btn>
+        <typeform-modal v-model="showModal" info="https://alenvi.typeform.com/to/MwEMWk" @closeModal="showModal = false"/>
         <q-btn color="primary" class="lt-lgx hide-on-drawer-visible absolute-right" @click="showDrawer = true" flat big>
           <q-icon name="menu" />
         </q-btn>
@@ -142,14 +142,15 @@
 <script>
 import {Cookies, openURL} from 'quasar';
 
-import Modal from '../components/Modal.vue';
+import TypeformModal from '../components/TypeformModal.vue';
 
 export default {
   components: {
-    Modal,
+    TypeformModal,
   },
   data () {
     return {
+      showModal: false,
       showDrawer: false,
       active: false,
       dropdownItemClass: 'dropdown-item',

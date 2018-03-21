@@ -1,9 +1,9 @@
-<template lang="html">
+<template>
   <div>
     <q-window-resize-observable @resize="onResize" />
-    <q-modal ref="basicModal" :content-css="setVideoContainerSize()" class="scroll overflow-hidden">
+    <q-modal v-model="toggleModal" :content-css="setVideoContainerSize()" class="scroll overflow-hidden">
       <div class="absolute-right">
-        <q-btn color="primary" @click="$refs.basicModal.close()">
+        <q-btn color="primary" @click="closeModal">
           <q-icon name="close"></q-icon>
         </q-btn>
       </div>
@@ -13,19 +13,21 @@
 </template>
 
 <script>
-import { QModal, QBtn, QWindowResizeObservable, QIcon } from 'quasar'
 
 export default {
-  components: {
-    QModal,
-    QBtn,
-    QWindowResizeObservable,
-    QIcon
+  model: {
+    prop: 'toggleModal',
+    event: 'change'
+  },
+  props: {
+    toggleModal: Boolean,
+    info: String,
   },
   data () {
     return {
       windowSize: {},
-      typeform_link: ''
+      typeform_link: this.info,
+      showModal: this.toggleModal,
     }
   },
   methods: {
@@ -44,9 +46,9 @@ export default {
     onResize (size) {
       this.windowSize = size
     },
-    openModal (link) {
-      this.typeform_link = link
-      this.$refs.basicModal.open()
+    closeModal () {
+      this.showModal = false
+      this.$emit('closeModal')
     }
   }
 }
