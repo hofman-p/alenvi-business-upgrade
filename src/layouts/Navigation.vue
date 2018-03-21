@@ -282,8 +282,13 @@ export default {
   footer ul li
     color: white
 
+  .q-layout-footer
+    z-index: 1500
+
   .footer-title
-    color: $primary
+    color: #cb4f88
+    @media screen and (max-width: 767px)
+      font-size: 18px
 
   .footer-links
     color: $white
