@@ -1,5 +1,10 @@
 <template>
   <q-page padding>
+    <section id="presentation">
+      <h1>Nous réinventons l'accompagnement à domicile des personnes âgées</h1>
+      <h5>Alenvi part du constat que <strong>la valorisation du métier d'auxiliaire de vie a un impact positif sur la qualité de l'accompagnement</strong> apporté aux personnes âgées.</h5>
+      <h5>En créant un cadre de travail innovant, Alenvi permet à ses auxiliaires d'«envie» d'exercer pleinement leur empathie pour faire <strong>beaucoup plus que du «maintien à domicile»</strong>.</h5>
+    </section>
     <section id="features">
       <features :featuresContent="featuresContent"/>
     </section>
@@ -65,6 +70,10 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import "~variables"
+
+h1
+  color: $primary
 
 #carousel-media
   background: #FAF9F8
