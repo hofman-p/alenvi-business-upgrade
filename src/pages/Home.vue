@@ -12,10 +12,10 @@
       <h1 class="text-center title-margin-bottom">Les auxiliaires d'envie</h1>
       <auxiliaries-gallery :videoNumber="videoNumber" :videoLocation="videoLocation" :videoRoles="videoRoles"/>
     </section>
-    <!-- <section id="carousel-media">
+    <section id="carousel-media">
       <h1 id="about-us" class="text-center">Ils parlent de nous</h1>
       <carousel-media />
-    </section> -->
+    </section>
     <section id="latest-articles">
        <h1 class="text-center title-margin-bottom">Blog : les derniers articles</h1>
       <latest-articles />
@@ -27,14 +27,14 @@
 import Features from '../components/Features.vue'
 import AuxiliariesGallery from '../components/AuxiliariesGallery.vue'
 import LatestArticles from '../components/LatestArticles.vue'
-// import CarouselMedia from '../components/CarouselMedia.vue'
+import CarouselMedia from '../components/CarouselMedia.vue'
 
 export default {
   components: {
     Features,
     AuxiliariesGallery,
     LatestArticles,
-    // CarouselMedia
+    CarouselMedia
   },
   data () {
     return {
