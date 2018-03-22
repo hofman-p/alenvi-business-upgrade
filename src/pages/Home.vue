@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Features from '../components/Features.vue'
+import Features from '../components/SquareFeatures.vue'
 import AuxiliariesGallery from '../components/AuxiliariesGallery.vue'
 import LatestArticles from '../components/LatestArticles.vue'
 import CarouselMedia from '../components/CarouselMedia.vue'
@@ -42,21 +42,21 @@ export default {
           text: 'Nous assistons votre proche pour les tâches de la vie quotidienne et passons de bons moments avec lui.',
           link: '/aide-a-domicile',
           image: 'https://res.cloudinary.com/alenvi/image/upload/v1507194145/images/business/pictos/aide_domicile.png',
-          backgroundColor: '#FFFFFF'
+          backgroundColor: 'first'
         },
         {
           title: 'Compagnie & stimulation',
           text: 'Formés en continu sur les troubles cognitifs, nous sommes là pour aider votre proche à conserver des activités : promenades, jeux...',
           link: '/compagnie',
           image: 'https://res.cloudinary.com/alenvi/image/upload/v1507194145/images/business/pictos/compagnie_stimulation.png',
-          backgroundColor: '#FAF9F8'
+          backgroundColor: 'second'
         },
         {
           title: `Sortie d'hôpital`,
           text: 'Nous aidons votre proche à retrouver son autonomie lorsqu’il regagne son domicile après un passage à l’hôpital.',
           link: '/sortie-hopital',
           image: 'https://res.cloudinary.com/alenvi/image/upload/v1507194145/images/business/pictos/sortie_hopital.png',
-          backgroundColor: '#FFFFFF'
+          backgroundColor: 'third'
         }
       ]
     }

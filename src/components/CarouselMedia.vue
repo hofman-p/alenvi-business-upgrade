@@ -2,7 +2,7 @@
   <div class="bg-carousel-gradient">
     <q-carousel infinite autoplay class="text-tertiary">
       <q-carousel-slide v-for="(slide, index) in slides" :key="index" class="bg-carousel-transparent">
-        <div class="row">
+        <div class="row justify-around">
           <div v-for="(content, index) in slide" :key="index" class="col-xs-12 col-xl-6">
             <a :href="content.link">
               <q-card color="white" class="shadow-1" flat>
