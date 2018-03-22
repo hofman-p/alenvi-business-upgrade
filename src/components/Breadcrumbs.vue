@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row no-padding">
     <ul class="breadcrumbs">
       <!-- If index is last, then apply "current" css class -->
       <li v-for="(breadcrumb, index) in $breadcrumbs" :key="index" :class="{ current: index === $breadcrumbs.length - 1 }">
@@ -13,9 +13,6 @@
 
 <script>
 export default {
-  mounted () {
-    console.log(this.$breadcrumbs)
-  }
 }
 </script>
 
@@ -30,6 +27,7 @@ export default {
 // put in list in line, add arrow after each <li> element
   .breadcrumbs
     list-style: none
+    padding: 0
     li
       float: left
       display: inline-block
