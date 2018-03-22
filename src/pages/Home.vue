@@ -1,6 +1,15 @@
 <template>
-  <q-page padding>
-    <section id="presentation">
+  <q-page>
+    <section id="presentation-picture" style="window-height">
+      <div>
+        <q-parallax src="https://res.cloudinary.com/alenvi/image/upload/v1507193477/images/business/Home_4_2000.jpg" class="window-height">
+          <h5>J'accompagne Paulette, 87 ans</h5>
+          <h1>Je suis Professionnelle de l'empathie !</h1>
+        </q-parallax>
+        <!-- <p>coucou</p> -->
+      </div>
+    </section>
+    <section class="q-pa-xl" id="presentation-writing">
       <h1>Nous réinventons l'accompagnement à domicile des personnes âgées</h1>
       <h5>Alenvi part du constat que <strong>la valorisation du métier d'auxiliaire de vie a un impact positif sur la qualité de l'accompagnement</strong> apporté aux personnes âgées.</h5>
       <h5>En créant un cadre de travail innovant, Alenvi permet à ses auxiliaires d'«envie» d'exercer pleinement leur empathie pour faire <strong>beaucoup plus que du «maintien à domicile»</strong>.</h5>
@@ -73,6 +82,10 @@ export default {
 @import "~variables"
 
 h1
+  color: $primary
+  margin-bottom: 3%
+
+q-parallax h1, h5
   color: $primary
 
 #carousel-media
