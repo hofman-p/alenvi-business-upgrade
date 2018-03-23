@@ -1,13 +1,18 @@
 <template>
   <q-page>
-    <section id="presentation-picture" style="window-height">
-      <div>
-        <q-parallax src="https://res.cloudinary.com/alenvi/image/upload/v1507193477/images/business/Home_4_2000.jpg" class="window-height">
+    <section id="presentation-picture">
+      <!-- <img src="https://res.cloudinary.com/alenvi/image/upload/v1507193477/images/business/Home_4_2000.jpg" style="width: 100vw; height: 97vh"> -->
+      <!-- <div> -->
+        <!-- <q-parallax src="https://res.cloudinary.com/alenvi/image/upload/v1507193477/images/business/Home_4_2000.jpg" :height="875">
           <h5>J'accompagne Paulette, 87 ans</h5>
           <h1>Je suis Professionnelle de l'empathie !</h1>
-        </q-parallax>
+        </q-parallax> -->
         <!-- <p>coucou</p> -->
-      </div>
+        <parallax>
+          <img src="https://res.cloudinary.com/alenvi/image/upload/v1507193477/images/business/Home_4_2000.jpg">
+          <h5>test</h5>
+        </parallax>
+      <!-- </div> -->
     </section>
     <section class="q-pa-xl" id="presentation-writing">
       <h1>Nous réinventons l'accompagnement à domicile des personnes âgées</h1>
@@ -37,13 +42,15 @@ import Features from '../components/SquareFeatures.vue'
 import AuxiliariesGallery from '../components/AuxiliariesGallery.vue'
 import LatestArticles from '../components/LatestArticles.vue'
 import CarouselMedia from '../components/CarouselMedia.vue'
+import Parallax from 'vue-parallaxy'
 
 export default {
   components: {
     Features,
     AuxiliariesGallery,
     LatestArticles,
-    CarouselMedia
+    CarouselMedia,
+    Parallax
   },
   data () {
     return {
