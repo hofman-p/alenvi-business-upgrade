@@ -140,7 +140,7 @@
 </template>
 
 <script>
-import {Cookies, openURL} from 'quasar';
+import { openURL } from 'quasar';
 
 import TypeformModal from '../components/TypeformModal.vue';
 
@@ -164,7 +164,7 @@ export default {
     };
   },
   mounted () {
-    if (Cookies.get('popupWasShown')) {
+    if (!this.$q.cookies.has('popupWasShown')) {
       this.displayCookieInfo();
     }
   },
@@ -181,14 +181,14 @@ export default {
     displayCookieInfo () {
       this.$q.notify({
         message: `En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies pour vous proposer des publicités ciblées adaptés à vos centres d’intérêts et réaliser des statistiques de visites.`,
-        timeout: 3000,
+        timeout: 0,
         type: 'info',
         position: 'bottom-right',
         actions: [
           {
             label: "OK, j'ai compris.",
             handler: () => {
-              Cookies.set('popupWasShown', true, {expires: 10, path: '/'});
+              this.$q.cookies.set('popupWasShown', true, {expires: 10, path: '/'});
             },
           },
         ],

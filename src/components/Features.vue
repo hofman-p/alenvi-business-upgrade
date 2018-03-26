@@ -4,7 +4,7 @@
     <div v-for="(feature, index) in featuresContent" :key="index" class="col-xs-12 col-md-4 square ">
       <div class="row justify-center items-center q-py-md">
         <div class="q-pb-md">
-          <img class="main-picto" :src="feature.image" alt="">
+          <img class="main-picto" :src="feature.image" :alt="`picto-${feature.title.split(' ').join('').toLowerCase()}`">
         </div>
         <div>
           <h2 class="text-center">{{feature.title}}</h2>

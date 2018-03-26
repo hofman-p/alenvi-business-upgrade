@@ -32,8 +32,7 @@
       <h1 class="text-center title-margin-bottom">Les auxiliaires d'envie</h1>
       <auxiliaries-gallery :videoNumber="videoNumber" :videoLocation="videoLocation" :videoRoles="videoRoles"/>
     </section>
-    <section id="carousel-media">
-      <h1 id="about-us" class="text-center">Ils parlent de nous</h1>
+    <section class="section-margin">
       <carousel-media />
     </section>
     <!-- <section id="latest-articles">
@@ -125,8 +124,8 @@ q-parallax h1, h5
 #presentation-banner h1
   color: white
 
-#carousel-media
-  background: #FAF9F8
+//#carousel-media
+  //background: #FAF9F8
 
 #about-us
   margin-top: 0

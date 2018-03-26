@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-carousel-gradient">
-    <q-carousel infinite autoplay class="text-tertiary">
-      <q-carousel-slide v-for="(slide, index) in slides" :key="index" class="bg-carousel-transparent">
+  <div>
+    <q-carousel :swipe-easing="overshoot" infinite autoplay class="text-tertiary">
+      <q-carousel-slide v-for="(slide, index) in slides" :key="index">
         <div class="row justify-around">
           <div v-for="(content, index) in slide" :key="index" class="col-xs-12 col-xl-6">
             <a :href="content.link">
@@ -34,10 +34,12 @@
 </template>
 
 <script>
+import { easing } from 'quasar'
 
 export default {
   data () {
     return {
+      overshoot: easing.overshoot,
       slides: [
         [
           {
@@ -100,18 +102,18 @@ export default {
     .img-carousel
       margin: 10px 0px 10px 0px
 
-  .bg-carousel-gradient
-    background: #FAF9F8
+  //.bg-carousel-gradient
+    //background: #FAF9F8
     // background: linear-gradient(135deg, $grey-carousel 0%, $grey-carousel-fade-1 20%, $grey-carousel-fade-2 40%, $white 50%)
 
-  .bg-carousel-transparent
-    background: rgba(0, 0, 0, 0)
+  //.bg-carousel-transparent
+    //background: rgba(0, 0, 0, 0)
 
   // .q-card
   //   border-radius: 15px
 
-  .q-card-title
-    color: $tertiary
+  //.q-card-title
+    //color: $tertiary
 
   .carousel-card
     min-height: 100px
