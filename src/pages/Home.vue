@@ -112,6 +112,8 @@ q-parallax h1, h5
   background-position: center
   background-repeat: no-repeat
   background-size: cover
+  @media (max-width: 768px)
+    background-image: url("../assets/Barbara_portrait.jpg")
 
 #presentation-banner
   background: $primary
