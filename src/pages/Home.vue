@@ -20,8 +20,8 @@
       <h5>Alenvi part du constat que <strong>la valorisation du métier d'auxiliaire de vie a un impact positif sur la qualité de l'accompagnement</strong> apporté aux personnes âgées.</h5>
       <h5>En créant un cadre de travail innovant, Alenvi permet à ses auxiliaires d'«envie» d'exercer pleinement leur empathie pour faire <strong>beaucoup plus que du «maintien à domicile»</strong>.</h5>
     </section>
-    <section id="presentation-banner" class="section-margin">
-      <div class="fullwidth-banner">
+    <section id="presentation-banner" class="q-px-xl row items-center section-margin">
+      <div>
         <h1>Les communautés d'auxiliaires mettent en place <strong>des solutions sur-mesure à un tarif social adapté</strong> à tous.</h1>
       </div>
     </section>
@@ -114,13 +114,10 @@ q-parallax h1, h5
   background-repeat: no-repeat
   background-size: cover
 
-.fullwidth-banner
+#presentation-banner
   background: $primary
   text-align: center
   height: 40vh
-  width: 100vw
-  display: table-cell
-  vertical-align: middle
 
 #presentation-banner h1
   color: white
