@@ -24,7 +24,7 @@
     </section>
     <section id="features" class="section-margin">
       <q-parallax src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto,w_480/v1507193477/images/business/Home_1_2000.jpg" class="section-margin" :height="500" />
-      <features :featuresContent="featuresContent"/>
+      <home-features :featuresContent="featuresContent"/>
     </section>
     <section id="auxiliaries-gallery" class="section-margin">
       <h1 class="text-center title-margin-bottom">Les auxiliaires d'envie</h1>
@@ -41,14 +41,14 @@
 </template>
 
 <script>
-import Features from '../components/Features.vue'
+import HomeFeatures from '../components/HomeFeatures.vue'
 import AuxiliariesGallery from '../components/AuxiliariesGallery.vue'
 import LatestArticles from '../components/LatestArticles.vue'
 import CarouselMedia from '../components/CarouselMedia.vue'
 
 export default {
   components: {
-    Features,
+    HomeFeatures,
     AuxiliariesGallery,
     LatestArticles,
     CarouselMedia

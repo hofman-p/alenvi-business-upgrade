@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <breadcrumb v-if="!$q.platform.is.mobile" class="col-12 breadcrumb"/>
+    <breadcrumb class="col-12 breadcrumb"/>
     <div class="row">
       <section id="vision">
         <h1 class="col-12 text-center title-margin-bottom">Valorisons le métier d'auxiliaire pour mieux accompagner les personnes âgées</h1>
@@ -57,8 +57,8 @@ ul
   list-style: none
 
 #vision
-  padding-left: 5%
-  padding-right: 5%
+  //padding-left: 5%
+  //padding-right: 5%
   @media (max-width: 991px)
     padding-bottom: 5%
 

@@ -92,25 +92,25 @@
       <div class="col-xs-6 col-lg-2">
         <h6 class="footer-title">A propos</h6>
         <ul>
-          <li class="footer-links">Vision</li>
-          <li class="footer-links">Equipe</li>
-          <li class="footer-links">Histoire d'alenvi</li>
+          <li class="footer-links" @click="goTo('/vision')">Vision</li>
+          <li class="footer-links" @click="goTo('/equipe')">Equipe</li>
+          <li class="footer-links" @click="goTo('/')">Histoire d'alenvi</li>
         </ul>
       </div>
       <div class="col-xs-6 col-lg-2">
         <h6 class="footer-title">Bénéficiaires</h6>
         <ul>
-          <li class="footer-links">Services</li>
-          <li class="footer-links">Communautés</li>
-          <li class="footer-links">Actualités</li>
+          <li class="footer-links" @click="goTo('/')">Services</li>
+          <li class="footer-links" @click="goTo('/')">Communautés</li>
+          <li class="footer-links" @click="goTo('/')">Actualités</li>
         </ul>
       </div>
       <div class="col-xs-6 col-lg-2">
         <h6 class="footer-title">Auxiliaires</h6>
         <ul>
-          <li class="footer-links">Recrutement</li>
-          <li class="footer-links">Communautés</li>
-          <li class="footer-links">Actualités</li>
+          <li class="footer-links" @click="goTo('/recrutement')">Recrutement</li>
+          <li class="footer-links" @click="goTo('/')">Communautés</li>
+          <li class="footer-links" @click="goTo('/')">Actualités</li>
         </ul>
       </div>
       <div class="col-xs-6 col-lg-2">
@@ -123,9 +123,9 @@
             <a href="https://www.facebook.com/alenviservices/">
               <q-icon name="fab fa-facebook" color="white" size="2.5rem" class="hover-icon on-left"/>
             </a>
-            <!-- <a href="https://www.youtube.com/channel/UCY31qIuLKsPY6zFUh_pR&#45;pw"> -->
+            <a href="https://www.youtube.com/channel/UCY31qIuLKsPY6zFUh_pR-pw">
               <q-icon name="fab fa-youtube" color="white" size="2.5rem" class="hover-icon"/>
-            <!-- </a> -->
+            </a>
         <!-- </div> -->
       </div>
       <div class="col-xs-6 col-lg-2">
@@ -178,6 +178,9 @@ export default {
     goUrl (url) {
       openURL(url);
     },
+    goTo (path) {
+      this.$router.push({ path });
+    },
     displayCookieInfo () {
       this.$q.notify({
         message: `En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies pour vous proposer des publicités ciblées adaptés à vos centres d’intérêts et réaliser des statistiques de visites.`,
@@ -193,16 +196,9 @@ export default {
           },
         ],
       });
-    },
-    // closePopover () {
-    //   if (!this.active) {
-    //     this.$refs.popover1.close();
-    //   } else {
-    //     return;
-    //   }
-    // }
-  },
-};
+    }
+  }
+}
 </script>
 
 <style lang="stylus" scoped>

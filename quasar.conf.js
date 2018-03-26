@@ -81,7 +81,8 @@ module.exports = function (ctx) {
         'QParallax'
       ],
       directives: [
-        'Ripple'
+        'Ripple',
+        'Scroll'
       ],
       // Quasar plugins
       plugins: [
