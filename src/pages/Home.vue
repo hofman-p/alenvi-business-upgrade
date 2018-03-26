@@ -23,7 +23,9 @@
       </div>
     </section>
     <section id="features" class="section-margin">
-      <q-parallax src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" class="section-margin" :height="500" />
+      <parallax speedFactor=0.4 sectionHeight=50>
+        <img src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" alt=""/>
+      </parallax>
       <features :featuresContent="featuresContent"/>
     </section>
     <section id="auxiliaries-gallery" class="section-margin">
@@ -41,6 +43,7 @@
 </template>
 
 <script>
+import Parallax from 'vue-parallaxy'
 import HomeFeatures from '../components/HomeFeatures.vue'
 import AuxiliariesGallery from '../components/AuxiliariesGallery.vue'
 import LatestArticles from '../components/LatestArticles.vue'
@@ -51,7 +54,8 @@ export default {
     HomeFeatures,
     AuxiliariesGallery,
     LatestArticles,
-    CarouselMedia
+    CarouselMedia,
+    Parallax
   },
   data () {
     return {
