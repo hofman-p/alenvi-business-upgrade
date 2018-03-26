@@ -41,14 +41,14 @@
 </template>
 
 <script>
-import Features from '../components/Features.vue'
+import HomeFeatures from '../components/HomeFeatures.vue'
 import AuxiliariesGallery from '../components/AuxiliariesGallery.vue'
 import LatestArticles from '../components/LatestArticles.vue'
 import CarouselMedia from '../components/CarouselMedia.vue'
 
 export default {
   components: {
-    Features,
+    HomeFeatures,
     AuxiliariesGallery,
     LatestArticles,
     CarouselMedia

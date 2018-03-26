@@ -1,55 +1,30 @@
-<template>
-  <div :class="['row', { 'q-px-xl': !getMd } ]">
-    <q-window-resize-observable @resize="onResize" />
-    <div v-if="!getMd" v-for="(feature, index) in featuresContent" :key="index" class="col-xs-12 col-md-4 square ">
-      <div class="row justify-center items-center q-py-md">
-        <div class="q-pb-md">
-          <img class="main-picto" :src="feature.image" :alt="`picto-${feature.title.split(' ').join('').toLowerCase()}`">
-        </div>
-        <div>
-          <h2 class="text-center">{{feature.title}}</h2>
-          <p :class="['text-justify', { 'q-px-lg': !getMd } ]">{{feature.text}}</p>
-        </div>
+<template lang="html">
+  <div class="row layout-padding">
+    <div v-for="(feature, index) in featuresContent" :key="index" class="col-sm-4 feature-padding" :style="{ backgroundColor: feature.backgroundColor }">
+      <div class="text-center">
+        <img class="main-picto" :src="feature.image" alt="">
+        <h2>{{feature.title}}</h2>
       </div>
-    </div>
-    <div v-if="getMd" v-for="(feature, index) in featuresContent" :key="index" class="col-xs-12 row justify-center items-center" :style="{ backgroundColor: feature.backgroundColor, height: '30vh' }">
-      <h1 class="no-margin" :style="{ color: feature.color }">{{ feature.title }}</h1>
+      <p class="feature-text">{{feature.text}}</p>
+      <div v-if="feature.link" class="text-center">
+        <router-link class="text-primary alenvi-link" v-if="feature.link.substring(0, 4) != 'http'" :to="feature.link">En savoir plus</router-link>
+        <a v-else :href="feature.link">En savoir plus</a>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
   props: {
     featuresContent: {
       type: Array
-    }
-  },
-  data () {
-    return {
-      isMd: false
-    }
-  },
-  computed: {
-    getMd () {
-      return this.isMd;
-    }
-  },
-  methods: {
-    onResize (size) {
-      if (size.width <= 768) {
-        this.isMd = true;
-      } else {
-        this.isMd = false;
-      }
     }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-@import '~variables'
 .main-picto
   width: 100px
   height: 100px
@@ -67,15 +42,8 @@ export default {
   padding-top: 2%
   padding-bottom: 2%
 
-.square
-  border-radius: 2px
-  background: transparent
-  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1)
-  cursor: pointer
-  &:hover
-    background: #FAF9F8
-
 .alenvi-link
   &:hover
     color: #ff1693 !important
+
 </style>
