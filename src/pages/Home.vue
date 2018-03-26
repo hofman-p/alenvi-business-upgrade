@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <section id="presentation-picture">
+    <section id="presentation-picture" class="section-margin">
       <!-- <img src="https://res.cloudinary.com/alenvi/image/upload/v1507193477/images/business/Home_4_2000.jpg" style="width: 100vw; height: 97vh"> -->
       <!-- <div> -->
         <!-- <q-parallax src="https://res.cloudinary.com/alenvi/image/upload/v1507193477/images/business/Home_4_2000.jpg" :height="875">
@@ -8,18 +8,24 @@
           <h1>Je suis Professionnelle de l'empathie !</h1>
         </q-parallax> -->
         <!-- <p>coucou</p> -->
-        <parallax>
+        <!-- <parallax>
           <img src="https://res.cloudinary.com/alenvi/image/upload/v1507193477/images/business/Home_4_2000.jpg">
           <h5>test</h5>
-        </parallax>
+        </parallax> -->
       <!-- </div> -->
+      <div id="main-bg"></div>
     </section>
-    <section class="q-pa-xl" id="presentation-writing">
+    <section class="q-pa-xl section-margin" id="presentation-writing">
       <h1>Nous réinventons l'accompagnement à domicile des personnes âgées</h1>
       <h5>Alenvi part du constat que <strong>la valorisation du métier d'auxiliaire de vie a un impact positif sur la qualité de l'accompagnement</strong> apporté aux personnes âgées.</h5>
       <h5>En créant un cadre de travail innovant, Alenvi permet à ses auxiliaires d'«envie» d'exercer pleinement leur empathie pour faire <strong>beaucoup plus que du «maintien à domicile»</strong>.</h5>
     </section>
-    <section id="features">
+    <section id="presentation-banner" class="section-margin">
+      <div class="fullwidth-banner">
+        <h1>Les communautés d'auxiliaires mettent en place <strong>des solutions sur-mesure à un tarif social adapté</strong> à tous.</h1>
+      </div>
+    </section>
+    <section id="features" class="section-margin">
       <features :featuresContent="featuresContent"/>
     </section>
     <section id="auxiliaries-gallery" class="section-margin">
@@ -30,10 +36,10 @@
       <h1 id="about-us" class="text-center">Ils parlent de nous</h1>
       <carousel-media />
     </section>
-    <section id="latest-articles">
+    <!-- <section id="latest-articles">
        <h1 class="text-center title-margin-bottom">Blog : les derniers articles</h1>
       <latest-articles />
-    </section>
+    </section> -->
   </q-page>
 </template>
 
@@ -101,6 +107,24 @@ h1
 q-parallax h1, h5
   color: $primary
 
+#main-bg
+  background-image: url("../assets/Barbara_landscape.jpg")
+  height: 100vh
+  background-position: center
+  background-repeat: no-repeat
+  background-size: cover
+
+.fullwidth-banner
+  background: $primary
+  text-align: center
+  height: 40vh
+  width: 100vw
+  display: table-cell
+  vertical-align: middle
+
+#presentation-banner h1
+  color: white
+
 #carousel-media
   background: #FAF9F8
 
@@ -116,4 +140,5 @@ q-parallax h1, h5
 
 .section-margin-big
   margin-bottom: 6%
+
 </style>
