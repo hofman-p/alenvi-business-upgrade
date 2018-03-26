@@ -17,12 +17,13 @@
         <h5 key="text3">En créant un cadre de travail innovant, Alenvi permet à ses auxiliaires d'«envie» d'exercer pleinement leur empathie pour faire <strong>beaucoup plus que du «maintien à domicile»</strong>.</h5>
       </transition-group>
     </section>
-    <section id="presentation-banner" class="q-px-xl row items-center section-margin">
+    <section id="presentation-banner" class="q-px-xl row items-center">
       <div>
         <h1>Les communautés d'auxiliaires mettent en place <strong>des solutions sur-mesure à un tarif social adapté</strong> à tous.</h1>
       </div>
     </section>
     <section id="features" class="section-margin">
+      <q-parallax src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto,w_480/v1507193477/images/business/Home_1_2000.jpg" class="section-margin" :height="500" />
       <features :featuresContent="featuresContent"/>
     </section>
     <section id="auxiliaries-gallery" class="section-margin">
