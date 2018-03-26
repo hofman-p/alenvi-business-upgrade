@@ -1,7 +1,7 @@
 <template>
   <div :class="['row', { 'q-px-xl': !getMd } ]">
     <q-window-resize-observable @resize="onResize" />
-    <div v-if="!getMd" v-for="(feature, index) in featuresContent" :key="index" class="col-xs-12 col-md-4 square ">
+    <div v-if="!getMd" v-for="(feature, index) in featuresContent" :key="index" class="col-xs-12 col-md-4 square" @click="goTo(feature.link)">
       <div class="row justify-center items-center q-py-md">
         <div class="q-pb-md">
           <img class="main-picto" :src="feature.image" :alt="`picto-${feature.title.split(' ').join('').toLowerCase()}`">
@@ -43,6 +43,9 @@ export default {
       } else {
         this.isMd = false;
       }
+    },
+    goTo (path) {
+      this.$router.push(path);
     }
   }
 }
