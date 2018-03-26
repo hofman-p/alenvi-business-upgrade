@@ -7,18 +7,15 @@
           <h5>J'accompagne Paulette, 87 ans</h5>
           <h1>Je suis Professionnelle de l'empathie !</h1>
         </q-parallax> -->
-        <!-- <p>coucou</p> -->
-        <!-- <parallax>
-          <img src="https://res.cloudinary.com/alenvi/image/upload/v1507193477/images/business/Home_4_2000.jpg">
-          <h5>test</h5>
-        </parallax> -->
       <!-- </div> -->
       <div id="main-bg"></div>
     </section>
     <section class="q-pa-xl section-margin" id="presentation-writing">
-      <h1>Nous réinventons l'accompagnement à domicile des personnes âgées</h1>
-      <h5>Alenvi part du constat que <strong>la valorisation du métier d'auxiliaire de vie a un impact positif sur la qualité de l'accompagnement</strong> apporté aux personnes âgées.</h5>
-      <h5>En créant un cadre de travail innovant, Alenvi permet à ses auxiliaires d'«envie» d'exercer pleinement leur empathie pour faire <strong>beaucoup plus que du «maintien à domicile»</strong>.</h5>
+      <transition-group appear enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+        <h1 key="text1">Nous réinventons l'accompagnement à domicile des personnes âgées</h1>
+        <h5 key="text2">Alenvi part du constat que <strong>la valorisation du métier d'auxiliaire de vie a un impact positif sur la qualité de l'accompagnement</strong> apporté aux personnes âgées.</h5>
+        <h5 key="text3">En créant un cadre de travail innovant, Alenvi permet à ses auxiliaires d'«envie» d'exercer pleinement leur empathie pour faire <strong>beaucoup plus que du «maintien à domicile»</strong>.</h5>
+      </transition-group>
     </section>
     <section id="presentation-banner" class="q-px-xl row items-center section-margin">
       <div>
@@ -47,15 +44,13 @@ import Features from '../components/Features.vue'
 import AuxiliariesGallery from '../components/AuxiliariesGallery.vue'
 import LatestArticles from '../components/LatestArticles.vue'
 import CarouselMedia from '../components/CarouselMedia.vue'
-import Parallax from 'vue-parallaxy'
 
 export default {
   components: {
     Features,
     AuxiliariesGallery,
     LatestArticles,
-    CarouselMedia,
-    Parallax
+    CarouselMedia
   },
   data () {
     return {
