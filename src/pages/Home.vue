@@ -23,7 +23,7 @@
       </div>
     </section>
     <section id="features" class="section-margin">
-      <q-parallax src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto,w_480/v1507193477/images/business/Home_1_2000.jpg" class="section-margin" :height="500" />
+      <q-parallax src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" class="section-margin" :height="500" />
       <features :featuresContent="featuresContent"/>
     </section>
     <section id="auxiliaries-gallery" class="section-margin">
