@@ -7,7 +7,7 @@ module.exports = function (ctx) {
     plugins: [
       'i18n',
       'axios',
-      'VueBreadcrumbs'
+      'VueBreadcrumbs',
     ],
     css: [
       'app.styl'

@@ -23,7 +23,7 @@
       </div>
     </section>
     <section id="features" class="section-margin">
-      <q-parallax class="q-mb-xl" src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" :height="800">
+      <q-parallax :class="[{ 'q-mb-xl': $q.platform.is.desktop || $q.platform.is.ipad }]" src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" :height="200" :speed="0.6" style="height:60vh">
         <!-- <img src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" alt=""/> -->
       </q-parallax>
       <home-features :featuresContent="featuresContent"/>
@@ -99,10 +99,6 @@ export default {
 <style lang="stylus" scoped>
 @import "~variables"
 
-@media screen and (min-width: 768px)
-  .Masthead
-    min-height: 60vh
-
 h1
   color: $primary
   margin-bottom: 3%
@@ -116,7 +112,7 @@ q-parallax h1, h5
   background-position: center
   background-repeat: no-repeat
   background-size: cover
-  @media (max-width: 768px)
+  @media (max-width: 1024px)
     background-image: url("../assets/Barbara_portrait.jpg")
 
 #presentation-banner
