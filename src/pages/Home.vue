@@ -11,6 +11,8 @@
       <div id="main-bg"></div>
       <div class="main-subtext text-center">J'accompagne Paulette, 87 ans</div>
       <div class="main-text text-center"><strong>Je suis Professionnelle de l'empathie !</strong></div>
+      <q-btn v-if="$q.platform.is.desktop" class="main-button-call-to-action" icon="call" color="primary" size="lg" label="Appeler au 01 73 12 55 97" />
+      <q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px" />
     </section>
     <section class="q-pa-xl section-margin" id="presentation-writing">
       <transition-group appear enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
@@ -143,25 +145,29 @@ q-parallax h1, h5
 
 .main-text
   position: absolute
-  top: 50vh
+  top: 35vh
   left: 10vw
   font-size: 5vh
   color: $primary
   font-family: alenviTitleFont
   @media (max-width: 1024px)
-    top: 10vh
+    top: 12vh
     left: 5%
     right: 1vw
 
 .main-subtext
   position: absolute
-  top: 45vh
+  top: 30vh
   left: 10vw
   font-size: 4vh
   font-family: alenviTitleFont
   @media (max-width: 1024px)
-    top: 2vh
-    left: 5%
+    top: 4vh
+    left: 1vw
     right: 1vw
 
+.main-button-call-to-action
+  position: absolute
+  top: 45vh
+  left: 10vw
 </style>

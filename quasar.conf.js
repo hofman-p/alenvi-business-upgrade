@@ -78,7 +78,9 @@ module.exports = function (ctx) {
         'QCarousel',
         'QCarouselSlide',
         'QInput',
-        'QParallax'
+        'QParallax',
+        'QFab',
+        'QFabAction'
       ],
       directives: [
         'Ripple',
