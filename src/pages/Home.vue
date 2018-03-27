@@ -9,6 +9,8 @@
         </q-parallax> -->
       <!-- </div> -->
       <div id="main-bg"></div>
+      <div class="main-subtext text-center">J'accompagne Paulette, 87 ans</div>
+      <div class="main-text text-center"><strong>Je suis Professionnelle de l'empathie !</strong></div>
     </section>
     <section class="q-pa-xl section-margin" id="presentation-writing">
       <transition-group appear enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
@@ -139,5 +141,28 @@ q-parallax h1, h5
 
 .section-margin-big
   margin-bottom: 6%
+
+.main-text
+  position: absolute
+  top: 50vh
+  left: 10vw
+  font-size: 5vh
+  color: $primary
+  font-family: alenviTitleFont
+  @media (max-width: 1024px)
+    top: 10vh
+    left: 5%
+    right: 1vw
+
+.main-subtext
+  position: absolute
+  top: 45vh
+  left: 10vw
+  font-size: 4vh
+  font-family: alenviTitleFont
+  @media (max-width: 1024px)
+    top: 2vh
+    left: 5%
+    right: 1vw
 
 </style>
