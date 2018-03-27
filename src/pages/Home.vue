@@ -17,15 +17,16 @@
         <h5 key="text3">En créant un cadre de travail innovant, Alenvi permet à ses auxiliaires d'«envie» d'exercer pleinement leur empathie pour faire <strong>beaucoup plus que du «maintien à domicile»</strong>.</h5>
       </transition-group>
     </section>
-    <section id="presentation-banner" class="q-px-xl row items-center">
+    <section id="presentation-banner" class="q-px-md row items-center">
       <div>
         <h1>Les communautés d'auxiliaires mettent en place <strong>des solutions sur-mesure à un tarif social adapté</strong> à tous.</h1>
       </div>
     </section>
-    <section id="features" class="section-margin">
-      <q-parallax :class="[{ 'q-mb-xl': $q.platform.is.desktop || $q.platform.is.ipad }]" src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" :height="200" :speed="0.6" style="height:60vh">
+    <section id="features" class="q-mb-lg">
+      <q-parallax v-if="$q.platform.is.desktop || $q.platform.is.ipad" class="q-mb-xl" src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" :height="200" :speed="0.6" style="height:60vh">
         <!-- <img src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" alt=""/> -->
       </q-parallax>
+      <img class="responsive" v-if="$q.platform.is.mobile" src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" alt="">
       <home-features :featuresContent="featuresContent"/>
     </section>
     <section id="auxiliaries-gallery" class="section-margin">
