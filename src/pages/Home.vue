@@ -21,7 +21,7 @@
         <h5 key="text3">En créant un cadre de travail innovant, Alenvi permet à ses auxiliaires d'«envie» d'exercer pleinement leur empathie pour faire <strong>beaucoup plus que du «maintien à domicile»</strong>.</h5>
       </transition-group>
     </section>
-    <section id="presentation-banner" class="q-px-md row items-center">
+    <section id="presentation-banner" class="row items-center">
       <div>
         <h1>Les communautés d'auxiliaires mettent en place <strong>des solutions sur-mesure à un tarif social adapté</strong> à tous.</h1>
       </div>
@@ -124,6 +124,8 @@ q-parallax h1, h5
   background: $primary
   text-align: center
   height: 40vh
+  padding-left: 5vw
+  padding-right: 5vw
 
 #presentation-banner h1
   color: white
