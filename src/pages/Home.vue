@@ -23,10 +23,10 @@
       </div>
     </section>
     <section id="features" class="section-margin">
-      <parallax speedFactor=0.4 sectionHeight=50>
-        <img src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" alt=""/>
-      </parallax>
-      <features :featuresContent="featuresContent"/>
+      <q-parallax class="q-mb-xl" src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" :height="800">
+        <!-- <img src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" alt=""/> -->
+      </q-parallax>
+      <home-features :featuresContent="featuresContent"/>
     </section>
     <section id="auxiliaries-gallery" class="section-margin">
       <h1 class="text-center title-margin-bottom">Les auxiliaires d'envie</h1>
@@ -98,6 +98,10 @@ export default {
 
 <style lang="stylus" scoped>
 @import "~variables"
+
+@media screen and (min-width: 768px)
+  .Masthead
+    min-height: 60vh
 
 h1
   color: $primary
