@@ -27,12 +27,15 @@
       </transition>
     </section>
     <section id="mid-banner">
-      <q-parallax v-if="$q.platform.is.desktop || $q.platform.is.ipad" class="q-mb-xl" src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" :height="200" :speed="0.6" style="height:60vh">
+      <q-parallax
+        v-if="$q.platform.is.desktop || $q.platform.is.ipad" class="q-mb-xl"
+        src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg"
+        :height="200" :speed="0.6" style="height:40vh">
         <!-- <img src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" alt=""/> -->
       </q-parallax>
       <img class="responsive" v-if="$q.platform.is.mobile" src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" alt="">
     </section>
-    <section id="features" class="q-mb-lg">
+    <section id="features" class="q-mb-lg row items-center">
       <home-features :featuresContent="featuresContent"/>
     </section>
     <section id="auxiliaries-gallery" class="section-margin">
@@ -132,8 +135,8 @@ q-parallax h1, h5
   @media (max-width: 1024px)
     background-image: url("../assets/Barbara_portrait.jpg")
 
-// #presentation-writing
-//   height: 40vh
+#presentation-writing
+  height: 40vh
 
 #presentation-banner
   background: $primary
@@ -146,7 +149,7 @@ q-parallax h1, h5
   color: white
 
 #features
-  height: 60vh
+  height: 40vh
 
 //#carousel-media
   //background: #FAF9F8
