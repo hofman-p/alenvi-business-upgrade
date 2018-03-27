@@ -14,23 +14,25 @@
       <q-btn v-if="$q.platform.is.desktop" class="main-button-call-to-action" icon="call" color="primary" size="lg" label="Appeler au 01 73 12 55 97" />
       <q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px" />
     </section>
-    <section class="q-pa-xl section-margin" id="presentation-writing">
-      <transition-group appear enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-        <h1 key="text1">Nous réinventons l'accompagnement à domicile des personnes âgées</h1>
-        <h5 key="text2">Alenvi part du constat que <strong>la valorisation du métier d'auxiliaire de vie a un impact positif sur la qualité de l'accompagnement</strong> apporté aux personnes âgées.</h5>
-        <h5 key="text3">En créant un cadre de travail innovant, Alenvi permet à ses auxiliaires d'«envie» d'exercer pleinement leur empathie pour faire <strong>beaucoup plus que du «maintien à domicile»</strong>.</h5>
+    <section id="presentation-writing" class="q-pa-xl section-margin" v-scroll-fire="fadeInPresWriting">
+      <transition-group enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+        <h1 v-if="hasScrolledPresWriting" key="presentation-writing-text">Nous réinventons l'accompagnement à domicile des personnes âgées</h1>
+        <h5 v-if="hasScrolledPresWriting" key="presentation-writing-text">Alenvi part du constat que <strong>la valorisation du métier d'auxiliaire de vie a un impact positif sur la qualité de l'accompagnement</strong> apporté aux personnes âgées.</h5>
+        <h5 v-if="hasScrolledPresWriting" key="presentation-writing-text">En créant un cadre de travail innovant, Alenvi permet à ses auxiliaires d'«envie» d'exercer pleinement leur empathie pour faire <strong>beaucoup plus que du «maintien à domicile»</strong>.</h5>
       </transition-group>
     </section>
-    <section id="presentation-banner" class="row items-center">
-      <div>
-        <h1>Les communautés d'auxiliaires mettent en place <strong>des solutions sur-mesure à un tarif social adapté</strong> à tous.</h1>
-      </div>
+    <section id="presentation-banner" class="row items-center" v-scroll-fire="fadeInPresBanner">
+      <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+        <h1 v-if="hasScrolledPresBanner">Les communautés d'auxiliaires mettent en place <strong>des solutions sur-mesure à un tarif social adapté</strong> à tous.</h1>
+      </transition>
     </section>
-    <section id="features" class="q-mb-lg">
+    <section id="mid-banner">
       <q-parallax v-if="$q.platform.is.desktop || $q.platform.is.ipad" class="q-mb-xl" src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" :height="200" :speed="0.6" style="height:60vh">
         <!-- <img src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" alt=""/> -->
       </q-parallax>
       <img class="responsive" v-if="$q.platform.is.mobile" src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" alt="">
+    </section>
+    <section id="features" class="q-mb-lg">
       <home-features :featuresContent="featuresContent"/>
     </section>
     <section id="auxiliaries-gallery" class="section-margin">
@@ -64,6 +66,8 @@ export default {
   },
   data () {
     return {
+      hasScrolledPresWriting: false,
+      hasScrolledPresBanner: false,
       videoNumber: 8,
       videoLocation: ['accueil'],
       videoRoles: ['Auxiliaire'],
@@ -97,6 +101,14 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    fadeInPresWriting () {
+      this.hasScrolledPresWriting = true;
+    },
+    fadeInPresBanner () {
+      this.hasScrolledPresBanner = true;
+    }
   }
 }
 </script>
@@ -120,6 +132,9 @@ q-parallax h1, h5
   @media (max-width: 1024px)
     background-image: url("../assets/Barbara_portrait.jpg")
 
+// #presentation-writing
+//   height: 40vh
+
 #presentation-banner
   background: $primary
   text-align: center
@@ -129,6 +144,9 @@ q-parallax h1, h5
 
 #presentation-banner h1
   color: white
+
+#features
+  height: 60vh
 
 //#carousel-media
   //background: #FAF9F8
