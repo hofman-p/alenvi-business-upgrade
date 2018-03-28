@@ -8,6 +8,7 @@ module.exports = function (ctx) {
       'i18n',
       'axios',
       'VueBreadcrumbs',
+      'Vuelidate',
     ],
     css: [
       'app.styl'
@@ -77,6 +78,7 @@ module.exports = function (ctx) {
         'QCardMedia',
         'QCarousel',
         'QCarouselSlide',
+        'QField',
         'QInput',
         'QParallax',
         'QFab',

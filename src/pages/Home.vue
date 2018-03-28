@@ -51,6 +51,13 @@
        <!-- <h1 class="text-center title-margin-bottom">Blog : les derniers articles</h1> -->
       <latest-articles />
     </section>
+    <section class="row justify-center items-center q-my-lg">
+      <h1 class="text-center col-xs-12">
+        Contactez-nous !
+        <q-icon class="on-right" name="send"/>
+      </h1>
+      <contact-form />
+    </section>
   </q-page>
 </template>
 
@@ -60,6 +67,7 @@ import HomeFeatures from '../components/HomeFeatures.vue'
 import AuxiliariesGallery from '../components/AuxiliariesGallery.vue'
 import LatestArticles from '../components/LatestArticles.vue'
 import CarouselMedia from '../components/CarouselMedia.vue'
+import ContactForm from '../components/ContactForm.vue'
 
 export default {
   components: {
@@ -67,7 +75,8 @@ export default {
     AuxiliariesGallery,
     LatestArticles,
     CarouselMedia,
-    Parallax
+    Parallax,
+    ContactForm
   },
   data () {
     return {
