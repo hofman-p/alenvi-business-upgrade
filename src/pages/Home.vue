@@ -14,7 +14,7 @@
       <q-btn v-if="$q.platform.is.desktop" class="main-button-call-to-action" icon="call" color="primary" size="lg" label="Appeler au 01 73 12 55 97" />
       <q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px" />
     </section>
-    <section id="presentation-writing" :class="[{ 'q-pa-xl': $q.platform.is.desktop }, { 'q-pa-lg': $q.platform.is.mobile }, 'q-my-lg', 'row', 'items-center']" v-scroll-fire="fadeInPresWriting">
+    <section id="presentation-writing" :class="[{ 'q-pa-xl': $q.platform.is.desktop }, { 'q-pa-lg': $q.platform.is.mobile }, 'q-my-lg', 'row', 'justify-center', 'items-center']" v-scroll-fire="fadeInPresWriting">
       <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
         <div v-if="hasScrolledPresWriting" class="text-center">
           <h1>Nous réinventons l'accompagnement à domicile des personnes âgées</h1>
@@ -23,7 +23,7 @@
         </div>
       </transition>
     </section>
-    <section id="presentation-banner" :class="[{ 'q-pa-xl': $q.platform.is.desktop }, { 'q-pa-lg': $q.platform.is.mobile }, 'q-mt-lg', 'row', 'items-center']" v-scroll-fire="fadeInPresBanner">
+    <section id="presentation-banner" :class="[{ 'q-pa-xl': $q.platform.is.desktop }, { 'q-pa-lg': $q.platform.is.mobile }, 'q-mt-lg', 'row', 'justify-center', 'items-center']" v-scroll-fire="fadeInPresBanner">
       <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
         <h1 v-if="hasScrolledPresBanner">Les communautés d'auxiliaires mettent en place <strong>des solutions sur-mesure à un tarif social adapté</strong> à tous.</h1>
       </transition>
@@ -32,7 +32,7 @@
       <q-parallax
         v-if="$q.platform.is.desktop" class="q-mb-xl"
         src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg"
-        :height="200" :speed="0.6" style="height:40vh">
+        :height="200" :speed="0.6" style="height:60vh">
         <!-- <img src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" alt=""/> -->
       </q-parallax>
       <img class="responsive" v-if="$q.platform.is.mobile" src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" alt="">
@@ -41,16 +41,16 @@
       <home-features :featuresContent="featuresContent"/>
     </section>
     <section id="auxiliaries-gallery" class="q-my-xl">
-      <h1 class="text-center title-margin-bottom">Les auxiliaires d'envie</h1>
+      <!-- <h1 class="text-center title-margin-bottom">Les auxiliaires d'envie</h1> -->
       <auxiliaries-gallery :videoNumber="videoNumber" :videoLocation="videoLocation" :videoRoles="videoRoles"/>
     </section>
     <section id="media" class="q-my-xl">
       <carousel-media />
     </section>
-    <!-- <section id="latest-articles">
-       <h1 class="text-center title-margin-bottom">Blog : les derniers articles</h1>
+    <section id="latest-articles" :class="[{ 'q-pa-xl': $q.platform.is.desktop }, { 'q-pa-lg': $q.platform.is.mobile }, 'q-my-lg']">
+       <!-- <h1 class="text-center title-margin-bottom">Blog : les derniers articles</h1> -->
       <latest-articles />
-    </section> -->
+    </section>
   </q-page>
 </template>
 

@@ -283,7 +283,8 @@ export default {
     z-index: 1500
 
   .footer-title
-    color: $white !important
+    color: white !important
+    font-weight: bold
     @media screen and (max-width: 767px)
       font-size: 18px
 
