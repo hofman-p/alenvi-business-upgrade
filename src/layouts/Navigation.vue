@@ -36,17 +36,17 @@
       </div>
     </q-layout-header>
 
-    <q-layout-drawer side="right" v-model="showDrawer">
-      <q-list>
+    <q-layout-drawer side="right" v-model="showDrawer" content-class="bg-primary-dimmed" :content-style="{ color: 'white' }">
+      <q-list no-border :highlight="false">
         <q-item-side right>
-          <q-btn @click="showDrawer = false" class="justify-end" color="tertiary" flat big>
+          <q-btn @click="showDrawer = false" class="justify-end" color="white" flat big>
            <q-icon name="close" />
           </q-btn>
         </q-item-side>
         <q-item to="/" exact>
           <q-item-main label="Accueil" />
         </q-item>
-        <q-collapsible label="Services">
+        <q-collapsible label="Services" class="test">
           <q-item to="/aide-a-domicile">
             <q-item-main label="Aide à domicile" />
           </q-item>
@@ -310,6 +310,7 @@ export default {
   .hover-icon:hover
     color: $grey-4 !important
 
-  // #bg-test
-  //   background-color: transparent !important
+  div.q-collapsible-inner
+    color: white !important
+
 </style>
