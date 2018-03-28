@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div v-if="getMd" v-for="(feature, index) in featuresContent" :key="index" class="col-xs-12 row justify-center items-center" :style="{ backgroundColor: feature.backgroundColor, height: '25vh' }">
+    <div v-if="getMd" v-for="(feature, index) in featuresContent" :key="index" class="col-xs-12 row justify-center items-center" :style="{ backgroundColor: feature.backgroundColor, height: '25vh' }" @click="goTo(feature.link)">
       <h1 class="no-margin" :style="{ color: feature.color }">{{ feature.title }}</h1>
     </div>
   </div>

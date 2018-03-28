@@ -270,7 +270,7 @@ export default {
     margin-left: auto
 
   footer
-    background-color: $purpleAlenvi
+    background-color: $primary
 
   footer ul
     list-style: none
@@ -283,7 +283,7 @@ export default {
     z-index: 1500
 
   .footer-title
-    color: #cb4f88
+    color: $white !important
     @media screen and (max-width: 767px)
       font-size: 18px
 

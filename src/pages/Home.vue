@@ -16,19 +16,19 @@
     </section>
     <section id="presentation-writing" :class="[{ 'q-pa-xl': $q.platform.is.desktop }, { 'q-pa-lg': $q.platform.is.mobile }, 'q-my-lg', 'row', 'items-center']" v-scroll-fire="fadeInPresWriting">
       <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-        <div v-if="hasScrolledPresWriting">
+        <div v-if="hasScrolledPresWriting" class="text-center">
           <h1>Nous réinventons l'accompagnement à domicile des personnes âgées</h1>
           <h5>Alenvi part du constat que <strong>la valorisation du métier d'auxiliaire de vie a un impact positif sur la qualité de l'accompagnement</strong> apporté aux personnes âgées.</h5>
-          <h5>En créant un cadre de travail innovant, Alenvi permet à ses auxiliaires d'«envie» d'exercer pleinement leur empathie pour faire <strong>beaucoup plus que du «maintien à domicile»</strong>.</h5>
+          <h5>En créant un cadre de travail innovant, Alenvi permet à ses auxiliaires d'«envie» d'exercer pleinement leur empathie pour faire <span class="pres-writing">beaucoup plus que du «maintien à domicile»</span>.</h5>
         </div>
       </transition>
     </section>
-    <section id="presentation-banner" :class="[{ 'q-pa-xl': $q.platform.is.desktop }, { 'q-pa-lg': $q.platform.is.mobile }, 'q-my-lg', 'row', 'items-center']" v-scroll-fire="fadeInPresBanner">
+    <section id="presentation-banner" :class="[{ 'q-pa-xl': $q.platform.is.desktop }, { 'q-pa-lg': $q.platform.is.mobile }, 'q-mt-lg', 'row', 'items-center']" v-scroll-fire="fadeInPresBanner">
       <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
         <h1 v-if="hasScrolledPresBanner">Les communautés d'auxiliaires mettent en place <strong>des solutions sur-mesure à un tarif social adapté</strong> à tous.</h1>
       </transition>
     </section>
-    <section id="mid-banner" class="q-my-lg">
+    <section id="mid-banner" :class="[{ 'q-mb-lg': $q.platform.is.mobile }]">
       <q-parallax
         v-if="$q.platform.is.desktop" class="q-mb-xl"
         src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg"
@@ -151,6 +151,10 @@ q-parallax h1, h5
 
 #presentation-banner h1
   color: white
+
+.pres-writing
+  font-weight: bold
+  font-size: 1.2em
 
 //#features
  // height: 50vh
