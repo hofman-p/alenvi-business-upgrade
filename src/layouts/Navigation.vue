@@ -2,7 +2,7 @@
   <!-- Configure "view" prop for QLayout -->
   <q-layout view="hHh lpr fff">
     <q-layout-header reveal>
-      <div class="w3-bar w3-white alenvi-nav row items-center justify-start"><!-- id="bg-test" -->
+      <div class="w3-bar w3-white alenvi-nav row items-center justify-start">
         <router-link :to="'/'" class="w3-bar-item" style="width: 180px">
           <img class="alenvi-logo" src="https://res.cloudinary.com/alenvi/image/upload/c_fit,q_auto,w_500/v1507124345/images/business/alenvi_logo_complet_full.png" alt="Logo Alenvi">
         </router-link>
@@ -27,6 +27,7 @@
             </div>
           </div>
         </div>
+        <q-btn id="btn-call-header" color="primary" big>TEST2MER2</q-btn>
         <q-btn id="btn-call-header" v-if="this.$route.meta.name != 'recrutement'" class="gt-mld" color="primary" big><a class="btn-call text-white" href="tel:+33179755475">Appeler le 01 79 75 54 75</a></q-btn>
         <q-btn id="btn-call-header" v-else class="gt-mld" color="primary" @click.native="showModal = true" big><a class="btn-call text-white">Postuler</a></q-btn>
         <typeform-modal v-model="showModal" info="https://alenvi.typeform.com/to/MwEMWk" @closeModal="showModal = false"/>
