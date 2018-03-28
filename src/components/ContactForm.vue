@@ -9,8 +9,10 @@
     <q-field icon="message" helper="500 caractères max." :count="500" :error="$v.user.message.$error" :error-label="messageError">
       <q-input float-label="Message" type="textarea" :rows="5" v-model="user.message" @blur="$v.user.message.$touch" />
     </q-field>
-    <sub style="padding-left:44px">*Tous les champs sont requis.</sub>
-    <div class="row justify-center" style="padding-left:44px">
+    <div class="no-icon-padding-sub">
+      <sub>*Tous les champs sont requis.</sub>
+    </div>
+    <div class="row justify-center no-icon-padding">
       <q-btn size="md" label="Envoyer" color="primary" :disable="$v.user.$invalid" />
     </div>
   </div>
@@ -67,4 +69,10 @@ export default {
 
   .q-field
     margin: 0 0 20px 0
+
+  .no-icon-padding
+    padding-left: 44px
+    &-sub
+      padding-left: 44px
+      margin: 0 0 20px 0
 </style>
