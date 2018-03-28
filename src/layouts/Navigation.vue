@@ -310,7 +310,7 @@ export default {
   .hover-icon:hover
     color: $grey-4 !important
 
-  div.q-collapsible-inner
+  /deep/ .q-collapsible-toggle-icon
     color: white !important
 
 </style>
