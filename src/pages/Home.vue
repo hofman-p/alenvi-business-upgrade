@@ -14,35 +14,37 @@
       <q-btn v-if="$q.platform.is.desktop" class="main-button-call-to-action" icon="call" color="primary" size="lg" label="Appeler au 01 73 12 55 97" />
       <q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px" />
     </section>
-    <section id="presentation-writing" class="q-pa-xl section-margin" v-scroll-fire="fadeInPresWriting">
-      <transition-group enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-        <h1 v-if="hasScrolledPresWriting" key="presentation-writing-text">Nous réinventons l'accompagnement à domicile des personnes âgées</h1>
-        <h5 v-if="hasScrolledPresWriting" key="presentation-writing-text">Alenvi part du constat que <strong>la valorisation du métier d'auxiliaire de vie a un impact positif sur la qualité de l'accompagnement</strong> apporté aux personnes âgées.</h5>
-        <h5 v-if="hasScrolledPresWriting" key="presentation-writing-text">En créant un cadre de travail innovant, Alenvi permet à ses auxiliaires d'«envie» d'exercer pleinement leur empathie pour faire <strong>beaucoup plus que du «maintien à domicile»</strong>.</h5>
-      </transition-group>
+    <section id="presentation-writing" :class="[{ 'q-pa-xl': $q.platform.is.desktop }, { 'q-pa-lg': $q.platform.is.mobile }, 'q-my-lg', 'row', 'items-center']" v-scroll-fire="fadeInPresWriting">
+      <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+        <div v-if="hasScrolledPresWriting">
+          <h1>Nous réinventons l'accompagnement à domicile des personnes âgées</h1>
+          <h5>Alenvi part du constat que <strong>la valorisation du métier d'auxiliaire de vie a un impact positif sur la qualité de l'accompagnement</strong> apporté aux personnes âgées.</h5>
+          <h5>En créant un cadre de travail innovant, Alenvi permet à ses auxiliaires d'«envie» d'exercer pleinement leur empathie pour faire <strong>beaucoup plus que du «maintien à domicile»</strong>.</h5>
+        </div>
+      </transition>
     </section>
-    <section id="presentation-banner" class="row items-center" v-scroll-fire="fadeInPresBanner">
+    <section id="presentation-banner" :class="[{ 'q-pa-xl': $q.platform.is.desktop }, { 'q-pa-lg': $q.platform.is.mobile }, 'q-my-lg', 'row', 'items-center']" v-scroll-fire="fadeInPresBanner">
       <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
         <h1 v-if="hasScrolledPresBanner">Les communautés d'auxiliaires mettent en place <strong>des solutions sur-mesure à un tarif social adapté</strong> à tous.</h1>
       </transition>
     </section>
-    <section id="mid-banner">
+    <section id="mid-banner" class="q-my-lg">
       <q-parallax
-        v-if="$q.platform.is.desktop || $q.platform.is.ipad" class="q-mb-xl"
+        v-if="$q.platform.is.desktop" class="q-mb-xl"
         src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg"
         :height="200" :speed="0.6" style="height:40vh">
         <!-- <img src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" alt=""/> -->
       </q-parallax>
       <img class="responsive" v-if="$q.platform.is.mobile" src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" alt="">
     </section>
-    <section id="features" class="q-mb-lg row items-center">
+    <section id="features" class="q-my-lg row items-center">
       <home-features :featuresContent="featuresContent"/>
     </section>
-    <section id="auxiliaries-gallery" class="section-margin">
+    <section id="auxiliaries-gallery" class="q-my-xl">
       <h1 class="text-center title-margin-bottom">Les auxiliaires d'envie</h1>
       <auxiliaries-gallery :videoNumber="videoNumber" :videoLocation="videoLocation" :videoRoles="videoRoles"/>
     </section>
-    <section class="section-margin">
+    <section id="media" class="q-my-xl">
       <carousel-media />
     </section>
     <!-- <section id="latest-articles">
@@ -136,23 +138,28 @@ q-parallax h1, h5
     background-image: url("../assets/Barbara_portrait.jpg")
 
 #presentation-writing
-  height: 40vh
+  @media (min-width: 1025px)
+    height: 60vh
 
 #presentation-banner
   background: $primary
   text-align: center
-  height: 40vh
-  padding-left: 5vw
-  padding-right: 5vw
+  //padding-left: 5vw
+  //padding-right: 5vw
+  @media (min-width: 1025px)
+    height: 40vh
 
 #presentation-banner h1
   color: white
 
-#features
-  height: 40vh
+//#features
+ // height: 50vh
 
-//#carousel-media
-  //background: #FAF9F8
+//#auxiliaries-gallery
+//  height: 70vh
+
+//#media
+  //height: 30vh
 
 #about-us
   margin-top: 0
