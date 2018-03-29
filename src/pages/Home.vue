@@ -44,19 +44,19 @@
       <!-- <h1 class="text-center title-margin-bottom">Les auxiliaires d'envie</h1> -->
       <auxiliaries-gallery :videoNumber="videoNumber" :videoLocation="videoLocation" :videoRoles="videoRoles"/>
     </section>
-    <section id="media" class="q-my-xl">
-      <carousel-media />
-    </section>
-    <section id="latest-articles" :class="[{ 'q-pa-xl': $q.platform.is.desktop }, { 'q-pa-lg': $q.platform.is.mobile }, 'q-my-lg']">
-       <!-- <h1 class="text-center title-margin-bottom">Blog : les derniers articles</h1> -->
-      <latest-articles />
-    </section>
     <section class="row justify-center items-center q-my-lg">
       <h1 class="text-center col-xs-12">
         Contactez-nous !
         <q-icon class="on-right" name="send"/>
       </h1>
       <contact-form />
+    </section>
+    <section id="media" class="q-my-xl">
+      <carousel-media />
+    </section>
+    <section id="latest-articles" :class="[{ 'q-pa-xl': $q.platform.is.desktop }, { 'q-pa-lg': $q.platform.is.mobile }, 'q-my-lg']">
+       <!-- <h1 class="text-center title-margin-bottom">Blog : les derniers articles</h1> -->
+      <latest-articles />
     </section>
   </q-page>
 </template>
