@@ -28,10 +28,26 @@
           </div>
         </div>
         <div class="gt-mld btn-call-header">
-          <q-btn color="primary" big>TEST2MER2</q-btn>
+          <q-btn color="primary" @click="locationModal = true" big>TEST2MER2</q-btn>
           <q-btn v-if="this.$route.meta.name != 'recrutement'" class="gt-mld" color="primary" big><a class="btn-call text-white" href="tel:+33179755475">Appeler le 01 79 75 54 75</a></q-btn>
           <q-btn v-else class="gt-mld" color="primary" @click.native="showModal = true" big><a class="btn-call text-white">Postuler</a></q-btn>
         </div>
+        <q-modal id="location-modal" v-model="locationModal">
+          <div class="column">
+            <div class="location-modal-text-blocks">
+              <p>Alenvi <strong>Paris</strong><br>
+              Centre, Sud et Est</p>
+            </div>
+            <div class="location-modal-text-blocks">
+              <p>Alenvi <strong>Sceaux</strong><br>
+              Sceaux et Hauts-de-Seine</p>
+            </div>
+            <div class="location-modal-text-blocks">
+              <p>Alenvi <strong>Versailles</strong><br>
+              Et alentours</p>
+            </div>
+          </div>
+        </q-modal>
         <typeform-modal v-model="showModal" info="https://alenvi.typeform.com/to/MwEMWk" @closeModal="showModal = false"/>
         <q-btn color="primary" class="lt-lgx hide-on-drawer-visible absolute-right" @click="showDrawer = true" flat big>
           <q-icon name="menu" />
@@ -153,6 +169,7 @@ export default {
   },
   data () {
     return {
+      locationModal: false,
       showModal: false,
       showDrawer: false,
       active: false,
@@ -218,6 +235,14 @@ export default {
   @media (max-width: 991px)
     .padding-top-footer
       padding-top: 15px
+
+  #location-modal
+    // background-color: blue
+    // height: 50%
+    // width: 50%
+
+  .location-modal-text-blocks
+    text-align: center
 
   .no-bg
     background: none !important
