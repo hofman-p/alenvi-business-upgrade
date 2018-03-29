@@ -27,9 +27,11 @@
             </div>
           </div>
         </div>
-        <q-btn id="btn-call-header" color="primary" big>TEST2MER2</q-btn>
-        <q-btn id="btn-call-header" v-if="this.$route.meta.name != 'recrutement'" class="gt-mld" color="primary" big><a class="btn-call text-white" href="tel:+33179755475">Appeler le 01 79 75 54 75</a></q-btn>
-        <q-btn id="btn-call-header" v-else class="gt-mld" color="primary" @click.native="showModal = true" big><a class="btn-call text-white">Postuler</a></q-btn>
+        <div class="gt-mld btn-call-header">
+          <q-btn color="primary" big>TEST2MER2</q-btn>
+          <q-btn v-if="this.$route.meta.name != 'recrutement'" class="gt-mld" color="primary" big><a class="btn-call text-white" href="tel:+33179755475">Appeler le 01 79 75 54 75</a></q-btn>
+          <q-btn v-else class="gt-mld" color="primary" @click.native="showModal = true" big><a class="btn-call text-white">Postuler</a></q-btn>
+        </div>
         <typeform-modal v-model="showModal" info="https://alenvi.typeform.com/to/MwEMWk" @closeModal="showModal = false"/>
         <q-btn color="primary" class="lt-lgx hide-on-drawer-visible absolute-right" @click="showDrawer = true" flat big>
           <q-icon name="menu" />
@@ -266,7 +268,7 @@ export default {
   .btn-call:hover
     color: $white
 
-  #btn-call-header
+  .btn-call-header
     // margin: 0 -15px
     margin-left: auto
 
