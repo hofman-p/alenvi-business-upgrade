@@ -40,8 +40,13 @@
         <q-modal id="location-modal" v-model="locationModal">
           <div class="column">
             <div class="location-modal-text-blocks">
-              <p>Alenvi <strong>Paris</strong><br>
-              Centre, Sud et Est</p>
+              <h1>TEST</h1>
+              <h2>TEST</h2>
+              <h3>TEST</h3>
+              <h4>TEST</h4>
+              <h5>TEST</h5>
+              <h2>Alenvi <span class="location-modal-text-bold" style=""><strong>Paris</strong></span></h2>
+              <h4>Centre, Sud et Est</h4>
             </div>
             <div class="location-modal-text-blocks">
               <p>Alenvi <strong>Sceaux</strong><br>
