@@ -9,8 +9,8 @@
         </q-parallax> -->
       <!-- </div> -->
       <div id="main-bg"></div>
-      <div class="main-subtext text-center">J'accompagne Paulette, 87 ans</div>
-      <div class="main-text text-center"><h1>Je suis Professionnelle de l'empathie !</h1></div>
+      <div class="main-subtext text-center">{{quotes[Math.floor(Math.random() * quotes.length)]}}</div>
+      <div class="main-text text-center"><h1>Barbara, Professionnelle d'empathie</h1></div>
       <q-btn v-if="$q.platform.is.desktop" class="main-button-call-to-action" icon="call" color="primary" size="lg" label="Appeler au 01 73 12 55 97" />
       <q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px" />
     </section>
@@ -80,6 +80,7 @@ export default {
   },
   data () {
     return {
+      quotes: [],
       hasScrolledPresWriting: false,
       hasScrolledPresBanner: false,
       videoNumber: 8,
@@ -115,6 +116,10 @@ export default {
         }
       ]
     }
+  },
+  created () {
+    const startQuotes = 'Bien accompagner une personne âgée c’est avant tout';
+    this.quotes = [`${startQuotes} comprendre ce qu'elle ressent.`, `${startQuotes} la valoriser.`, `${startQuotes} la laisser libre de ses choix.`];
   },
   methods: {
     fadeInPresWriting () {
@@ -190,7 +195,7 @@ q-parallax h1, h5
 .main-text
   position: absolute
   top: 35vh
-  left: 10vw
+  left: 5vw
   font-size: 2vh
   color: $primary
   font-family: alenviTitleFont
@@ -205,7 +210,7 @@ q-parallax h1, h5
 .main-subtext
   position: absolute
   top: 30vh
-  left: 10vw
+  left: 5vw
   font-size: 4vh
   font-family: alenviTitleFont
   @media (max-width: 1024px)
@@ -216,5 +221,5 @@ q-parallax h1, h5
 .main-button-call-to-action
   position: absolute
   top: 45vh
-  left: 10vw
+  left: 5vw
 </style>
