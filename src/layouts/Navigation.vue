@@ -33,7 +33,9 @@
         </div>
         <div class="gt-mld btn-call-header">
           <!-- <q-btn color="secondary" @click="locationModal = true" big>TEST2MER2</q-btn> -->
-          <q-icon name="location" size="xl" color="secondary" />
+          <q-btn class="q-mr-md cursor-pointer" size="md" color="primary" @click="locationModal = true" round flat>
+            <q-icon name="location on" size="2.3rem" />
+          </q-btn>
           <q-btn v-if="this.$route.meta.name != 'recrutement'" class="gt-mld" color="primary" big><a class="btn-call text-white" href="tel:+33179755475">Appeler le 01 79 75 54 75</a></q-btn>
           <q-btn v-else class="gt-mld" color="primary" @click.native="showModal = true" big><a class="btn-call text-white">Postuler</a></q-btn>
         </div>
