@@ -10,12 +10,12 @@
           <div class="w3-dropdown-hover bg-white">
             <button id="dropdownVision" class="alenvi-button text-tertiary"><router-link to="/vision" exact>Vision <q-icon name="arrow drop down"/></router-link></button>
             <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
-              <a href="http://blog.alenvi.io/tag/alenvi" class="w3-bar-item">Blog - Le projet Alenvi</a>
+              <a href="http://blog.alenvi.io/tag/alenvi" class="w3-bar-item">Le projet Alenvi</a>
             </div>
           </div>
           <router-link to="equipe" class="w3-bar-item">Equipe</router-link>
-          <div class="w3-dropdown-hover bg-white">
-            <button id="dropdownClients" class="alenvi-button text-tertiary">Bénéficiaires</button>
+          <div class="w3-dropdown-hover -white">
+            <button id="dropdownClients" class="alenvi-button text-tertiary">Bénéficiaires<q-icon name="arrow drop down"/></button>
             <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
               <router-link exact to="aide-a-domicile" class="w3-bar-item">Aide à domicile</router-link>
               <router-link exact to="compagnie" class="w3-bar-item">Compagnie et stimulation</router-link>
@@ -27,12 +27,13 @@
             <button id="dropdownAuxiliary" class="alenvi-button text-tertiary">Auxiliaires <q-icon name="arrow drop down"/></button>
             <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
               <router-link to="recrutement" class="w3-bar-item">Recrutement</router-link>
-              <a href="http://blog.alenvi.io/tag/auxiliaires" class="w3-bar-item">Blog - Auxiliaires</a>
+              <a href="http://blog.alenvi.io/tag/auxiliaires" class="w3-bar-item">Auxiliaires</a>
             </div>
           </div>
         </div>
         <div class="gt-mld btn-call-header">
-          <q-btn color="primary" @click="locationModal = true" big>TEST2MER2</q-btn>
+          <!-- <q-btn color="secondary" @click="locationModal = true" big>TEST2MER2</q-btn> -->
+          <q-icon name="location" size="xl" color="secondary" />
           <q-btn v-if="this.$route.meta.name != 'recrutement'" class="gt-mld" color="primary" big><a class="btn-call text-white" href="tel:+33179755475">Appeler le 01 79 75 54 75</a></q-btn>
           <q-btn v-else class="gt-mld" color="primary" @click.native="showModal = true" big><a class="btn-call text-white">Postuler</a></q-btn>
         </div>
@@ -280,14 +281,14 @@ export default {
       color: $tertiary
       text-decoration: none
       &:hover
-        color: $purpleAlenvi
+        color: $secondary
 
   .w3-dropdown-hover
     height: 60px
 
   header .router-link-exact-active
     font-weight: 900
-    color: $purpleAlenvi
+    color: $secondary
 
   .alenvi-logo
     width: 100%
