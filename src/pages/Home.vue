@@ -28,15 +28,15 @@
         <h1 v-if="hasScrolledPresBanner">Les communautés d'auxiliaires mettent en place <strong>des solutions sur-mesure à un tarif social adapté</strong> à tous.</h1>
       </transition>
     </section>
-    <section id="mid-banner" :class="[{ 'q-mb-lg': $q.platform.is.mobile }]">
+    <!-- <section id="mid-banner" :class="[{ 'q-mb-lg': $q.platform.is.mobile }]">
       <q-parallax
         v-if="$q.platform.is.desktop" class="q-mb-xl"
         src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg"
         :height="200" :speed="0.6" style="height:60vh">
-        <!-- <img src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" alt=""/> -->
+         <img src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" alt=""/>
       </q-parallax>
       <img class="responsive" v-if="$q.platform.is.mobile" src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" alt="">
-    </section>
+    </section> -->
     <section id="features" class="q-my-lg row items-center">
       <home-features :featuresContent="featuresContent"/>
     </section>

@@ -8,22 +8,26 @@
         </router-link>
         <div class="row items-center gt-mld">
           <div class="w3-dropdown-hover bg-white">
-            <button id="dropdownHome" class="alenvi-button text-tertiary"><router-link :to="'/'" exact>Services <q-icon name="arrow drop down"/></router-link></button>
+            <button id="dropdownVision" class="alenvi-button text-tertiary"><router-link to="/vision" exact>Vision <q-icon name="arrow drop down"/></router-link></button>
             <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
-              <router-link :to="'aide-a-domicile'" class="w3-bar-item">Aide à domicile</router-link>
-              <router-link :to="'compagnie'" class="w3-bar-item">Compagnie et stimulation</router-link>
-              <router-link :to="'sortie-hopital'" class="w3-bar-item">Sortie d'hôpital</router-link>
+              <a href="http://blog.alenvi.io/tag/alenvi" class="w3-bar-item">Blog - Le projet Alenvi</a>
             </div>
           </div>
-          <router-link :to="'vision'" class="w3-bar-item">Vision</router-link>
-          <router-link :to="'equipe'" class="w3-bar-item">Equipe</router-link>
-          <router-link :to="'recrutement'" class="w3-bar-item">Recrutement</router-link>
+          <router-link to="equipe" class="w3-bar-item">Equipe</router-link>
           <div class="w3-dropdown-hover bg-white">
-            <button id="dropdownMag" class="alenvi-button text-tertiary"><a href="http://blog.alenvi.io/">Blog <q-icon name="arrow drop down"/></a></button>
+            <button id="dropdownClients" class="alenvi-button text-tertiary">Bénéficiaires</button>
             <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
-              <a href="http://blog.alenvi.io/tag/aidants-familiaux" class="w3-bar-item">Aidants familiaux</a>
-              <a href="http://blog.alenvi.io/tag/auxiliaires" class="w3-bar-item">Auxiliaires</a>
-              <a href="http://blog.alenvi.io/tag/alenvi" class="w3-bar-item">Le projet Alenvi</a>
+              <router-link exact to="aide-a-domicile" class="w3-bar-item">Aide à domicile</router-link>
+              <router-link exact to="compagnie" class="w3-bar-item">Compagnie et stimulation</router-link>
+              <router-link exact to="sortie-hopital" class="w3-bar-item">Sortie d'hôpital</router-link>
+              <a href="http://blog.alenvi.io/tag/aidants-familiaux" class="w3-bar-item">Conseils</a>
+            </div>
+          </div>
+          <div class="w3-dropdown-hover bg-white">
+            <button id="dropdownAuxiliary" class="alenvi-button text-tertiary">Auxiliaires <q-icon name="arrow drop down"/></button>
+            <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
+              <router-link to="recrutement" class="w3-bar-item">Recrutement</router-link>
+              <a href="http://blog.alenvi.io/tag/auxiliaires" class="w3-bar-item">Blog - Auxiliaires</a>
             </div>
           </div>
         </div>
@@ -276,14 +280,14 @@ export default {
       color: $tertiary
       text-decoration: none
       &:hover
-        color: $primary
+        color: $purpleAlenvi
 
   .w3-dropdown-hover
     height: 60px
 
   header .router-link-exact-active
     font-weight: 900
-    color: $primary
+    color: $purpleAlenvi
 
   .alenvi-logo
     width: 100%
