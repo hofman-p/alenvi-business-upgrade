@@ -46,7 +46,7 @@
       <!-- <h1 class="text-center title-margin-bottom">Les auxiliaires d'envie</h1> -->
       <auxiliaries-gallery :videoNumber="videoNumber" :videoLocation="videoLocation" :videoRoles="videoRoles"/>
     </section>
-    <section class="row justify-center items-center q-my-lg">
+    <section id="formulaire-contact" class="row justify-center items-center q-my-lg">
       <h1 class="text-center col-xs-12">
         Décrivez-nous votre besoin !
         <q-icon class="on-right" name="send"/>
