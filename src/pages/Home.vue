@@ -9,8 +9,9 @@
         </q-parallax> -->
       <!-- </div> -->
       <div id="main-bg"></div>
-      <div class="main-subtext text-center">{{quotes[Math.floor(Math.random() * quotes.length)]}}</div>
-      <div class="main-text text-center"><h1>Barbara, Professionnelle d'empathie</h1></div>
+      <div class="main-text-fix"><h1>{{startQuote}}</h1></div>
+      <div class="main-text"><h1>{{quotes[Math.floor(Math.random() * quotes.length)]}}</h1></div>
+      <div class="main-subtext">Barbara, Professionnelle d'empathie</div>
       <q-btn v-if="$q.platform.is.desktop" class="main-button-call-to-action" icon="call" color="primary" size="lg" label="Appeler au 01 73 12 55 97" />
       <q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px" />
     </section>
@@ -118,8 +119,8 @@ export default {
     }
   },
   created () {
-    const startQuotes = 'Bien accompagner une personne âgée c’est avant tout';
-    this.quotes = [`${startQuotes} comprendre ce qu'elle ressent.`, `${startQuotes} la valoriser.`, `${startQuotes} la laisser libre de ses choix.`];
+    this.startQuote = 'Bien accompagner une personne âgée,';
+    this.quotes = [`C’est avant tout comprendre ce qu'elle ressent.`, `C’est avant tout la valoriser.`, `C’est avant tout la laisser libre de ses choix.`];
   },
   methods: {
     fadeInPresWriting () {
@@ -192,31 +193,55 @@ q-parallax h1, h5
 .section-margin-big
   margin-bottom: 6%
 
-.main-text
+.main-text-fix
   position: absolute
-  top: 35vh
+  top: 20vh
   left: 5vw
   font-size: 2vh
   color: $primary
   font-family: alenviTitleFont
+  text-align: center
   @media (max-width: 1024px)
-    top: 12vh
+    top: 0
     left: 5%
     right: 1vw
+    font-size: 0.7em
+    text-align: left
+
+.main-text-fix h1
+  font-weight: bold
+
+.main-text
+  position: absolute
+  top: 27vh
+  left: 5vw
+  font-size: 2vh
+  color: $primary
+  font-family: alenviTitleFont
+  text-align: center
+  @media (max-width: 1024px)
+    top: 9vh
+    left: 5%
+    right: 1vw
+    font-size: 0.7em
+    text-align: left
 
 .main-text h1
   font-weight: bold
 
 .main-subtext
   position: absolute
-  top: 30vh
+  top: 35vh
   left: 5vw
   font-size: 4vh
   font-family: alenviTitleFont
+  text-align: center
   @media (max-width: 1024px)
-    top: 4vh
+    top: 20vh
     left: 1vw
     right: 1vw
+    // font-size: 3vh
+    text-align: right
 
 .main-button-call-to-action
   position: absolute
