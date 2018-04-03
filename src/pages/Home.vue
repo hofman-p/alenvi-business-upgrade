@@ -176,8 +176,6 @@ q-parallax h1, h5
   background-position: center
   background-repeat: no-repeat
   background-size: cover
-  @media (max-width: 1024px)
-    background-image: url("../assets/Barbara_portrait.jpg")
 
 #presentation-writing
   @media (min-width: 1025px)
