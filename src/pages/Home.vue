@@ -16,10 +16,10 @@
     </section>
     <section id="presentation-writing" :class="[{ 'q-pa-xl': $q.platform.is.desktop }, { 'q-pa-lg': $q.platform.is.mobile }, 'q-my-lg', 'row', 'justify-center', 'items-center']" v-scroll-fire="fadeInPresWriting">
       <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-        <div v-if="hasScrolledPresWriting" class="text-center">
-          <h1>Nous réinventons l'accompagnement à domicile des personnes âgées</h1>
-          <h5>Alenvi part du constat que <strong>la valorisation du métier d'auxiliaire de vie a un impact positif sur la qualité de l'accompagnement</strong> apporté aux personnes âgées.</h5>
-          <h5>En créant un cadre de travail innovant, Alenvi permet à ses auxiliaires d'«envie» d'exercer pleinement leur empathie pour faire <span class="pres-writing">beaucoup plus que du «maintien à domicile»</span>.</h5>
+        <div v-if="hasScrolledPresWriting">
+          <h1 class="text-center">Nous réinventons l'accompagnement à domicile des personnes âgées</h1>
+          <big class="text-justify">Alenvi part du constat que <strong>la valorisation du métier d'auxiliaire de vie a un impact positif sur la qualité de l'accompagnement</strong> apporté aux personnes âgées.
+          En créant un cadre de travail innovant, Alenvi permet à ses auxiliaires d'«envie» d'exercer pleinement leur empathie pour faire <strong>beaucoup plus que du «maintien à domicile»</strong>.</big>
         </div>
       </transition>
     </section>
