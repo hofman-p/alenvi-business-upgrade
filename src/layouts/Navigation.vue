@@ -118,7 +118,7 @@
     </q-page-container>
 
     <!-- Footer -->
-    <q-layout-footer class="row justify-between items-center q-pl-lg">
+    <q-layout-footer class="row justify-between items-stretch q-pl-lg">
       <div class="col-xs-6 col-lg-2">
         <h6 class="footer-title">A propos</h6>
         <ul>
@@ -130,25 +130,25 @@
       <div class="col-xs-6 col-lg-2">
         <h6 class="footer-title">Bénéficiaires</h6>
         <ul>
-          <li class="footer-links" @click="goTo('/')">Services</li>
-          <li class="footer-links" @click="goTo('/')">Communautés</li>
-          <li class="footer-links" @click="goTo('/')">Actualités</li>
+          <li class="footer-links" @click="goTo('/aide-a-domicile')">Aide à domicile</li>
+          <li class="footer-links" @click="goTo('/compagnie')">Compagnie et stimulation</li>
+          <li class="footer-links" @click="goTo('/sortie-hopital')">Sortie d'hôpital</li>
+          <li class="footer-links"><a href="http://blog.alenvi.io/tag/aidants-familiaux">Conseils</a></li>
         </ul>
       </div>
       <div class="col-xs-6 col-lg-2">
         <h6 class="footer-title">Auxiliaires</h6>
         <ul>
           <li class="footer-links" @click="goTo('/recrutement')">Recrutement</li>
-          <li class="footer-links" @click="goTo('/')">Communautés</li>
-          <li class="footer-links" @click="goTo('/')">Actualités</li>
+          <li class="footer-links"><a href="http://blog.alenvi.io/tag/auxiliaires">Actualités</a></li>
         </ul>
       </div>
-      <div class="col-xs-6 col-lg-2">
+      <div class="col-xs-6 col-lg-2 self-center">
         <a href="#" class="footer-spe-link">Nous trouver</a>
         <br />
         <a href="#" class="footer-spe-link">Se connecter</a>
       </div>
-      <div class="col-xs-6 col-lg-2">
+      <div class="col-xs-6 col-lg-2 self-center">
         <!-- <div class="row justify&#45;center"> -->
             <a href="https://www.facebook.com/alenviservices/">
               <q-icon name="fab fa-facebook" color="white" size="2.5rem" class="hover-icon on-left"/>
@@ -158,7 +158,7 @@
             </a>
         <!-- </div> -->
       </div>
-      <div class="col-xs-6 col-lg-2">
+      <div class="col-xs-6 col-lg-2 self-center">
         <!-- <div class="row justify&#45;center items&#45;center"> -->
           <!-- <div> -->
             <img class="footer-img" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019445/images/business/logo-service-personne.png" alt="logo service personne">
