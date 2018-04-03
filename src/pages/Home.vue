@@ -232,7 +232,7 @@ q-parallax h1, h5
     top: 0
     left: 5%
     right: 1vw
-    font-size: 0.7em
+    font-size: 0.75em
     text-align: left
 
 .main-text-fix h1
@@ -250,7 +250,7 @@ q-parallax h1, h5
     top: 9vh
     left: 5%
     right: 1vw
-    font-size: 0.7em
+    font-size: 0.75em
     text-align: left
 
 .main-text h1
