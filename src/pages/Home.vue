@@ -47,7 +47,7 @@
     </section>
     <section class="row justify-center items-center q-my-lg">
       <h1 class="text-center col-xs-12">
-        Contactez-nous !
+        Décrivez-nous votre besoin !
         <q-icon class="on-right" name="send"/>
       </h1>
       <contact-form />
@@ -234,7 +234,6 @@ q-parallax h1, h5
   top: 35vh
   left: 5vw
   font-size: 4vh
-  font-family: alenviTitleFont
   text-align: center
   @media (max-width: 1024px)
     top: 20vh
