@@ -245,7 +245,7 @@ q-parallax h1, h5
   font-family: alenviTitleFont
   text-align: center
   @media (max-width: 1024px)
-    top: 9vh
+    top: 11vh
     left: 5%
     right: 1vw
     font-size: 0.75em
@@ -261,10 +261,10 @@ q-parallax h1, h5
   font-size: 4vh
   text-align: center
   @media (max-width: 1024px)
-    top: 20vh
+    top: 23vh
     left: 1vw
     right: 1vw
-    // font-size: 3vh
+    font-size: 3vh
     text-align: right
 
 .main-button-call-to-action
