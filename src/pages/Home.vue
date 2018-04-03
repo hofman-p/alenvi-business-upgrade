@@ -15,16 +15,16 @@
       <q-btn v-if="$q.platform.is.desktop" class="main-button-call-to-action" icon="call" color="primary" size="lg" label="Appeler au 01 73 12 55 97" />
       <q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px" />
     </section>
-    <section id="presentation-writing" :class="[{ 'q-pa-xl': $q.platform.is.desktop }, { 'q-pa-lg': $q.platform.is.mobile }, 'q-my-lg', 'row', 'justify-center', 'items-center']" v-scroll-fire="fadeInPresWriting">
+    <section id="presentation-writing" class="a-pa-xl q-my-lg row justify-center items-center" v-scroll-fire="fadeInPresWriting">
       <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-        <div v-if="hasScrolledPresWriting" class="text-center">
-          <h1>Nous réinventons l'accompagnement à domicile des personnes âgées</h1>
-          <h5>Alenvi part du constat que <strong>la valorisation du métier d'auxiliaire de vie a un impact positif sur la qualité de l'accompagnement</strong> apporté aux personnes âgées.</h5>
-          <h5>En créant un cadre de travail innovant, Alenvi permet à ses auxiliaires d'«envie» d'exercer pleinement leur empathie pour faire <span class="pres-writing">beaucoup plus que du «maintien à domicile»</span>.</h5>
+        <div v-if="hasScrolledPresWriting">
+          <h1 class="text-center">Nous réinventons l'accompagnement à domicile des personnes âgées</h1>
+          <big class="text-justify">Alenvi part du constat que <strong>la valorisation du métier d'auxiliaire de vie a un impact positif sur la qualité de l'accompagnement</strong> apporté aux personnes âgées.
+          En créant un cadre de travail innovant, Alenvi permet à ses auxiliaires d'«envie» d'exercer pleinement leur empathie pour faire <strong>beaucoup plus que du «maintien à domicile»</strong>.</big>
         </div>
       </transition>
     </section>
-    <section id="presentation-banner" :class="[{ 'q-pa-xl': $q.platform.is.desktop }, { 'q-pa-lg': $q.platform.is.mobile }, 'q-mt-lg', 'row', 'justify-center', 'items-center']" v-scroll-fire="fadeInPresBanner">
+    <section id="presentation-banner" class="a-pa-xl q-mt-lg row justify-center items-center" v-scroll-fire="fadeInPresBanner">
       <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
         <h1 v-if="hasScrolledPresBanner">Les communautés d'auxiliaires mettent en place <strong>des solutions sur-mesure à un tarif social adapté</strong> à tous.</h1>
       </transition>
@@ -55,7 +55,7 @@
     <section id="media" class="q-my-xl">
       <carousel-media />
     </section>
-    <section id="latest-articles" :class="[{ 'q-pa-xl': $q.platform.is.desktop }, { 'q-pa-lg': $q.platform.is.mobile }, 'q-my-lg']">
+    <section id="latest-articles" class="a-pa-xl q-my-lg">
        <!-- <h1 class="text-center title-margin-bottom">Blog : les derniers articles</h1> -->
       <latest-articles />
     </section>
@@ -247,4 +247,9 @@ q-parallax h1, h5
   position: absolute
   top: 45vh
   left: 5vw
+
+.a-pa-xl
+  padding: 48px 48px
+  @media (max-width: 1024px)
+    padding: 24px 24px
 </style>
