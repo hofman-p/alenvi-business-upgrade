@@ -16,6 +16,13 @@ export default [
         }
       },
       {
+        path: 'accueil',
+        component: () => import('pages/Home'),
+        meta: {
+          breadcrumb: 'Accueil'
+        }
+      },
+      {
         path: 'aide-a-domicile',
         component: () => import('pages/HomeCare'),
         meta: {

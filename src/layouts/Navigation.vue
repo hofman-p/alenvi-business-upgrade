@@ -27,43 +27,42 @@
             <button id="dropdownAuxiliary" class="alenvi-button text-tertiary">Auxiliaires <q-icon name="arrow drop down"/></button>
             <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
               <router-link to="recrutement" class="w3-bar-item">Recrutement</router-link>
-              <a href="http://blog.alenvi.io/tag/auxiliaires" class="w3-bar-item">Auxiliaires</a>
+              <a href="http://blog.alenvi.io/tag/auxiliaires" class="w3-bar-item">Partage d'expériences</a>
             </div>
           </div>
         </div>
         <div class="gt-mld btn-call-header">
-          <!-- <q-btn color="secondary" @click="locationModal = true" big>TEST2MER2</q-btn> -->
-          <q-btn class="q-mr-md cursor-pointer" size="md" color="primary" @click="locationModal = true" round flat>
+          <q-btn class="q-mr-md cursor-pointer" size="md" color="secondary" @click="locationModal = true" round flat>
             <q-icon name="location on" size="2.3rem" />
           </q-btn>
-          <q-btn v-if="this.$route.meta.name != 'recrutement'" class="gt-mld" color="primary" big><a class="btn-call text-white" href="tel:+33179755475">Appeler le 01 79 75 54 75</a></q-btn>
-          <q-btn v-else class="gt-mld" color="primary" @click.native="showModal = true" big><a class="btn-call text-white">Postuler</a></q-btn>
+          <q-btn v-if="this.$route.meta.name != 'recrutement'" color="primary" big><a class="btn-call text-white" href="tel:+33179755475">Appeler le 01 79 75 54 75</a></q-btn>
+          <q-btn v-else color="primary" @click.native="showModal = true" big><a class="btn-call text-white">Postuler</a></q-btn>
         </div>
-        <q-modal id="location-modal" v-model="locationModal">
+        <q-modal id="location-modal" v-model="locationModal" :content-css="{ padding: '2%'}" minimized>
           <div class="column">
             <div class="location-modal-text-blocks">
-              <h1>TEST</h1>
-              <h2>TEST</h2>
-              <h3>TEST</h3>
-              <h4>TEST</h4>
-              <h5>TEST</h5>
-              <h2>Alenvi <span class="location-modal-text-bold" style=""><strong>Paris</strong></span></h2>
+              <h2 class="location-modal-text-alenvi"><span>Alenvi</span> <span class="location-modal-text-bold">Paris</span></h2>
               <h4>Centre, Sud et Est</h4>
             </div>
             <div class="location-modal-text-blocks">
-              <p>Alenvi <strong>Sceaux</strong><br>
-              Sceaux et Hauts-de-Seine</p>
+              <h2><span class="location-modal-text-alenvi">Alenvi</span> <span class="location-modal-text-bold">Sceaux</span></h2>
+              <h4>Et Hauts-de-Seine</h4>
             </div>
             <div class="location-modal-text-blocks">
-              <p>Alenvi <strong>Versailles</strong><br>
-              Et alentours</p>
+              <h2><span class="location-modal-text-alenvi">Alenvi</span> <span class="location-modal-text-bold">Versailles</span></h2>
+              <h4>Et alentours</h4>
             </div>
           </div>
         </q-modal>
         <typeform-modal v-model="showModal" info="https://alenvi.typeform.com/to/MwEMWk" @closeModal="showModal = false"/>
-        <q-btn color="primary" class="lt-lgx hide-on-drawer-visible absolute-right" @click="showDrawer = true" flat big>
-          <q-icon name="menu" />
-        </q-btn>
+        <div class="row absolute-right lt-lgx items-center">
+          <q-btn size="md" color="secondary" @click="locationModal = true" round flat>
+            <q-icon name="location on" size="2rem" />
+          </q-btn>
+          <q-btn color="primary" class="hide-on-drawer-visible" @click="showDrawer = true" flat big>
+            <q-icon name="menu" size="2rem"/>
+          </q-btn>
+        </div>
       </div>
     </q-layout-header>
 
@@ -255,6 +254,18 @@ export default {
 
   .location-modal-text-blocks
     text-align: center
+
+  .location-modal-text-blocks h2
+    margin-bottom: 0px !important
+
+  .location-modal-text-blocks h4
+    margin-top: 0px !important
+
+  .location-modal-text-alenvi
+    color: $primary
+
+  .location-modal-text-bold
+    color: $secondary
 
   .no-bg
     background: none !important
