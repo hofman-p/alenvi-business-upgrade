@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <section id="presentation-picture" class="section-margin">
+    <section id="presentation-picture" class="q-mb-xl">
       <!-- <img src="https://res.cloudinary.com/alenvi/image/upload/v1507193477/images/business/Home_4_2000.jpg" style="width: 100vw; height: 97vh"> -->
       <!-- <div> -->
         <!-- <q-parallax src="https://res.cloudinary.com/alenvi/image/upload/v1507193477/images/business/Home_4_2000.jpg" :height="875">
@@ -15,7 +15,7 @@
       <q-btn v-if="$q.platform.is.desktop" class="main-button-call-to-action" icon="call" color="primary" size="lg" label="Appeler au 01 73 12 55 97" />
       <q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px" />
     </section>
-    <section id="presentation-writing" class="a-pa-xl q-my-lg row justify-center items-center" v-scroll-fire="fadeInPresWriting">
+    <section id="presentation-writing" class="a-pa-xl q-mb-xl row justify-center items-center" v-scroll-fire="fadeInPresWriting">
       <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
         <div v-if="hasScrolledPresWriting">
           <h1 class="text-center">Nous réinventons l'accompagnement à domicile des personnes âgées</h1>
@@ -24,7 +24,7 @@
         </div>
       </transition>
     </section>
-    <section id="presentation-banner" class="a-pa-xl q-mt-lg row justify-center items-center" v-scroll-fire="fadeInPresBanner">
+    <section id="presentation-banner" class="a-pa-xl q-mb-xl row justify-center items-center" v-scroll-fire="fadeInPresBanner">
       <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
         <h1 class="no-margin" v-if="hasScrolledPresBanner">Les communautés d'auxiliaires mettent en place <strong>des solutions sur-mesure à un tarif social adapté</strong> à tous.</h1>
       </transition>
@@ -38,24 +38,24 @@
       </q-parallax>
       <img class="responsive" v-if="$q.platform.is.mobile" src="https://res.cloudinary.com/alenvi/image/upload/c_fill,q_auto/v1507193477/images/business/Home_1_2000.jpg" alt="">
     </section> -->
-    <section id="features" class="q-my-lg row items-center">
-      <home-features :featuresContent="featuresContent"/>
+    <section id="features" class="a-pa-xl q-mb-xl row items-center">
+      <home-features />
     </section>
-    <section id="auxiliaries-gallery" class="q-my-xl">
+    <section id="auxiliaries-gallery" class="q-mb-xl">
       <!-- <h1 class="text-center title-margin-bottom">Les auxiliaires d'envie</h1> -->
       <auxiliaries-gallery :videoNumber="videoNumber" :videoLocation="videoLocation" :videoRoles="videoRoles"/>
     </section>
-    <section class="row justify-center items-center q-my-lg">
+    <section class="row justify-center items-center q-mb-xl">
       <h1 class="text-center col-xs-12">
         Décrivez-nous votre besoin !
         <q-icon class="on-right" name="send"/>
       </h1>
       <contact-form />
     </section>
-    <section id="media" class="q-my-xl">
+    <section id="media" class="q-mb-xl">
       <carousel-media />
     </section>
-    <section id="latest-articles" class="a-pa-xl q-my-lg">
+    <section id="latest-articles" class="a-pa-xl q-mb-xl">
        <!-- <h1 class="text-center title-margin-bottom">Blog : les derniers articles</h1> -->
       <latest-articles />
     </section>
@@ -86,36 +86,7 @@ export default {
       hasScrolledPresBanner: false,
       videoNumber: 8,
       videoLocation: ['accueil'],
-      videoRoles: ['Auxiliaire'],
-      featuresContent: [
-        {
-          title: 'Aide à domicile',
-          text: 'Nous assistons votre proche pour les tâches de la vie quotidienne et passons de bons moments avec lui.',
-          link: '/aide-a-domicile',
-          image: 'https://res.cloudinary.com/alenvi/image/upload/v1507194145/images/business/pictos/aide_domicile.png',
-          backgroundColor: '#E2007A',
-          color: 'white',
-          titleColor: 'white'
-        },
-        {
-          title: 'Compagnie & stimulation',
-          text: 'Formés en continu sur les troubles cognitifs, nous sommes là pour aider votre proche à conserver des activités : promenades, jeux...',
-          link: '/compagnie',
-          image: 'https://res.cloudinary.com/alenvi/image/upload/v1507194145/images/business/pictos/compagnie_stimulation.png',
-          backgroundColor: 'white',
-          color: '#E2007A',
-          titleColor: '#E2007A',
-        },
-        {
-          title: `Sortie d'hôpital`,
-          text: 'Nous aidons votre proche à retrouver son autonomie lorsqu’il regagne son domicile après un passage à l’hôpital.',
-          link: '/sortie-hopital',
-          image: 'https://res.cloudinary.com/alenvi/image/upload/v1507194145/images/business/pictos/sortie_hopital.png',
-          backgroundColor: '#E2007A',
-          color: 'white',
-          titleColor: 'white'
-        }
-      ]
+      videoRoles: ['Auxiliaire']
     }
   },
   created () {
