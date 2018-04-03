@@ -324,6 +324,7 @@ export default {
 
   .footer-title
     color: white !important
+    font-family: alenviTextFont
     font-weight: bold
     @media screen and (max-width: 767px)
       font-size: 18px

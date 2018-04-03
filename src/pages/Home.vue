@@ -27,7 +27,7 @@
     </section>
     <section id="presentation-banner" class="a-pa-xl q-mt-lg row justify-center items-center" v-scroll-fire="fadeInPresBanner">
       <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-        <h1 v-if="hasScrolledPresBanner">Les communautés d'auxiliaires mettent en place <strong>des solutions sur-mesure à un tarif social adapté</strong> à tous.</h1>
+        <h1 class="no-margin" v-if="hasScrolledPresBanner">Les communautés d'auxiliaires mettent en place <strong>des solutions sur-mesure à un tarif social adapté</strong> à tous.</h1>
       </transition>
     </section>
     <!-- <section id="mid-banner" :class="[{ 'q-mb-lg': $q.platform.is.mobile }]">
@@ -48,7 +48,7 @@
     </section>
     <section class="row justify-center items-center q-my-lg">
       <h1 class="text-center col-xs-12">
-        Contactez-nous !
+        Décrivez-nous votre besoin !
         <q-icon class="on-right" name="send"/>
       </h1>
       <contact-form />
@@ -263,7 +263,6 @@ q-parallax h1, h5
   top: 35vh
   left: 5vw
   font-size: 4vh
-  font-family: alenviTitleFont
   text-align: center
   @media (max-width: 1024px)
     top: 20vh

@@ -59,19 +59,19 @@ export default {
         ],
         [
           {
-            title: 'Europe 1',
-            img: 'https://res.cloudinary.com/alenvi/image/upload/c_scale,q_auto,w_175/v1510067496/images/business/Europe_1.jpg',
-            imgAlt: 'Europe 1 logo',
-            description: "« En disant auxiliaire d'envie, on reconnaît que ce qu'apportent les auxiliaires, c'est bien plus que du maintien à domicile\xa0»",
-            link: 'https://www.youtube.com/watch?v=c7tEjBkwfY0'
-          },
-          {
             title: 'Le parisien',
             img: 'https://res.cloudinary.com/alenvi/image/upload/v1507019444/images/business/leparisien.png',
             imgAlt: 'leparisien logo',
             description: "« A la rencontre des auxiliaires d'envie\xa0»",
             link: 'http://www.leparisien.fr/economie/business/a-la-rencontre-des-auxilliaires-d-envie-20-09-2016-6135411.php'
-          }
+          },
+          {
+            title: 'Siver Eco',
+            img: 'https://res.cloudinary.com/alenvi/image/upload/c_scale,q_auto:eco,w_120/v1522753629/images/business/logo-silver-economie.png',
+            imgAlt: 'SilverEco logo',
+            description: "« Alenvi transforme le métier d'auxiliaire de vie.\xa0»",
+            link: 'https://www.silvereco.fr/alenvi-et-ogust-oeuvrent-ensemble-pour-revaloriser-le-metier-dauxiliaire-de-vie/3178309'
+          },
         ]
       ],
       isNotMozilla: {
