@@ -87,21 +87,21 @@ export default {
           startQuote: 'Bien accompagner une personne âgée,',
           middleQuote: `C’est avant tout comprendre ce qu'elle ressent.`,
           author: `Barbara, Professionnelle d'empathie`,
-          backgroundPortrait: 'https://res.cloudinary.com/alenvi/image/upload/q_auto:low/v1522747308/images/business/Barbara_portrait_S2.jpg',
+          backgroundPortrait: 'https://res.cloudinary.com/alenvi/image/upload/c_scale,q_auto:low,w_1032/v1522747308/images/business/Barbara_portrait_S2.jpg',
           backgroundLandscape: 'https://res.cloudinary.com/alenvi/image/upload/c_scale,h_1381,q_auto:low/v1522747309/images/business/Barbara_paysage_S2.jpg'
         },
         {
           startQuote: 'Bien accompagner une personne âgée,',
           middleQuote: `C’est avant tout la valoriser.`,
           author: `Valérie, Professionnelle d'empathie`,
-          backgroundPortrait: 'https://res.cloudinary.com/alenvi/image/upload/q_auto:low/v1522747309/images/business/Valérie_portrait_S.jpg',
+          backgroundPortrait: 'https://res.cloudinary.com/alenvi/image/upload/c_scale,h_1050,q_auto:low/v1522747309/images/business/Valérie_portrait_S.jpg',
           backgroundLandscape: 'https://res.cloudinary.com/alenvi/image/upload/c_scale,h_1381,q_auto:low/v1522747309/images/business/Valérie_paysage_S.jpg'
         },
         {
           startQuote: 'Bien accompagner une personne âgée,',
           middleQuote: `C’est avant tout la laisser libre de ses choix.`,
           author: `Isabelle, Professionnelle d'empathie`,
-          backgroundPortrait: 'https://res.cloudinary.com/alenvi/image/upload/q_auto:low/v1522747309/images/business/Isabelle_portrait_S.jpg',
+          backgroundPortrait: 'https://res.cloudinary.com/alenvi/image/upload/c_scale,h_1050,q_auto:low/v1522747309/images/business/Isabelle_portrait_S.jpg',
           backgroundLandscape: 'https://res.cloudinary.com/alenvi/image/upload/c_scale,h_1381,q_auto:low/v1522747309/images/business/Isabelle_paysage_S.jpg'
         }
       ],
@@ -146,9 +146,7 @@ export default {
   },
   computed: {
     getQuote () {
-      const test = this.quotes[Math.floor(Math.random() * this.quotes.length)];
-      console.log('GET COTE', test);
-      return test
+      return this.quotes[Math.floor(Math.random() * this.quotes.length)];
     }
   },
   methods: {
