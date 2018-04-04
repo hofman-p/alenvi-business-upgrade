@@ -16,9 +16,9 @@
       <h1 class="no-margin" :style="{ color: feature.color }">{{ feature.title }}</h1>
     </div>
   </div> -->
-  <div class="row justify-between gutter-sm">
-    <div v-for="(feature, index) in features" :key="index" class="col-xs-12 col-md-4 flex-card">
-      <q-card class="hover-shadow cursor-pointer" flat @click.native="goTo(feature.link)">
+  <div class="row gutter-sm">
+    <div v-for="(feature, index) in features" :key="index" class="col-xs-12 col-md-4 row items-stretch">
+      <q-card class="cursor-pointer hover-shadow" flat @click.native="goTo(feature.link)">
         <q-card-media>
           <img :src="feature.image" :alt="`${feature.title.split(' ').join('').toLowerCase()}`">
         </q-card-media>
