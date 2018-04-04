@@ -118,9 +118,8 @@
     </q-page-container>
 
     <!-- Footer -->
-    <q-layout-footer class="row justify-between items-stretch q-pl-lg">
+    <q-layout-footer class="row justify-between items-center q-pl-lg">
       <div class="col-xs-6 col-lg-2">
-        <h6 class="footer-title">A propos</h6>
         <ul>
           <li class="footer-links" @click="goTo('/vision')">Vision</li>
           <li class="footer-links" @click="goTo('/equipe')">Equipe</li>
@@ -128,43 +127,38 @@
         </ul>
       </div>
       <div class="col-xs-6 col-lg-2">
-        <h6 class="footer-title">Bénéficiaires</h6>
         <ul>
           <li class="footer-links" @click="goTo('/aide-a-domicile')">Aide à domicile</li>
           <li class="footer-links" @click="goTo('/compagnie')">Compagnie et stimulation</li>
           <li class="footer-links" @click="goTo('/sortie-hopital')">Sortie d'hôpital</li>
-          <li class="footer-links"><a href="http://blog.alenvi.io/tag/aidants-familiaux">Conseils</a></li>
         </ul>
       </div>
       <div class="col-xs-6 col-lg-2">
-        <h6 class="footer-title">Auxiliaires</h6>
         <ul>
-          <li class="footer-links" @click="goTo('/recrutement')">Recrutement</li>
-          <li class="footer-links"><a href="http://blog.alenvi.io/tag/auxiliaires">Actualités</a></li>
+          <li class="footer-links footer-spe-link"><a href="http://blog.alenvi.io">Blog</a></li>
+          <li class="footer-links footer-spe-link" @click="goTo('/mentions')">Mentions Légales</li>
         </ul>
       </div>
-      <div class="col-xs-6 col-lg-2 self-center">
-        <a href="#" class="footer-spe-link">Nous trouver</a>
-        <br />
-        <a href="#" class="footer-spe-link">Se connecter</a>
+      <div class="col-xs-6 col-lg-1">
+        <ul>
+          <li class="footer-links footer-spe-link" @click="locationModal = true">Nous trouver</li>
+          <li><a href="#" class="footer-spe-link">Se connecter</a></li>
+        </ul>
       </div>
-      <div class="col-xs-6 col-lg-2 self-center">
+      <div class="col-xs-6 col-lg-2 row justify-center justify-start-resp">
+        <a href="https://www.facebook.com/alenviservices/">
+          <q-icon name="fab fa-facebook" color="white" size="2.5rem" class="hover-icon on-left"/>
+        </a>
+        <a href="https://www.youtube.com/channel/UCY31qIuLKsPY6zFUh_pR-pw">
+          <q-icon name="fab fa-youtube" color="white" size="2.5rem" class="hover-icon"/>
+        </a>
+      </div>
+      <div class="col-xs-6 col-lg-3 row justify-center items-center">
         <!-- <div class="row justify&#45;center"> -->
-            <a href="https://www.facebook.com/alenviservices/">
-              <q-icon name="fab fa-facebook" color="white" size="2.5rem" class="hover-icon on-left"/>
-            </a>
-            <a href="https://www.youtube.com/channel/UCY31qIuLKsPY6zFUh_pR-pw">
-              <q-icon name="fab fa-youtube" color="white" size="2.5rem" class="hover-icon"/>
-            </a>
+            <img class="footer-img on-left" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019445/images/business/logo-service-personne.png" alt="logo service personne">
+            <img class="footer-img" src="https://res.cloudinary.com/alenvi/image/upload/b_rgb:ffffff,c_scale,q_auto/v1507019444/images/business/logo_charte_qualite.gif" alt="logo service personne">
         <!-- </div> -->
       </div>
-      <div class="col-xs-6 col-lg-2 self-center">
-        <!-- <div class="row justify&#45;center items&#45;center"> -->
-          <!-- <div> -->
-            <img class="footer-img" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019445/images/business/logo-service-personne.png" alt="logo service personne">
-          <!-- </div> -->
-        </div>
-      <!-- </div> -->
     </q-layout-footer>
   </q-layout>
 </template>
@@ -354,14 +348,20 @@ export default {
       color: $grey-4 !important
 
   .footer-img
-   width: 100px
+   width: 110px
    height: auto
+   @media (max-width: 768px)
+    width: 75px
 
   .forced-wrap
     flex-wrap: wrap
 
   .hover-icon:hover
     color: $grey-4 !important
+
+  .justify-start-resp
+    @media (max-width: 1159px)
+      justify-content: start
 
   /deep/ .q-collapsible-toggle-icon
     color: white !important
