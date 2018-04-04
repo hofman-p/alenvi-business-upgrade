@@ -123,7 +123,7 @@
         <ul>
           <li class="footer-links" @click="goTo('/vision')">Vision</li>
           <li class="footer-links" @click="goTo('/equipe')">Equipe</li>
-          <li class="footer-links" @click="goTo('/')">Histoire d'alenvi</li>
+          <li class="footer-links" @click="goTo('/recrutement')">Recrutement</li>
         </ul>
       </div>
       <div class="col-xs-6 col-lg-2">
@@ -135,8 +135,8 @@
       </div>
       <div class="col-xs-6 col-lg-2">
         <ul>
-          <li class="footer-links footer-spe-link"><a href="http://blog.alenvi.io">Blog</a></li>
-          <li class="footer-links footer-spe-link" @click="goTo('/mentions')">Mentions Légales</li>
+          <li class="footer-links"><a href="http://blog.alenvi.io">Blog</a></li>
+          <li class="footer-links" @click="goTo('/mentions')">Mentions Légales</li>
         </ul>
       </div>
       <div class="col-xs-6 col-lg-1">
@@ -154,10 +154,8 @@
         </a>
       </div>
       <div class="col-xs-6 col-lg-3 row justify-center items-center">
-        <!-- <div class="row justify&#45;center"> -->
-            <img class="footer-img on-left" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019445/images/business/logo-service-personne.png" alt="logo service personne">
-            <img class="footer-img" src="https://res.cloudinary.com/alenvi/image/upload/b_rgb:ffffff,c_scale,q_auto/v1507019444/images/business/logo_charte_qualite.gif" alt="logo service personne">
-        <!-- </div> -->
+        <img class="footer-img on-left" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019445/images/business/logo-service-personne.png" alt="logo service personne">
+        <img class="footer-img" src="https://res.cloudinary.com/alenvi/image/upload/v1522847849/images/business/logo_charte_qualite___2018.png" alt="logo charte qualité">
       </div>
     </q-layout-footer>
   </q-layout>
