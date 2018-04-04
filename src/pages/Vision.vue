@@ -62,9 +62,9 @@ export default {
 
 ul
   list-style: none
-
-li
-  font-size: 2.3vh
+  li
+    font-size: 1.3em
+    line-height: 1.7em
 
 #vision
   //padding-left: 5%

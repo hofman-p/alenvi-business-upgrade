@@ -12,7 +12,7 @@
         <q-btn color="primary" big>
           <a class="btn-call" href="tel:+33179755475">Appeler le 01 79 75 54 75</a>
         </q-btn>
-        <p id="online-asking" @click="showModal = true">Demande en ligne</p>
+        <!-- <p id="online-asking" @click="showModal = true">Demande en ligne</p> -->
         <typeform-modal v-model="showModal" info="https://alenvi.typeform.com/to/Hq6cm5" @closeModal="showModal = false"/>
       </div>
       <div class="col-lg-6 text-center self-center">
