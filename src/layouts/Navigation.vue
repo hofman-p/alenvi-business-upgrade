@@ -346,7 +346,7 @@ export default {
       color: $grey-4 !important
 
   .footer-img
-   width: 110px
+   width: 107px
    height: auto
    @media (max-width: 768px)
     width: 75px
