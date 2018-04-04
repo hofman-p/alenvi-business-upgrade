@@ -46,12 +46,15 @@
       <!-- <h1 class="text-center title-margin-bottom">Les auxiliaires d'envie</h1> -->
       <auxiliaries-gallery :videoNumber="videoNumber" :videoLocation="videoLocation" :videoRoles="videoRoles"/>
     </section>
-    <section id="formulaire-contact" class="row justify-center items-center q-mb-xl">
-      <h1 class="text-center col-xs-12">
+    <section id="formulaire-contact" class="q-mb-xl"> <!-- class="row justify-center items-center q-mb-xl" -->
+      <!-- <h1 class="text-center col-xs-12">
         Décrivez-nous votre besoin !
         <q-icon class="on-right" name="send"/>
-      </h1>
-      <contact-form />
+      </h1> -->
+      <div class="row">
+        <div class="col-8 grey-bg"></div>
+        <contact-form class="col-4 contact-form" />
+      </div>
     </section>
     <section id="media" class="q-mb-xl">
       <carousel-media />
@@ -247,4 +250,14 @@ q-parallax h1, h5
   padding: 48px 48px
   @media (max-width: 1024px)
     padding: 24px 24px
+
+.grey-bg
+  background-color: #FAF9F8
+
+#formulaire-contact
+  margin-top: 5%
+
+.contact-form
+  padding-left: 2%
+  padding-right: 2%
 </style>

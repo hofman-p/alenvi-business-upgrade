@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 600px; max-width: 80vw;">
+  <div> <!-- style="width: 600px; max-width: 80vw;" -->
     <q-field icon="face">
       <q-input  float-label="Votre nom" v-model="user.name" />
     </q-field>
