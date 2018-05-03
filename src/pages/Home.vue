@@ -48,13 +48,13 @@
     </section>
     <section id="formulaire-contact" class="q-mb-xl"> <!-- class="row justify-center items-center q-mb-xl" -->
       <div class="row">
-        <div class="row col-6 items-center">
-          <h1 class="text-center col-xs-12">
+        <div class="row col-lg-6 justify-center items-center">
+          <h1 class="text-center">
             Décrivez-nous votre besoin
             <q-icon class="on-right" name="send"/>
           </h1>
         </div>
-        <contact-form class="col-4 contact-form" />
+        <contact-form class="col-lg-4 contact-form" />
       </div>
     </section>
     <section id="media" class="q-mb-xl">
@@ -259,8 +259,9 @@ q-parallax h1, h5
     padding: 24px 24px
 
 #formulaire-contact
-  background-color: #FAF9F8
   margin-top: 5%
+  @media (min-width: 1200px)
+    background-color: #FAF9F8
 
 .contact-form
   padding-left: 2%
