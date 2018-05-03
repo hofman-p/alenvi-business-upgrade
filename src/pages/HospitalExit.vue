@@ -40,6 +40,12 @@ import Features from '../components/Features.vue'
 import Auxiliaries from '../components/AuxiliariesGallery.vue'
 
 export default {
+  metaInfo: {
+    title: "Sortie d'hôpital",
+    meta: [
+      { name: 'description', content: "Les 'auxiliaires d’envie' aident votre proche âgé à réussir son retour à domicile à la suite d’une hospitalisation." }
+    ]
+  },
   components: {
     Breadcrumb,
     TypeformModal,
