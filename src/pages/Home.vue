@@ -117,7 +117,7 @@ export default {
       ],
       hasScrolledPresWriting: false,
       hasScrolledPresBanner: false,
-      videoNumber: 8,
+      videoNumber: 6,
       videoLocation: ['accueil'],
       videoRoles: ['Auxiliaire']
     }
