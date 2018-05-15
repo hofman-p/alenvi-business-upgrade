@@ -8,19 +8,13 @@
         </router-link>
         <div class="row items-center gt-mld">
           <div class="w3-dropdown-hover bg-white">
-            <button id="dropdownVision" class="alenvi-button text-tertiary"><router-link to="/vision" exact>Vision <q-icon name="arrow drop down"/></router-link></button>
-            <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
-              <a href="http://blog.alenvi.io/tag/alenvi" class="w3-bar-item">Le projet Alenvi</a>
-            </div>
-          </div>
-          <router-link to="equipe" class="w3-bar-item">Equipe</router-link>
-          <div class="w3-dropdown-hover -white">
             <button id="dropdownClients" class="alenvi-button text-tertiary">Bénéficiaires<q-icon name="arrow drop down"/></button>
             <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
               <router-link exact to="aide-a-domicile" class="w3-bar-item">Aide à domicile</router-link>
               <router-link exact to="compagnie" class="w3-bar-item">Compagnie et stimulation</router-link>
               <router-link exact to="sortie-hopital" class="w3-bar-item">Sortie d'hôpital</router-link>
               <a href="http://blog.alenvi.io/tag/aidants-familiaux" class="w3-bar-item">Conseils</a>
+              <a href="https://app.alenvi.io/login" class="w3-bar-item">Se connecter</a>
             </div>
           </div>
           <div class="w3-dropdown-hover bg-white">
@@ -30,8 +24,19 @@
               <a href="http://blog.alenvi.io/tag/auxiliaires" class="w3-bar-item">Partage d'expériences</a>
             </div>
           </div>
+          <router-link to="equipe" class="w3-bar-item">Equipe</router-link>
+          <div class="w3-dropdown-hover bg-white">
+            <button id="dropdownVision" class="alenvi-button text-tertiary">A propos <q-icon name="arrow drop down"/></button>
+            <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
+              <router-link exact to="vision" class="w3-bar-item">Vision</router-link>
+              <a href="http://blog.alenvi.io/tag/alenvi" class="w3-bar-item">Le projet Alenvi</a>
+            </div>
+          </div>
         </div>
         <div class="gt-mld btn-call-header">
+          <q-btn class="q-mr-md cursor-pointer" size="md" color="secondary" @click="contactModal = true" round flat>
+            <q-icon name="mail" size="2.3rem" />
+          </q-btn>
           <q-btn class="q-mr-md cursor-pointer" size="md" color="secondary" @click="locationModal = true" round flat>
             <q-icon name="location on" size="2.3rem" />
           </q-btn>
@@ -54,8 +59,11 @@
             </div>
           </div>
         </q-modal>
-        <typeform-modal v-model="showModal" info="https://alenvi.typeform.com/to/MwEMWk" @closeModal="showModal = false"/>
+        <typeform-modal v-model="contactModal" info="https://alenvi.typeform.com/to/MwEMWk" @closeModal="contactModal = false"/>
         <div class="row absolute-right lt-lgx items-center">
+          <q-btn size="md" color="secondary" @click="contactModal = true" round flat>
+            <q-icon name="mail" size="2rem" />
+          </q-btn>
           <q-btn size="md" color="secondary" @click="locationModal = true" round flat>
             <q-icon name="location on" size="2rem" />
           </q-btn>
@@ -76,7 +84,7 @@
         <q-item to="/" exact>
           <q-item-main label="Accueil" />
         </q-item>
-        <q-collapsible label="Services" class="test">
+        <q-collapsible label="Bénéficiaires">
           <q-item to="/aide-a-domicile">
             <q-item-main label="Aide à domicile" />
           </q-item>
@@ -86,28 +94,30 @@
           <q-item to="/sortie-hopital">
             <q-item-main label="Sortie d'hôpital" />
           </q-item>
+          <q-item class="no-bg" to="">
+            <q-item-main @click.native="goUrl('http://blog.alenvi.io/tag/aidants-familiaux')" label="Conseils" />
+          </q-item>
+          <q-item class="no-bg" to="">
+            <q-item-main @click.native="goUrl('https://app.alenvi.io/login')" label="Se connecter" />
+          </q-item>
         </q-collapsible>
-        <q-item to="/vision">
-          <q-item-main label="Vision" />
-        </q-item>
+        <q-collapsible label="Auxiliaires">
+          <q-item to="/recrutement">
+            <q-item-main label="Recrutement" />
+          </q-item>
+          <q-item class="no-bg" to="">
+            <q-item-main @click.native="goUrl('http://blog.alenvi.io/tag/auxiliaires')" label="Partage d'expériences" />
+          </q-item>
+        </q-collapsible>
         <q-item to="/equipe">
           <q-item-main label="Equipe" />
         </q-item>
-        <q-item to="/recrutement">
-          <q-item-main label="Recrutement" />
-        </q-item>
-        <q-collapsible label="Blog">
-          <q-item class="no-bg" to="">
-            <q-item-main @click="goUrl('http://blog.alenvi.io')" label="Accueil Blog" />
+        <q-collapsible label="A propos">
+          <q-item to="/vision">
+            <q-item-main label="Vision" />
           </q-item>
           <q-item class="no-bg" to="">
-            <q-item-main @click="goUrl('http://blog.alenvi.io/tag/aidants-familiaux')" label="Aidants familiaux" />
-          </q-item>
-          <q-item class="no-bg" to="">
-            <q-item-main @click="goUrl('http://blog.alenvi.io/tag/auxiliaires')" label="Auxiliaires" />
-          </q-item>
-          <q-item class="no-bg" to="">
-            <q-item-main @click="goUrl('http://blog.alenvi.io/tag/alenvi')" label="Le projet Alenvi" />
+            <q-item-main @click.native="goUrl('http://blog.alenvi.io/tag/alenvi')" label="Le projet Alenvi" />
           </q-item>
         </q-collapsible>
       </q-list>
@@ -180,6 +190,7 @@ export default {
   },
   data () {
     return {
+      contactModal: false,
       locationModal: false,
       showModal: false,
       showDrawer: false,

@@ -14,7 +14,7 @@
       </div>
     </div>
     <!-- On Desktop -->
-    <div class="col-sm-3 auxiliaries-container" v-for="(auxiliary, index) in auxiliaries" :key="index" v-if="!$q.platform.is.mobile && auxiliary.youtube" @click="openModal(auxiliary)">
+    <div class="col-sm-2 auxiliaries-container" v-for="(auxiliary, index) in auxiliaries" :key="index" v-if="!$q.platform.is.mobile && auxiliary.youtube" @click="openModal(auxiliary)">
       <img class="auxiliaries-size" :src="auxiliary.picture.link" alt="splash" />
       <div class="auxiliaries-icon-container row justify-center">
         <q-icon class="auxiliaries-icon self-center" name="play circle outline" color="white" size="5rem" style="display: inherit"/>
@@ -81,7 +81,7 @@ export default {
         this.auxiliaries.splice(this.videoNumber);
       }
     }
-    for (let i = 0, j = 4, test = false; i < this.auxiliaries.length; i++) {
+    for (let i = 0, j = 6, test = false; i < this.auxiliaries.length; i++) {
       if (this.auxiliaries[i].role.name === 'Auxiliaire') {
         if (i < j) {
           if (test) {
@@ -90,9 +90,9 @@ export default {
             this.auxiliaries[i].backgroundColor = i % 2 === 0 ? '#F070AA' : '#B61A6D';
           }
         } else {
-          j += 4;
+          j += 6;
           test = !test;
-          this.auxiliaries[i].backgroundColor = this.auxiliaries[i - 4].backgroundColor === '#F070AA' ? '#B61A6D' : '#F070AA';
+          this.auxiliaries[i].backgroundColor = this.auxiliaries[i - 6].backgroundColor === '#F070AA' ? '#B61A6D' : '#F070AA';
           // this.auxiliaries[i].backgroundColor = i % 2 == 0 ? '#F070AA' : '#B61A6D';
         }
       } else {
