@@ -10,12 +10,12 @@
         <div class="row items-center">
           <div class="col-lg-7">
             <ul>
-              <li class="secondary"><q-icon name="keyboard arrow right"/> CDI 35h garanti et rémunération SMIC +20%</li>
-              <li class="primary"><q-icon name="keyboard arrow right" /> Autonomie dans la gestion du planning et des bénéficiaires</li>
-              <li class="quaternary"><q-icon name="keyboard arrow right" /> Formation continue effectuée par un réseau de neurologues</li>
-              <li class="secondary"><q-icon name="keyboard arrow right" /> Coopération entre collègues et réunions de communauté toutes les 2 semaines</li>
-              <li class="primary"><q-icon name="keyboard arrow right" /> Participation au développement de la communauté (prospection, recrutement, suivi de la qualité…)</li>
-              <li class="quaternary"><q-icon name="keyboard arrow right" /> Partages sur Messenger</li>
+              <li><q-icon name="keyboard arrow right"/> CDI 35h garanti et rémunération SMIC +20%</li>
+              <li><q-icon name="keyboard arrow right" /> Autonomie dans la gestion du planning et des bénéficiaires</li>
+              <li><q-icon name="keyboard arrow right" /> Formation continue effectuée par un réseau de neurologues</li>
+              <li><q-icon name="keyboard arrow right" /> Coopération entre collègues et réunions de communauté toutes les 2 semaines</li>
+              <li><q-icon name="keyboard arrow right" /> Participation au développement de la communauté (prospection, recrutement, suivi de la qualité…)</li>
+              <li><q-icon name="keyboard arrow right" /> Partages sur Messenger</li>
             </ul>
           </div>
           <div class="col-lg-5" style="height: 40vh">

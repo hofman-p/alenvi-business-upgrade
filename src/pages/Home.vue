@@ -14,7 +14,7 @@
       <div class="main-text"><h1>{{getQuote.middleQuote}}</h1></div>
       <div class="main-subtext">{{getQuote.author}}</div>
       <q-btn v-if="$q.platform.is.desktop" class="main-button-call-to-action" icon="call" color="primary" size="lg" label="Appeler au 01 73 12 55 97" />
-      <q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px" />
+      <!-- <q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px" /> -->
     </section>
     <section id="presentation-writing" class="a-pa-xl q-mb-xl row justify-center items-center" v-scroll-fire="fadeInPresWriting">
       <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
