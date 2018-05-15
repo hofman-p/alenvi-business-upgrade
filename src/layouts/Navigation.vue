@@ -119,6 +119,12 @@
 
     <!-- Footer -->
     <q-layout-footer class="row justify-between items-center q-pl-lg">
+      <q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px" />
+      <cookie-law buttonText="OK" buttonClass="cookie-button">
+        <div slot="message">
+          En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies pour vous proposer des publicités ciblées adaptés à vos centres d’intérêts et réaliser des statistiques de visites.
+        </div>
+      </cookie-law>
       <div class="col-xs-6 col-lg-2">
         <ul>
           <li class="footer-links" @click="goTo('/vision')">Vision</li>
@@ -165,10 +171,12 @@
 import { openURL } from 'quasar';
 
 import TypeformModal from '../components/TypeformModal.vue';
+import CookieLaw from 'vue-cookie-law';
 
 export default {
   components: {
     TypeformModal,
+    CookieLaw
   },
   data () {
     return {
@@ -187,9 +195,9 @@ export default {
     };
   },
   mounted () {
-    if (!this.$q.cookies.has('popupWasShown')) {
-      this.displayCookieInfo();
-    }
+    // if (!this.$q.cookies.has('popupWasShown')) {
+    //   this.displayCookieInfo();
+    // }
   },
   methods: {
     isActive () {
@@ -204,22 +212,22 @@ export default {
     goTo (path) {
       this.$router.push({ path });
     },
-    displayCookieInfo () {
-      this.$q.notify({
-        message: `En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies pour vous proposer des publicités ciblées adaptés à vos centres d’intérêts et réaliser des statistiques de visites.`,
-        timeout: 0,
-        type: 'info',
-        position: 'bottom-right',
-        actions: [
-          {
-            label: "OK, j'ai compris.",
-            handler: () => {
-              this.$q.cookies.set('popupWasShown', true, {expires: 10, path: '/'});
-            },
-          },
-        ],
-      });
-    }
+    // displayCookieInfo () {
+    //   this.$q.notify({
+    //     message: `En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies pour vous proposer des publicités ciblées adaptés à vos centres d’intérêts et réaliser des statistiques de visites.`,
+    //     timeout: 0,
+    //     type: 'info',
+    //     position: 'bottom-right',
+    //     actions: [
+    //       {
+    //         label: "OK, j'ai compris.",
+    //         handler: () => {
+    //           this.$q.cookies.set('popupWasShown', true, {expires: 10, path: '/'});
+    //         },
+    //       },
+    //     ],
+    //   });
+    // }
   }
 }
 </script>
@@ -363,5 +371,11 @@ export default {
 
   /deep/ .q-collapsible-toggle-icon
     color: white !important
+
+  /deep/ .cookie-button
+    background: $primary
+    padding: 0.625em 3.125em
+    color: #fff
+    border-radius: 0
 
 </style>
