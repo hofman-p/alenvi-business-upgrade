@@ -46,24 +46,24 @@
       <!-- <h1 class="text-center title-margin-bottom">Les auxiliaires d'envie</h1> -->
       <auxiliaries-gallery :videoNumber="videoNumber" :videoLocation="videoLocation" :videoRoles="videoRoles"/>
     </section>
-    <section id="formulaire-contact" class="q-mb-xl"> <!-- class="row justify-center items-center q-mb-xl" -->
-      <div class="row">
-        <div class="row col-lg-6 justify-center items-center">
-          <h1 class="text-center">
-            Décrivez-nous votre besoin
-            <q-icon class="on-right" name="send"/>
-          </h1>
-        </div>
-        <contact-form class="col-lg-4 contact-form" />
-      </div>
-    </section>
+    <!-- <section id="formulaire-contact" class="q-mb-xl"> <\!-- class="row justify-center items-center q-mb-xl" -\-> -->
+    <!--   <div class="row"> -->
+    <!--     <div class="row col-lg-6 justify-center items-center"> -->
+    <!--       <h1 class="text-center"> -->
+    <!--         Décrivez-nous votre besoin -->
+    <!--         <q-icon class="on-right" name="send"/> -->
+    <!--       </h1> -->
+    <!--     </div> -->
+    <!--     <contact-form class="col-lg-4 contact-form" /> -->
+    <!--   </div> -->
+    <!-- </section> -->
     <section id="media" class="q-mb-xl">
       <carousel-media />
     </section>
-    <section id="latest-articles" class="a-pa-xl q-mb-xl">
-       <!-- <h1 class="text-center title-margin-bottom">Blog : les derniers articles</h1> -->
-      <latest-articles />
-    </section>
+    <!-- <section id="latest-articles" class="a-pa-xl q-mb-xl"> -->
+    <!--    <\!-- <h1 class="text-center title-margin-bottom">Blog : les derniers articles</h1> -\-> -->
+    <!--   <latest-articles /> -->
+    <!-- </section> -->
   </q-page>
 </template>
 

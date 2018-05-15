@@ -18,7 +18,7 @@
   </div> -->
   <div class="row gutter-sm">
     <div v-for="(feature, index) in features" :key="index" class="col-xs-12 col-md-4 row items-stretch">
-      <q-card class="cursor-pointer hover-shadow" flat @click.native="goTo(feature.link)">
+      <q-card class="cursor-pointer hover-shadow card-border" flat @click.native="goTo(feature.link)">
         <q-card-media>
           <img :src="feature.image" :alt="`${feature.title.split(' ').join('').toLowerCase()}`">
         </q-card-media>
@@ -26,7 +26,7 @@
           <h5 class="card-title">{{ feature.title }}</h5>
         </q-card-title>
         <q-card-main>
-          <div class="q-subheading">{{ feature.text }}</div>
+          <div class="q-subheading text-justify">{{ feature.text }}</div>
         </q-card-main>
       </q-card>
     </div>
@@ -128,8 +128,12 @@ export default {
 
 .card-title
   color: $primary
+  margin: 0
   @media (max-width: 400px)
     font-size: 1.4em
+
+.card-border
+  border: 1px solid rgba(0, 0, 0, .1)
 
 .flex-card
   flex: 0 1 auto
