@@ -200,7 +200,7 @@ export default {
   position: relative
   // width: 100%
   // height: 100%
-  font-size: 40px
+  font-size: 30px
   color: white
 
 .auxiliaries-filter
