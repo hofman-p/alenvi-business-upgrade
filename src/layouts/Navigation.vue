@@ -24,7 +24,9 @@
             <a href="http://blog.alenvi.io/tag/auxiliaires" class="w3-bar-item">Partage d'expériences</a>
           </div>
         </div>
-        <router-link to="equipe" class="w3-bar-item">Equipe</router-link>
+        <div class="w3-bar-item self-center">
+          <router-link to="equipe">Equipe</router-link>
+        </div>
         <div class="w3-dropdown-hover bg-white">
           <button id="dropdownVision" class="alenvi-button text-tertiary">A propos <q-icon name="arrow drop down"/></button>
           <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
@@ -300,8 +302,8 @@ export default {
       &:hover
         color: $secondary
 
-  .w3-dropdown-hover
-    height: 60px
+  // .w3-dropdown-hover
+    // height: 60px
 
   header .router-link-exact-active
     font-weight: 900
