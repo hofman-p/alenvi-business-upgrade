@@ -27,7 +27,7 @@
     </section>
     <section id="presentation-banner" class="a-pa-xl q-mb-xl row justify-center items-center"><!-- v-scroll="fadeInPresBanner" -->
       <!-- <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut"> -->
-        <h1 class="no-margin" v-if="hasScrolledPresBanner">Les communautés d'auxiliaires mettent en place <strong>des solutions sur-mesure à un tarif social adapté</strong> à tous.</h1>
+        <h1 class="no-margin">Les communautés d'auxiliaires mettent en place <strong>des solutions sur-mesure à un tarif social adapté</strong> à tous.</h1><!-- v-if="hasScrolledPresBanner" -->
       <!-- </transition> -->
     </section>
     <!-- <section id="mid-banner" :class="[{ 'q-mb-lg': $q.platform.is.mobile }]">
