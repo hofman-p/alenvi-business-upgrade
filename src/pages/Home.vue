@@ -16,19 +16,19 @@
       <q-btn v-if="$q.platform.is.desktop" class="main-button-call-to-action" icon="call" color="primary" size="lg" label="Appeler au 01 73 12 55 97" />
       <!-- <q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px" /> -->
     </section>
-    <section id="presentation-writing" class="a-pa-xl q-mb-xl row justify-center items-center" v-scroll-fire="fadeInPresWriting">
-      <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-        <div v-if="hasScrolledPresWriting">
+    <section id="presentation-writing" class="a-pa-xl q-mb-xl row justify-center items-center"> <!-- v-scroll="fadeInPresWriting" -->
+      <!-- <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut"> -->
+        <div><!-- v-if="hasScrolledPresWriting" -->
           <h1 class="text-center">Nous réinventons l'accompagnement à domicile des personnes âgées</h1>
           <big class="text-justify">Alenvi part du constat que <strong>la valorisation du métier d'auxiliaire de vie a un impact positif sur la qualité de l'accompagnement</strong> apporté aux personnes âgées.
           En créant un cadre de travail innovant, Alenvi permet à ses auxiliaires d'«envie» d'exercer pleinement leur empathie pour faire <strong>beaucoup plus que du «maintien à domicile»</strong>.</big>
         </div>
-      </transition>
+      <!-- </transition> -->
     </section>
-    <section id="presentation-banner" class="a-pa-xl q-mb-xl row justify-center items-center" v-scroll-fire="fadeInPresBanner">
-      <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+    <section id="presentation-banner" class="a-pa-xl q-mb-xl row justify-center items-center"><!-- v-scroll="fadeInPresBanner" -->
+      <!-- <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut"> -->
         <h1 class="no-margin" v-if="hasScrolledPresBanner">Les communautés d'auxiliaires mettent en place <strong>des solutions sur-mesure à un tarif social adapté</strong> à tous.</h1>
-      </transition>
+      <!-- </transition> -->
     </section>
     <!-- <section id="mid-banner" :class="[{ 'q-mb-lg': $q.platform.is.mobile }]">
       <q-parallax
@@ -74,6 +74,7 @@ import AuxiliariesGallery from '../components/AuxiliariesGallery.vue'
 import LatestArticles from '../components/LatestArticles.vue'
 import CarouselMedia from '../components/CarouselMedia.vue'
 import ContactForm from '../components/ContactForm.vue'
+import { debounce } from 'quasar'
 
 export default {
   metaInfo: {
@@ -131,9 +132,10 @@ export default {
     }
   },
   methods: {
-    fadeInPresWriting () {
+    fadeInPresWriting: debounce(position => {
       this.hasScrolledPresWriting = true;
-    },
+      console.log(this.hasScrolledPresWriting);
+    }, 50),
     fadeInPresBanner () {
       this.hasScrolledPresBanner = true;
     }
