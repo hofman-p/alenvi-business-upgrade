@@ -61,7 +61,7 @@
           </div>
         </div>
       </q-modal>
-      <typeform-modal v-model="contactModal" info="https://alenvi.typeform.com/to/MwEMWk" @closeModal="contactModal = false"/>
+      <typeform-modal v-model="contactModal" info="https://alenvi.typeform.com/to/Hq6cm5" @closeModal="contactModal = false"/>
       <div class="row absolute-right lt-lgx items-center">
         <q-btn size="md" color="secondary" @click="contactModal = true" round flat>
           <q-icon name="mail" size="2rem" />

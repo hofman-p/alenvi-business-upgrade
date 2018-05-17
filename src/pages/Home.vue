@@ -8,10 +8,11 @@
           <h1>Je suis Professionnelle de l'empathie !</h1>
         </q-parallax> -->
       <!-- </div> -->
-      <div v-if="$q.platform.is.desktop" id="main-bg" :style="{ backgroundImage: `url(${getQuote.backgroundLandscape})`}"></div>
-      <div v-if="$q.platform.is.mobile" id="main-bg" :style="{ backgroundImage: `url(${getQuote.backgroundPortrait})`}"></div>
-      <div class="main-text-fix"><h1>{{getQuote.startQuote}}</h1></div>
-      <div class="main-text"><h1>{{getQuote.middleQuote}}</h1></div>
+      <div class="gt-md main-bg" :style="{ backgroundImage: `url(${getQuote.backgroundLandscape})`}"></div>
+      <div class="lt-lg main-bg" :style="{ backgroundImage: `url(${getQuote.backgroundPortrait})`}"></div>
+      <div class="gt-md main-text-fix"><h1>{{getQuote.startQuote}} {{getQuote.middleQuote}}</h1></div>
+      <div class=" main-text-fix"><h1>{{getQuote.startQuote}} {{getQuote.middleQuote}}</h1></div>
+      <div class="lt-lg main-text"><h1>{{getQuote.middleQuote}}</h1></div>
       <div class="main-subtext">{{getQuote.author}}</div>
       <q-btn v-if="$q.platform.is.desktop" class="main-button-call-to-action" icon="call" color="primary" size="lg" label="Appeler au 01 73 12 55 97" />
       <!-- <q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px" /> -->
@@ -96,22 +97,22 @@ export default {
       quotes: [
         {
           startQuote: 'Bien accompagner une personne âgée,',
-          middleQuote: `C’est avant tout la valoriser.`,
-          author: `Barbara, Professionnelle d'empathie`,
+          middleQuote: `c’est avant tout la valoriser.`,
+          author: `Barbara, Professionnelle de l'empathie`,
           backgroundPortrait: 'https://res.cloudinary.com/alenvi/image/upload/c_scale,q_auto:low,w_1032/v1522747308/images/business/Barbara_portrait_S2.jpg',
           backgroundLandscape: 'https://res.cloudinary.com/alenvi/image/upload/c_scale,h_1381,q_auto:low/v1522747309/images/business/Barbara_paysage_S2.jpg'
         },
         {
           startQuote: 'Bien accompagner une personne âgée,',
-          middleQuote: `C’est avant tout la laisser libre de ses choix.`,
-          author: `Valérie, Professionnelle d'empathie`,
+          middleQuote: `c’est avant tout la laisser libre de ses choix.`,
+          author: `Valérie, Professionnelle de l'empathie`,
           backgroundPortrait: 'https://res.cloudinary.com/alenvi/image/upload/c_scale,h_1050,q_auto:low/v1522747309/images/business/Valérie_portrait_S.jpg',
           backgroundLandscape: 'https://res.cloudinary.com/alenvi/image/upload/c_scale,h_1381,q_auto:low/v1522747309/images/business/Valérie_paysage_S.jpg'
         },
         {
           startQuote: 'Bien accompagner une personne âgée,',
-          middleQuote: `C’est avant tout comprendre ce qu'elle ressent.`,
-          author: `Isabelle, Professionnelle d'empathie`,
+          middleQuote: `c’est avant tout comprendre ce qu'elle ressent.`,
+          author: `Isabelle, Professionnelle de l'empathie`,
           backgroundPortrait: 'https://res.cloudinary.com/alenvi/image/upload/c_scale,h_1050,q_auto:low/v1522747309/images/business/Isabelle_portrait_S.jpg',
           backgroundLandscape: 'https://res.cloudinary.com/alenvi/image/upload/c_scale,h_1381,q_auto:low/v1522747309/images/business/Isabelle_paysage_S.jpg'
         }
@@ -153,7 +154,7 @@ h1
 q-parallax h1, h5
   color: $primary
 
-#main-bg
+.main-bg
   // background-image: url("../assets/Barbara_landscape.jpg")
   height: 100vh
   background-position: center
