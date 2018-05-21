@@ -8,13 +8,14 @@
           <h1>Je suis Professionnelle de l'empathie !</h1>
         </q-parallax> -->
       <!-- </div> -->
-      <div class="gt-md main-bg" :style="{ backgroundImage: `url(${getQuote.backgroundLandscape})`}"></div>
-      <div class="lt-lg main-bg" :style="{ backgroundImage: `url(${getQuote.backgroundPortrait})`}"></div>
-      <div class="gt-md main-text-fix"><h1>{{getQuote.startQuote}} {{getQuote.middleQuote}}</h1></div>
-      <div class=" main-text-fix"><h1>{{getQuote.startQuote}} {{getQuote.middleQuote}}</h1></div>
-      <div class="lt-lg main-text"><h1>{{getQuote.middleQuote}}</h1></div>
-      <div class="main-subtext">{{getQuote.author}}</div>
-      <q-btn v-if="$q.platform.is.desktop" class="main-button-call-to-action" icon="call" color="primary" size="lg" label="Appeler au 01 73 12 55 97" />
+      <transition-group enter-active-class="animated fadeIn" leave-active-class="animated fadeOut" appear>
+        <div v-if="show" key="test1" class="gt-md main-bg" :style="{ backgroundImage: `url(${selectedQuote.backgroundLandscape})`}"></div>
+        <div v-if="show" key="test2" class="lt-lg main-bg" :style="{ backgroundImage: `url(${selectedQuote.backgroundPortrait})`}"></div>
+        <div v-if="show" key="test3" class="main-text-fix"><h1>{{selectedQuote.startQuote}}</h1></div>
+        <div v-if="show" key="test4" class="main-text"><h1>{{selectedQuote.middleQuote}}</h1></div>
+        <div v-if="show" key="test5" class="main-subtext">{{selectedQuote.author}}</div>
+      </transition-group>
+      <q-btn v-if="$q.platform.is.desktop" class="main-button-call-to-action gt-md" icon="call" color="primary" size="lg" label="Appeler au 01 73 12 55 97" />
       <!-- <q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px" /> -->
     </section>
     <section id="presentation-writing" class="a-pa-xl q-mb-xl row justify-center items-center"> <!-- v-scroll="fadeInPresWriting" -->
@@ -94,24 +95,27 @@ export default {
   },
   data () {
     return {
+      show: true,
+      interval: null,
+      selectedQuote: {},
       quotes: [
         {
           startQuote: 'Bien accompagner une personne âgée,',
-          middleQuote: `c’est avant tout la valoriser.`,
+          middleQuote: `C’est avant tout la valoriser.`,
           author: `Barbara, Professionnelle de l'empathie`,
           backgroundPortrait: 'https://res.cloudinary.com/alenvi/image/upload/c_scale,q_auto:low,w_1032/v1522747308/images/business/Barbara_portrait_S2.jpg',
           backgroundLandscape: 'https://res.cloudinary.com/alenvi/image/upload/c_scale,h_1381,q_auto:low/v1522747309/images/business/Barbara_paysage_S2.jpg'
         },
         {
           startQuote: 'Bien accompagner une personne âgée,',
-          middleQuote: `c’est avant tout la laisser libre de ses choix.`,
+          middleQuote: `C’est avant tout la laisser libre de ses choix.`,
           author: `Valérie, Professionnelle de l'empathie`,
           backgroundPortrait: 'https://res.cloudinary.com/alenvi/image/upload/c_scale,h_1050,q_auto:low/v1522747309/images/business/Valérie_portrait_S.jpg',
           backgroundLandscape: 'https://res.cloudinary.com/alenvi/image/upload/c_scale,h_1381,q_auto:low/v1522747309/images/business/Valérie_paysage_S.jpg'
         },
         {
           startQuote: 'Bien accompagner une personne âgée,',
-          middleQuote: `c’est avant tout comprendre ce qu'elle ressent.`,
+          middleQuote: `C’est avant tout comprendre ce qu'elle ressent.`,
           author: `Isabelle, Professionnelle de l'empathie`,
           backgroundPortrait: 'https://res.cloudinary.com/alenvi/image/upload/c_scale,h_1050,q_auto:low/v1522747309/images/business/Isabelle_portrait_S.jpg',
           backgroundLandscape: 'https://res.cloudinary.com/alenvi/image/upload/c_scale,h_1381,q_auto:low/v1522747309/images/business/Isabelle_paysage_S.jpg'
@@ -125,6 +129,7 @@ export default {
     }
   },
   created () {
+    this.carousel();
     console.log(this.getQuote);
   },
   computed: {
@@ -139,7 +144,25 @@ export default {
     }, 50),
     fadeInPresBanner () {
       this.hasScrolledPresBanner = true;
+    },
+    carousel () {
+      let i = 0;
+      this.selectedQuote = this.quotes[i];
+      this.interval = setInterval(() => {
+        setTimeout(() => {
+          this.show = false;
+        }, 7500);
+        this.show = true;
+        this.selectedQuote = this.quotes[i++];
+        if (i === 3) {
+          i = 0;
+        }
+      }, 8000);
+      // this.selectedQuote = this.getQuote;
     }
+  },
+  beforeDestroy () {
+    clearInterval(this.interval);
   }
 }
 </script>
@@ -205,12 +228,12 @@ q-parallax h1, h5
 .main-text-fix
   position: absolute
   top: 20vh
-  left: 5vw
+  left: 3vw
   font-size: 2vh
   color: $primary
   font-family: alenviTitleFont
   text-align: center
-  @media (max-width: 1024px)
+  @media (max-width: 1700px)
     top: 0
     left: 5%
     right: 1vw
@@ -223,12 +246,12 @@ q-parallax h1, h5
 .main-text
   position: absolute
   top: 27vh
-  left: 5vw
+  left: 3vw
   font-size: 2vh
   color: $primary
   font-family: alenviTitleFont
   text-align: center
-  @media (max-width: 1024px)
+  @media (max-width: 1700px)
     top: 11vh
     left: 5%
     right: 1vw
@@ -241,15 +264,15 @@ q-parallax h1, h5
 .main-subtext
   position: absolute
   top: 35vh
-  left: 5vw
+  left: 3vw
   font-size: 4vh
   text-align: center
-  @media (max-width: 1024px)
+  @media (max-width: 1700px)
     top: 23vh
-    left: 1vw
+    left: 5%
     right: 1vw
-    font-size: 3vh
-    text-align: right
+    font-size: 1.25em
+    text-align: left
 
 .main-button-call-to-action
   position: absolute
