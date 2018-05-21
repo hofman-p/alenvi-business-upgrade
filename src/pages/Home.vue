@@ -234,6 +234,11 @@ q-parallax h1, h5
   font-family: alenviTitleFont
   text-align: center
   @media (max-width: 1700px)
+    top: 20vh
+    left: 3vw
+    text-align: left
+    font-size: 0.85em
+  @media (max-width: 1200px)
     top: 0
     left: 5%
     right: 1vw
@@ -252,6 +257,11 @@ q-parallax h1, h5
   font-family: alenviTitleFont
   text-align: center
   @media (max-width: 1700px)
+    top: 27vh
+    left: 3vw
+    font-size: 0.85em
+    text-align: left
+  @media (max-width: 1200px)
     top: 11vh
     left: 5%
     right: 1vw
@@ -268,6 +278,11 @@ q-parallax h1, h5
   font-size: 4vh
   text-align: center
   @media (max-width: 1700px)
+    top: 35vh
+    left: 3vw
+    font-size: 1.6em
+    text-align: left
+  @media (max-width: 1200px)
     top: 23vh
     left: 5%
     right: 1vw
