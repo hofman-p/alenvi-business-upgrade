@@ -137,7 +137,7 @@
         En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies pour vous proposer des publicités ciblées adaptés à vos centres d’intérêts et réaliser des statistiques de visites.
       </div>
     </cookie-law>
-    <div class="col-xs-7 col-lg-3">
+    <div class="col-xs-7 col-md-6 col-lg-3">
       <h6 class="footer-title">Bénéficiaires</h6>
       <ul>
         <li class="footer-links" @click="goTo('/aide-a-domicile')">Aide à domicile</li>
@@ -147,7 +147,7 @@
         <li class="footer-links"><a href="https://app.alenvi.io/login">Se connecter</a></li>
       </ul>
     </div>
-    <div class="col-xs-5 col-lg-3">
+    <div class="col-xs-5 col-md-6 col-lg-3">
       <h6 class="footer-title">A propos</h6>
       <ul>
         <li class="footer-links" @click="goTo('/vision')">Vision</li>
@@ -156,7 +156,7 @@
         <li class="footer-links" @click="goTo('/mentions')">Mentions Légales</li>
       </ul>
     </div>
-    <div class="col-xs-4 col-lg-3 row self-center justify-center justify-start-resp">
+    <div class="col-xs-4 col-md-6 col-lg-3 row self-center justify-center justify-start-resp">
       <a href="https://www.facebook.com/alenviservices/">
         <q-icon name="fab fa-facebook" color="white" size="2.5rem" class="hover-icon on-left"/>
       </a>
@@ -164,7 +164,7 @@
         <q-icon name="fab fa-youtube" color="white" size="2.5rem" class="hover-icon"/>
       </a>
     </div>
-    <div class="col-xs-8 col-lg-3 row justify-end items-center">
+    <div class="col-xs-8 col-md-6 col-lg-3 row justify-end items-center justify-start-resp">
       <img class="footer-img on-left" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019445/images/business/logo-service-personne.png" alt="logo service personne">
       <img class="footer-img" src="https://res.cloudinary.com/alenvi/image/upload/v1522847849/images/business/logo_charte_qualite___2018.png" alt="logo charte qualité">
     </div>
@@ -373,7 +373,9 @@ export default {
     color: $grey-4 !important
 
   .justify-start-resp
-    @media (max-width: 1159px)
+    @media (max-width: 320px)
+      justify-content: start
+    @media (min-width: 768px) and (max-width: 1199px)
       justify-content: start
 
   /deep/ .q-collapsible-toggle-icon
