@@ -130,7 +130,7 @@
   </q-page-container>
 
   <!-- Footer -->
-  <q-layout-footer class="row justify-between q-px-lg">
+  <q-layout-footer class="row justify-between q-px-xl">
     <q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px" />
     <cookie-law buttonText="OK" buttonClass="cookie-button">
       <div slot="message">
@@ -349,6 +349,7 @@ export default {
   .footer-links
     color: $white
     cursor: pointer;
+    line-height: 1.5
     &:hover
       color: $grey-4 !important
 
