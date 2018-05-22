@@ -239,11 +239,13 @@ q-parallax h1, h5
     text-align: left
     font-size: 0.85em
   @media (max-width: 1200px)
-    top: 0
+    top: 5vh
     left: 5%
     right: 1vw
     font-size: 0.75em
     text-align: left
+  @media (max-width: 575px)
+    font-size: 0.55em
 
 .main-text-fix h1
   font-weight: bold
@@ -267,6 +269,8 @@ q-parallax h1, h5
     right: 1vw
     font-size: 0.75em
     text-align: left
+  @media (max-width: 575px)
+    font-size: 0.55em
 
 .main-text h1
   font-weight: bold
@@ -288,6 +292,8 @@ q-parallax h1, h5
     right: 1vw
     font-size: 1.25em
     text-align: left
+  @media (max-width: 575px)
+    font-size: 1em
 
 .main-button-call-to-action
   position: absolute
