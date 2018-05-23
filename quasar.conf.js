@@ -36,8 +36,6 @@ module.exports = function (ctx) {
       // extractCSS: false,
       useNotifier: false,
       extendWebpack (cfg) {
-        console.log('ENV', ctx.prod);
-        console.log(cfg);
         cfg.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
@@ -150,7 +148,6 @@ module.exports = function (ctx) {
             })
           );
         }
-        console.log(cfg);
       },
       env: {
         API_HOSTNAME: JSON.stringify(process.env.API_HOSTNAME)
