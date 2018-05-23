@@ -38,7 +38,10 @@ export default {
   metaInfo: {
     title: 'Compagnie',
     meta: [
-      { name: 'description', content: "Les 'auxiliaires d’envie' passent du temps de qualité avec les personnes âgées à domicile : promenades, jeux, stimulation etc…" }
+      { name: 'description', content: "Les 'auxiliaires d’envie' passent du temps de qualité avec les personnes âgées à domicile : promenades, jeux, stimulation etc…" },
+    ],
+    script: [
+      { innerHTML: '{ "@context": "http://schema.org", "name": "Compagnie", "description": "Temps de qualité avec les personnes âgées à domicile: promenades, jeux, stimulation, etc" }', type: 'application/ld+json' }
     ]
   },
   components: {

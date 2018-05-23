@@ -19,6 +19,9 @@ export default {
     title: 'Equipe',
     meta: [
       { name: 'description', content: 'Présentations en vidéo des collaborateurs d’Alenvi.' }
+    ],
+    script: [
+      { innerHTML: '{ "@context": "http://schema.org", "name": "Equipe", "description": "Présentations en vidéo des collaborateurs d’Alenvi" }', type: 'application/ld+json' }
     ]
   },
   components: {
