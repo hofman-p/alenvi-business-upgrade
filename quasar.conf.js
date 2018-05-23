@@ -137,7 +137,7 @@ module.exports = function (ctx) {
                 // renderAfterDocumentEvent: 'custom-render-trigger',
 
                 // Optional - Wait to render until the specified element is detected using `document.querySelector`
-                // renderAfterElementExists: 'q-app',
+                renderAfterElementExists: '#q-app',
 
                 // Optional - Wait to render until a certain amount of time has passed.
                 // NOT RECOMMENDED
