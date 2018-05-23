@@ -38,6 +38,9 @@ export default {
     title: 'Recrutement',
     meta: [
       { name: 'description', content: 'Rejoignez une équipe engagée pour la valorisation du métier d’auxiliaire de vie.' }
+    ],
+    script: [
+      { innerHTML: '{ "@context": "http://schema.org", "name": "Recrutement", "description": "Rejoignez une équipe engagée pour la valorisation du métier d’auxiliaire de vie" }', type: 'application/ld+json' }
     ]
   },
   components: {

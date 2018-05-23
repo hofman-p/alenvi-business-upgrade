@@ -39,6 +39,9 @@ export default {
     title: 'Aide à domicile',
     meta: [
       { name: 'description', content: "Services d’aide à domicile (repas, toilettes, aide au lever…) proposés aux personnes âgées par les 'auxiliaires d’envie' Alenvi." }
+    ],
+    script: [
+      { innerHTML: '{ "@context": "http://schema.org", "name": "Aide à domicile", "description": "Services d\'aide pour personnes âgées à domicile (repas, toilettes, aide au lever...)" }', type: 'application/ld+json' }
     ]
   },
   components: {

@@ -44,6 +44,9 @@ export default {
     title: "Sortie d'hôpital",
     meta: [
       { name: 'description', content: "Les 'auxiliaires d’envie' aident votre proche âgé à réussir son retour à domicile à la suite d’une hospitalisation." }
+    ],
+    script: [
+      { innerHTML: '{ "@context": "http://schema.org", "name": "Sortie d\'hôpital", "description": "Réussir le retour à domicile de votre proche âgé suite à une hospitalisation" }', type: 'application/ld+json' }
     ]
   },
   components: {
