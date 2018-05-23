@@ -19,7 +19,10 @@
       <q-btn v-if="$q.platform.is.desktop" class="main-button-call-to-action gt-md" icon="call" color="primary" size="lg"><a href="tel:+33179755475">Appeler au 01 79 75 54 75</a></q-btn>
       <!-- <q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px" /> -->
     </section>
-    <section id="call-button" class="lt-lg a-pa-xl q-mb-xl row justify-center items-center">
+    <section v-if="!$q.platform.is.mobile" id="call-button" class="lt-lg a-pa-xl q-mb-xl row justify-center items-center">
+      <q-btn icon="call" color="primary" size="lg"><a href="tel:+33179755475">Appeler au 01 79 75 54 75</a></q-btn>
+    </section>
+    <section v-if="$q.platform.is.mobile" id="call-button" class="a-pa-xl q-mb-xl row justify-center items-center">
       <q-btn icon="call" color="primary" size="lg"><a href="tel:+33179755475">Appeler au 01 79 75 54 75</a></q-btn>
     </section>
     <section id="presentation-writing" class="a-pa-xl q-mb-xl row justify-center items-center"> <!-- v-scroll="fadeInPresWriting" -->
@@ -127,7 +130,7 @@ export default {
       ],
       hasScrolledPresWriting: false,
       hasScrolledPresBanner: false,
-      videoNumber: 6,
+      videoNumber: this.$q.platform.is.mobile ? 8 : 6,
       videoLocation: ['accueil'],
       videoRoles: ['Auxiliaire']
     }
