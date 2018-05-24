@@ -36,8 +36,6 @@ module.exports = function (ctx) {
       // extractCSS: false,
       useNotifier: false,
       extendWebpack (cfg) {
-        console.log('ENV', ctx.prod);
-        console.log(cfg);
         cfg.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
@@ -137,7 +135,7 @@ module.exports = function (ctx) {
                 // renderAfterDocumentEvent: 'custom-render-trigger',
 
                 // Optional - Wait to render until the specified element is detected using `document.querySelector`
-                // renderAfterElementExists: 'q-app',
+                renderAfterElementExists: '#q-app',
 
                 // Optional - Wait to render until a certain amount of time has passed.
                 // NOT RECOMMENDED
@@ -150,7 +148,6 @@ module.exports = function (ctx) {
             })
           );
         }
-        console.log(cfg);
       },
       env: {
         API_HOSTNAME: JSON.stringify(process.env.API_HOSTNAME)
