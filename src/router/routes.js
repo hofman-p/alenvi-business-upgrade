@@ -2,6 +2,7 @@
 export default [
   {
     path: '/',
+    name: 'Accueil',
     component: () => import('layouts/Navigation'),
     meta: {
       breadcrumb: 'Accueil',
@@ -17,6 +18,7 @@ export default [
       },
       {
         path: 'accueil',
+        name: 'Accueil',
         component: () => import('pages/Home'),
         meta: {
           breadcrumb: 'Accueil'
@@ -24,6 +26,7 @@ export default [
       },
       {
         path: 'aide-a-domicile',
+        name: 'Aide à domicile',
         component: () => import('pages/HomeCare'),
         meta: {
           breadcrumb: 'Aide à domicile',
@@ -32,6 +35,7 @@ export default [
       },
       {
         path: 'compagnie',
+        name: 'Compagnie',
         component: () => import('pages/Company'),
         meta: {
           breadcrumb: 'Compagnie et stimulation',
@@ -40,6 +44,7 @@ export default [
       },
       {
         path: 'sortie-hopital',
+        name: "Sortie d'hôpital",
         component: () => import('pages/HospitalExit'),
         meta: {
           breadcrumb: "Sortie d'hôpital",
@@ -48,6 +53,7 @@ export default [
       },
       {
         path: 'mentions',
+        name: 'Mentions Légales',
         component: () => import('pages/LegalNotices'),
         meta: {
           breadcrumb: 'Mentions Légales',
@@ -56,6 +62,7 @@ export default [
       },
       {
         path: 'recrutement',
+        name: 'Recrutement',
         component: () => import('pages/Recruitment'),
         meta: {
           breadcrumb: 'Recrutement',
@@ -64,6 +71,7 @@ export default [
       },
       {
         path: 'envie',
+        name: 'Envie',
         component: () => import('pages/Recruitment'),
         meta: {
           breadcrumb: 'Recrutement',
@@ -72,6 +80,7 @@ export default [
       },
       {
         path: 'contrat',
+        name: 'contrat',
         component: () => import('pages/Recruitment'),
         meta: {
           breadcrumb: 'Recrutement',
@@ -80,6 +89,7 @@ export default [
       },
       {
         path: 'vision',
+        name: 'vision',
         component: () => import('pages/Vision'),
         meta: {
           breadcrumb: 'Vision',
@@ -88,6 +98,7 @@ export default [
       },
       {
         path: 'equipe',
+        name: 'Equipe',
         component: () => import('pages/Team'),
         meta: {
           breadcrumb: 'Equipe',
@@ -103,7 +114,7 @@ export default [
       {
         path: 'charte-envie',
         beforeEnter: (to, from, next) => {
-          window.location = 'http://blog.alenvi.io/charte-envie';
+          window.location = 'https://blog.alenvi.io/charte-envie';
         }
       }
     ]
