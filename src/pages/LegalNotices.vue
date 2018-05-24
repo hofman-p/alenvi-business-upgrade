@@ -36,7 +36,7 @@ import Breadcrumb from '../components/Breadcrumbs.vue'
 
 export default {
   metaInfo: {
-    title: 'Mention légales',
+    title: 'Mentions légales',
     meta: [
       { name: 'description', content: 'Mentions légales de l’organisation Alenvi.' }
     ]
