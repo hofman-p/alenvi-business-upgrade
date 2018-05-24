@@ -305,7 +305,7 @@ q-parallax h1, h5
 .main-button-call-to-action
   position: absolute
   top: 45vh
-  left: 5vw
+  left: 3vw
 
 .a-pa-xl
   padding: 48px 48px
