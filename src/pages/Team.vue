@@ -21,7 +21,7 @@ export default {
       { name: 'description', content: 'Présentations en vidéo des collaborateurs d’Alenvi.' }
     ],
     script: [
-      { innerHTML: '{ "@context": "http://schema.org", "@type": "Equipe", "name": "Equipe", "description": "Présentations en vidéo des collaborateurs d’Alenvi" }', type: 'application/ld+json' }
+      { innerHTML: '{ "@context": "http://schema.org", "@type": "Role", "name": "Equipe", "description": "Présentations en vidéo des collaborateurs d’Alenvi", "url": "https://www.alenvi.io/equipe" }', type: 'application/ld+json' }
     ]
   },
   components: {

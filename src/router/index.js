@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Meta from 'vue-meta'
+import VueGtm from 'vue-gtm'
 
 import routes from './routes'
 
@@ -28,6 +29,12 @@ const Router = new VueRouter({
   },
   // scrollBehavior: () => ({ y: 0 }),
   routes
+})
+
+Vue.use(VueGtm, {
+  debug: true, // Whether or not display console logs debugs (optional)
+  vueRouter: Router, // Pass the router instance to automatically sync with router (optional)
+  // ignoredViews: ['homepage'], // If router, you can exclude some routes name (case insensitive) (optional)
 })
 
 export default Router

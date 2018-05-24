@@ -40,7 +40,7 @@ export default {
       { name: 'description', content: 'Rejoignez une équipe engagée pour la valorisation du métier d’auxiliaire de vie.' }
     ],
     script: [
-      { innerHTML: '{ "@context": "http://schema.org", "name": "Recrutement", "description": "Rejoignez une équipe engagée pour la valorisation du métier d’auxiliaire de vie" }', type: 'application/ld+json' }
+      { innerHTML: '{ "@context": "http://schema.org", "@type": "Organization", "url": "https://www.alenvi.io/recrutement", "name": "Recrutement", "description": "Rejoignez une équipe engagée pour la valorisation du métier d’auxiliaire de vie" }', type: 'application/ld+json' }
     ]
   },
   components: {
