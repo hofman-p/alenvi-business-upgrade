@@ -41,7 +41,7 @@ export default {
       { name: 'description', content: "Les 'auxiliaires d’envie' passent du temps de qualité avec les personnes âgées à domicile : promenades, jeux, stimulation etc…" },
     ],
     script: [
-      { innerHTML: '{ "@context": "http://schema.org", "@type": "Services", "name": "Compagnie", "description": "Temps de qualité avec les personnes âgées à domicile: promenades, jeux, stimulation, etc" }', type: 'application/ld+json' }
+      { innerHTML: '{ "@context": "http://schema.org", "@type": "Service", "url": "https://www.alenvi.io/compagnie", "name": "Compagnie", "description": "Temps de qualité avec les personnes âgées à domicile: promenades, jeux, stimulation, etc" }', type: 'application/ld+json' }
     ]
   },
   components: {

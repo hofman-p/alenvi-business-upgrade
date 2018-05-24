@@ -46,7 +46,7 @@ export default {
       { name: 'description', content: "Les 'auxiliaires d’envie' aident votre proche âgé à réussir son retour à domicile à la suite d’une hospitalisation." }
     ],
     script: [
-      { innerHTML: '{ "@context": "http://schema.org", "@type": "Services", "name": "Sortie d\'hôpital", "description": "Réussir le retour à domicile de votre proche âgé suite à une hospitalisation" }', type: 'application/ld+json' }
+      { innerHTML: '{ "@context": "http://schema.org", "@type": "Service", "url": "https://www.alenvi.io/sortie-hopital", "name": "Sortie d\'hôpital", "description": "Réussir le retour à domicile de votre proche âgé suite à une hospitalisation" }', type: 'application/ld+json' }
     ]
   },
   components: {

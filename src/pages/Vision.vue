@@ -41,7 +41,7 @@ export default {
       { name: 'description', content: 'Alenvi réinvente l’accompagnement à domicile des personnes âgées grâce à la valorisation des auxiliaires de vie et aux technologies mobiles.' }
     ],
     script: [
-      { innerHTML: '{ "@context": "http://schema.org", "@type": "Vision", "name": "Vision", "description": "Alenvi réinvente l\'accompagnement à domicile des personnes âgées" }', type: 'application/ld+json' }
+      { innerHTML: '{ "@context": "http://schema.org", "@type": "Organization", "name": "Vision", "description": "Alenvi réinvente l\'accompagnement à domicile des personnes âgées", "url": "https://www.alenvi.io/vision" }', type: 'application/ld+json' }
     ]
   },
   components: {
