@@ -21,6 +21,7 @@
     "prerender-spa-plugin": "^3.1.0",
     "vue-breadcrumbs": "^1.1.2",
     "vue-cookie-law": "^1.5.0",
+    "vue-gtm": "^1.0.2",
     "vue-i18n": "^7.3.3",
     "vue-meta": "^1.5.0",
     "vue-parallaxy": "^1.1.1",
