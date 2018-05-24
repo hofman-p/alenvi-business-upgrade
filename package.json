@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No test specified\" && exit 0",
-    "postinstall": "quasar build",
+    "postinstall": "quasar build && cp _redirects dist/spa-mat && cp sitemap.xml dist/spa-mat",
     "start": "node server.js"
   },
   "dependencies": {
