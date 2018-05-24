@@ -131,7 +131,7 @@
 
   <!-- Footer -->
   <q-layout-footer class="row justify-between q-px-xl">
-    <q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px" />
+    <a href="tel:+33179755475"><q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px"></q-btn></a>
     <cookie-law buttonText="OK" buttonClass="cookie-button">
       <div slot="message">
         En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies pour vous proposer des publicités ciblées adaptés à vos centres d’intérêts et réaliser des statistiques de visites.

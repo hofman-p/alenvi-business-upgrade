@@ -62,43 +62,43 @@ module.exports = function (ctx) {
               //   html: String, // The rendered HTML for this route.
               //   outputPath: String // The path the rendered HTML will be written to.
               // }
-              // postProcess (renderedRoute) {
-              //   // Ignore any redirects.
-              //   // renderedRoute.path = renderedRoute.originalPath
-              //   // Basic whitespace removal. (Don't use this in production.)
-              //   // renderedRoute.html = renderedRoute.html.split(/>[\s]+</gmi).join('><')
-              //   // Remove /index.html from the output path if the dir name ends with a .html file extension.
-              //   // For example: /dist/dir/special.html/index.html -> /dist/dir/special.html
-              //   // if (renderedRoute.path.endsWith('.html')) {
-              //   //   renderedRoute.outputPath = path.join(__dirname, 'dist', renderedRoute.path);
-              //   // }
+              postProcess (renderedRoute) {
+                // Ignore any redirects.
+                // renderedRoute.path = renderedRoute.originalPath
+                // Basic whitespace removal. (Don't use this in production.)
+                // renderedRoute.html = renderedRoute.html.split(/>[\s]+</gmi).join('><')
+                // Remove /index.html from the output path if the dir name ends with a .html file extension.
+                // For example: /dist/dir/special.html/index.html -> /dist/dir/special.html
+                // if (renderedRoute.path.endsWith('.html')) {
+                //   renderedRoute.outputPath = path.join(__dirname, 'dist', renderedRoute.path);
+                // }
 
-              //   // renderedRoute.html = renderedRoute.html.replace(/<script>[^<]*<\/script>/i,
-              //   //   `<script>
-              //   //      (function (w, d, s, l, i) {
-              //   //        w[l] = w[l] || [];
-              //   //        w[l].push({
-              //   //          'gtm.start': new Date().getTime(),
-              //   //          event: 'gtm.js'
-              //   //        });
-              //   //        var f = d.getElementsByTagName(s)[0],
-              //   //          j = d.createElement(s),
-              //   //          dl = l != 'dataLayer' ? '&l=' + l : '';
-              //   //        j.async = true;
-              //   //        j.src =
-              //   //          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-              //   //        f.parentNode.insertBefore(j, f);
-              //   //      })(window, document, 'script', 'dataLayer', 'GTM-5MT8HT');
-              //   //      </script>
-              //   //      <script>
-              //   //        window.addEventListener('load', function() {
-              //   //           WSDidDyn.track();
-              //   //        });
-              //   //      </script>`);
-              //   // renderedRoute.html = renderedRoute.html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/i, '');
+                renderedRoute.html = renderedRoute.html.replace(/<script>[^<]*<\/script>/i,
+                  `<script>
+                     (function (w, d, s, l, i) {
+                       w[l] = w[l] || [];
+                       w[l].push({
+                         'gtm.start': new Date().getTime(),
+                         event: 'gtm.js'
+                       });
+                       var f = d.getElementsByTagName(s)[0],
+                         j = d.createElement(s),
+                         dl = l != 'dataLayer' ? '&l=' + l : '';
+                       j.async = true;
+                       j.src =
+                         'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                       f.parentNode.insertBefore(j, f);
+                     })(window, document, 'script', 'dataLayer', 'GTM-5MT8HT');
+                     </script>
+                     <script>
+                       window.addEventListener('load', function() {
+                          WSDidDyn.track();
+                       });
+                     </script>`);
+                // renderedRoute.html = renderedRoute.html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/i, '');
 
-              //   return renderedRoute;
-              // },
+                return renderedRoute;
+              },
 
               // Optional - Uses html-minifier (https://github.com/kangax/html-minifier)
               // To minify the resulting HTML.
@@ -145,7 +145,7 @@ module.exports = function (ctx) {
 
                 // Other puppeteer options.
                 // (See here: https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#puppeteerlaunchoptions)
-                headless: false // Display the browser window when rendering. Useful for debugging.
+                headless: true // Display the browser window when rendering. Useful for debugging.
               })
             })
           );

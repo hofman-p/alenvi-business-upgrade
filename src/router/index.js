@@ -32,9 +32,18 @@ const Router = new VueRouter({
 })
 
 Vue.use(VueGtm, {
-  debug: true, // Whether or not display console logs debugs (optional)
+  debug: false, // Whether or not display console logs debugs (optional)
   vueRouter: Router, // Pass the router instance to automatically sync with router (optional)
   // ignoredViews: ['homepage'], // If router, you can exclude some routes name (case insensitive) (optional)
+})
+
+Router.beforeEach((to, from, next) => {
+  console.log(to.path);
+  if (to.path !== '/' && to.path.slice(-1) === '/') {
+    console.log(to.path.slice(0, -1));
+    return next(to.path.slice(0, -1));
+  }
+  next();
 })
 
 export default Router
