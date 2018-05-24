@@ -252,7 +252,7 @@ q-parallax h1, h5
     font-size: 0.75em
     text-align: left
   @media (max-width: 575px)
-    font-size: 0.55em
+    font-size: 8px
 
 .main-text-fix h1
   font-weight: bold
@@ -277,7 +277,7 @@ q-parallax h1, h5
     font-size: 0.75em
     text-align: left
   @media (max-width: 575px)
-    font-size: 0.55em
+    font-size: 8px
 
 .main-text h1
   font-weight: bold
