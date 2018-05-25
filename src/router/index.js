@@ -38,9 +38,7 @@ Vue.use(VueGtm, {
 })
 
 Router.beforeEach((to, from, next) => {
-  console.log(to.path);
   if (to.path !== '/' && to.path.slice(-1) === '/') {
-    console.log(to.path.slice(0, -1));
     return next(to.path.slice(0, -1));
   }
   next();
