@@ -61,7 +61,7 @@ export default {
           backgroundColor: '#FFFFFF'
         },
         {
-          title: 'Un accompagnement sur mesure',
+          title: 'Accompagnement sur mesure',
           text: `Une équipe d'auxiliaires adaptée à vos besoins vous suit et fait évoluer ses prestations si nécessaire.`,
           image: 'https://res.cloudinary.com/alenvi/image/upload/v1507194145/images/business/pictos/sur_mesure.png',
           backgroundColor: '#FAF9F8'
