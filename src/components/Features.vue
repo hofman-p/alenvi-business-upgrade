@@ -3,7 +3,7 @@
   <div v-for="(feature, index) in featuresContent" :key="index" class="col-sm-4 feature-padding" :style="{ backgroundColor: feature.backgroundColor }">
     <div class="text-center">
       <img class="main-picto" :src="feature.image" alt="">
-      <h2>{{feature.title}}</h2>
+      <h2 style="white-space: pre">{{feature.title}}</h2>
     </div>
       <p class="feature-text">{{feature.text}}</p>
       <div v-if="feature.link" class="text-center">
