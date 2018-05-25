@@ -134,7 +134,7 @@
     <a href="tel:+33179755475"><q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px"></q-btn></a>
     <cookie-law buttonText="OK" buttonClass="cookie-button">
       <div slot="message">
-        En poursuivant votre navigation sur ce site, vous acceptez l'utilisation de cookies afin de vous proposer des publicités ciblées, adaptées à vos centres d'intérêt et réaliser des statistiques de visites..
+        En poursuivant votre navigation sur ce site, vous acceptez l'utilisation de cookies afin de vous proposer des publicités ciblées, adaptées à vos centres d'intérêt et réaliser des statistiques de visites.
       </div>
     </cookie-law>
     <div class="col-xs-7 col-md-6 col-lg-3">
