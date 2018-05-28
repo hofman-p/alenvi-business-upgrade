@@ -130,7 +130,8 @@ export default {
       ],
       hasScrolledPresWriting: false,
       hasScrolledPresBanner: false,
-      videoNumber: this.$q.platform.is.mobile ? 8 : 6,
+      // videoNumber: this.$q.platform.is.mobile ? 8 : 6,
+      videoNumber: 6,
       videoLocation: ['accueil'],
       videoRoles: ['Auxiliaire']
     }

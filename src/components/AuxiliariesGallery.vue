@@ -46,13 +46,16 @@ export default {
   data () {
     return {
       opened: false,
-      windowSize: {},
+      windowSize: {
+        width: window.innerWidth,
+        height: window.innerHeight
+      },
       video_link: '',
       auxiliaries: [],
       auxiliariesRaw: []
     }
   },
-  async created () {
+  async mounted () {
     // if (PROD) {
     //   this.isProd = true;
     // }
@@ -65,21 +68,19 @@ export default {
       params: payload
     });
     // console.log('AUXILIARIES ROLES', auxiliariesRaw.data.data.users);
-    this.auxiliariesRaw = auxiliariesRaw.data.data.users;
-    this.auxiliaries = this.auxiliariesRaw;
+    // this.auxiliariesRaw = auxiliariesRaw.data.data.users;
+    // this.auxiliaries = this.auxiliariesRaw;
+    this.auxiliaries = this.auxiliariesRaw = auxiliariesRaw.data.data.users;
     this.shuffle(this.auxiliaries);
     if (this.auxiliaries[0].role.name === 'Admin' ||
-    this.auxiliaries[0].role.name === 'Coach' ||
-    this.auxiliaries[0].role.name === 'Tech') {
+        this.auxiliaries[0].role.name === 'Coach' ||
+        this.auxiliaries[0].role.name === 'Tech') {
       const first = this.auxiliaries.splice(0, 1);
       this.auxiliaries.push(first[0]);
     }
     if (this.videoNumber) {
-      if (this.windowSize.width < 600 && this.videoNumber > 4) {
-        this.auxiliaries.splice(this.videoNumber / 2);
-      } else {
-        this.auxiliaries.splice(this.videoNumber);
-      }
+      this.auxiliaries = this.auxiliariesMobile;
+      // this.auxiliaries.splice(this.videoNumber);
     }
     for (let i = 0, j = 6, test = false; i < this.auxiliaries.length; i++) {
       if (this.auxiliaries[i].role.name === 'Auxiliaire') {
@@ -115,14 +116,33 @@ export default {
         height
       }
     },
+    auxiliariesMobile () {
+      if (this.windowSize.width < 600 && this.videoNumber > 4) {
+        return this.auxiliariesRaw.slice(0, this.videoNumber / 2);
+      } else {
+        return this.auxiliariesRaw.slice(0, this.videoNumber);
+      }
+    }
   },
   methods: {
     openModal (auxiliary) {
-      this.video_link = `${auxiliary.youtube.link}?autoplay=1&enablejsapi=1`;
+      this.video_link = `${auxiliary.youtube.link}?autoplay=1?rel=0&enablejsapi=1`;
       this.opened = true;
     },
     onResize (size) {
       this.windowSize = size;
+      if (this.videoNumber) {
+        this.auxiliaries = this.auxiliariesMobile;
+      }
+      // if (this.videoNumber) {
+      //   if (size.width < 600 && this.videoNumber > 4) {
+      //     // console.log(this.auxiliaries.slice(this.videoNumber / 2));
+      //     // console.log(this.auxiliariesMobile);
+      //     // this.auxiliariesMobile;
+      //   } else {
+      //     this.auxiliaries.splice(this.videoNumber);
+      //   }
+      // }
     },
     closeModal () {
       const iframe = document.getElementById('auxiliary-iframe').contentWindow;
