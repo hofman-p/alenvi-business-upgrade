@@ -82,24 +82,7 @@ export default {
       this.auxiliaries = this.auxiliariesMobile;
       // this.auxiliaries.splice(this.videoNumber);
     }
-    for (let i = 0, j = 6, test = false; i < this.auxiliaries.length; i++) {
-      if (this.auxiliaries[i].role.name === 'Auxiliaire') {
-        if (i < j) {
-          if (test) {
-            this.auxiliaries[i].backgroundColor = i % 2 === 1 ? '#F070AA' : '#B61A6D';
-          } else {
-            this.auxiliaries[i].backgroundColor = i % 2 === 0 ? '#F070AA' : '#B61A6D';
-          }
-        } else {
-          j += 6;
-          test = !test;
-          this.auxiliaries[i].backgroundColor = this.auxiliaries[i - 6].backgroundColor === '#F070AA' ? '#B61A6D' : '#F070AA';
-          // this.auxiliaries[i].backgroundColor = i % 2 == 0 ? '#F070AA' : '#B61A6D';
-        }
-      } else {
-        this.auxiliaries[i].backgroundColor = '#F29400';
-      }
-    }
+    this.generateMosaic(this.auxiliaries);
   },
   computed: {
     setVideoContainerSize () {
@@ -134,6 +117,7 @@ export default {
       if (this.videoNumber) {
         this.auxiliaries = this.auxiliariesMobile;
       }
+      this.generateMosaic(this.auxiliaries);
       // if (this.videoNumber) {
       //   if (size.width < 600 && this.videoNumber > 4) {
       //     // console.log(this.auxiliaries.slice(this.videoNumber / 2));
@@ -160,6 +144,26 @@ export default {
       const num = targetId.replace(/^\D+/, '');
       const videoNum = `video${num}`;
       this.$refs[videoNum][0].style.zIndex = 4;
+    },
+    generateMosaic (auxiliaries) {
+      for (let i = 0, j = 6, test = false; i < auxiliaries.length; i++) {
+        if (auxiliaries[i].role.name === 'Auxiliaire') {
+          if (i < j) {
+            if (test) {
+              auxiliaries[i].backgroundColor = i % 2 === 1 ? '#F070AA' : '#B61A6D';
+            } else {
+              auxiliaries[i].backgroundColor = i % 2 === 0 ? '#F070AA' : '#B61A6D';
+            }
+          } else {
+            j += 6;
+            test = !test;
+            auxiliaries[i].backgroundColor = auxiliaries[i - 6].backgroundColor === '#F070AA' ? '#B61A6D' : '#F070AA';
+            // this.auxiliaries[i].backgroundColor = i % 2 == 0 ? '#F070AA' : '#B61A6D';
+          }
+        } else {
+          auxiliaries[i].backgroundColor = '#F29400';
+        }
+      }
     }
   }
 }
