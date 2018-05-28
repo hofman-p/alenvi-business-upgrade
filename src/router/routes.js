@@ -2,7 +2,6 @@
 export default [
   {
     path: '/',
-    name: 'Accueil',
     component: () => import('layouts/Navigation'),
     meta: {
       breadcrumb: 'Accueil',
